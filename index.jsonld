@@ -1,34 +1,5 @@
 [
   {
-    "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl",
-    "@type": [
-      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
-      "http://www.w3.org/ns/dcat#DataService"
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-11T09:29:17.790361+00:00"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": ""
-      }
-    ],
-    "http://www.w3.org/ns/dcat#endpointURL": [
-      {
-        "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl"
-      }
-    ],
-    "https://schema.org/numberOfItems": [
-      {
-        "@value": 16
-      }
-    ]
-  },
-  {
     "@id": "https://fdp.duchennedatafoundation.org",
     "@type": [
       "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
@@ -37,7 +8,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-11T09:29:17.790361+00:00"
+        "@value": "2026-10-12T09:59:50.636687+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -54,6 +25,35 @@
     "https://schema.org/numberOfItems": [
       {
         "@value": 1
+      }
+    ]
+  },
+  {
+    "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl",
+    "@type": [
+      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
+      "http://www.w3.org/ns/dcat#DataService"
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-10-12T09:59:50.636687+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": ""
+      }
+    ],
+    "http://www.w3.org/ns/dcat#endpointURL": [
+      {
+        "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl"
+      }
+    ],
+    "https://schema.org/numberOfItems": [
+      {
+        "@value": 16
       }
     ]
   },
@@ -76,7 +76,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-11T09:29:17.790361+00:00"
+        "@value": "2026-10-12T09:59:50.636687+00:00"
       }
     ],
     "http://purl.org/dc/terms/publisher": [
@@ -112,41 +112,6 @@
     ]
   },
   {
-    "@id": "https://fdp.dcc.sib.swiss",
-    "@type": [
-      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
-      "http://www.w3.org/ns/dcat#DataService"
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "The SPHN Metadata Catalog provides an overview of health research datasets available in Switzerland. It describes standardized metadata of each dataset, including the scope of the data, creation date, and access conditions. While the underlying data come from diverse sources and domains, the metadata comply with the HealthDCAT-AP (https://healthdataeu.pages.code.europa.eu/healthdcat-ap/releases/release-6) standard of the European Health Data Space (EHDS)."
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-11T09:29:17.790361+00:00"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "SPHN FAIR Data Point"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#endpointURL": [
-      {
-        "@id": "https://fdp.dcc.sib.swiss"
-      }
-    ],
-    "https://schema.org/numberOfItems": [
-      {
-        "@value": 20
-      }
-    ]
-  },
-  {
     "@id": "https://fdp.wikipathways.org/index.ttl",
     "@type": [
       "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
@@ -161,7 +126,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-11T09:29:17.790361+00:00"
+        "@value": "2026-10-12T09:59:50.636687+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -190,7 +155,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-11T09:29:17.790361+00:00"
+        "@value": "2026-10-12T09:59:50.636687+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -219,7 +184,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-11T09:29:17.790361+00:00"
+        "@value": "2026-10-12T09:59:50.636687+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -236,6 +201,41 @@
     "https://schema.org/numberOfItems": [
       {
         "@value": 1
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.dcc.sib.swiss",
+    "@type": [
+      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
+      "http://www.w3.org/ns/dcat#DataService"
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "The SPHN Metadata Catalog provides an overview of health research datasets available in Switzerland. It describes standardized metadata of each dataset, including the scope of the data, creation date, and access conditions. While the underlying data come from diverse sources and domains, the metadata comply with the HealthDCAT-AP (https://healthdataeu.pages.code.europa.eu/healthdcat-ap/releases/release-6) standard of the European Health Data Space (EHDS)."
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-10-12T09:59:50.636687+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "SPHN FAIR Data Point"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#endpointURL": [
+      {
+        "@id": "https://fdp.dcc.sib.swiss"
+      }
+    ],
+    "https://schema.org/numberOfItems": [
+      {
+        "@value": 20
       }
     ]
   }
