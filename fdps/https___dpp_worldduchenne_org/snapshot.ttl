@@ -5,8 +5,8 @@
 @prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix ns1: <http://semanticscience.org/resource/> .
 @prefix ns2: <https://w3id.org/ejp-rd/vocabulary#> .
-@prefix ns3: <http://www.w3.org/2006/vcard/ns#> .
-@prefix ns4: <http://www.re3data.org/schema/3-0#> .
+@prefix ns3: <http://www.re3data.org/schema/3-0#> .
+@prefix ns4: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -210,8 +210,8 @@
     dcterms:type ns2:CountingCase ;
     ns1:SIO_000628 <https://w3id.org/duchenne-fdp/dataservice1/64f63f32-415e-438e-b5ab-4dae77b3b9d1/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://w3id.org/duchenne-fdp/dataservice1/64f63f32-415e-438e-b5ab-4dae77b3b9d1/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
-    dcat:contactPoint [ a ns3:Agent ;
-            ns3:url <https://fairdata.systems> ] ;
+    dcat:contactPoint [ a ns4:Agent ;
+            ns4:url <https://fairdata.systems> ] ;
     dcat:endpointDescription <https://fairdata.services/api-local/swagger> ;
     dcat:endpointURL <https://fairdata.services/api-local/count> ;
     dcat:keyword "Count",
@@ -246,8 +246,8 @@
     dcterms:type ns2:VPBeacon2_individuals ;
     ns1:SIO_000628 <https://w3id.org/duchenne-fdp/dataservice1/6e01cade-b7b7-4289-b0d8-5fb5bdab17d9/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://w3id.org/duchenne-fdp/dataservice1/6e01cade-b7b7-4289-b0d8-5fb5bdab17d9/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
-    dcat:contactPoint [ a ns3:Agent ;
-            ns3:url <https://fairdata.systems> ] ;
+    dcat:contactPoint [ a ns4:Agent ;
+            ns4:url <https://fairdata.systems> ] ;
     dcat:endpointDescription <http://fairdata.services:10002/openapi.json> ;
     dcat:endpointURL <http://fairdata.services:10002/individuals> ;
     dcat:keyword "Beacon2 Individuals",
@@ -281,8 +281,8 @@
     dcterms:type ns2:PhenotypeFrequency ;
     ns1:SIO_000628 <https://w3id.org/duchenne-fdp/dataservice1/75c6eb7f-90b8-486a-8de8-c48ec722f1bc/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://w3id.org/duchenne-fdp/dataservice1/75c6eb7f-90b8-486a-8de8-c48ec722f1bc/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
-    dcat:contactPoint [ a ns3:Agent ;
-            ns3:url <https://www.duchenne-spain.org/que-es-duchenne/> ] ;
+    dcat:contactPoint [ a ns4:Agent ;
+            ns4:url <https://www.duchenne-spain.org/que-es-duchenne/> ] ;
     dcat:endpointDescription <https://fairdata.services/api-local/swagger> ;
     dcat:endpointURL <https://fairdata.services/api-local/phenotype-frequencies> ;
     dcat:keyword "count",
@@ -320,8 +320,8 @@
     dcterms:type <https://w3id.org/euro-nmd-kpis#KPI_000007> ;
     ns1:SIO_000628 <https://w3id.org/duchenne-fdp/dataservice1/ad5f1578-2dd6-4358-8585-92000df9c09b/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://w3id.org/duchenne-fdp/dataservice1/ad5f1578-2dd6-4358-8585-92000df9c09b/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
-    dcat:contactPoint [ a ns3:Agent ;
-            ns3:url <https://www.duchenne-spain.org/que-es-duchenne/> ] ;
+    dcat:contactPoint [ a ns4:Agent ;
+            ns4:url <https://www.duchenne-spain.org/que-es-duchenne/> ] ;
     dcat:endpointDescription <https://fairdata.services/api-local/swagger> ;
     dcat:endpointURL <https://fairdata.services/api-local/kpi-ttd> ;
     dcat:keyword "diagnosis delay",
@@ -354,8 +354,8 @@
     dcterms:type ns2:VPBeacon2_individuals_4 ;
     ns1:SIO_000628 <https://w3id.org/duchenne-fdp/dataservice1/c9c68f83-8487-44ef-b675-64fa8a2b4bb8/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://w3id.org/duchenne-fdp/dataservice1/c9c68f83-8487-44ef-b675-64fa8a2b4bb8/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
-    dcat:contactPoint [ a ns3:Agent ;
-            ns3:url <https://fairdata.systems> ] ;
+    dcat:contactPoint [ a ns4:Agent ;
+            ns4:url <https://fairdata.systems> ] ;
     dcat:endpointDescription <http://fairdata.services:10004/openapi.json> ;
     dcat:endpointURL <http://fairdata.services:10004/individuals> ;
     dcat:keyword "Beacon4 Individuals" ;
@@ -383,9 +383,9 @@
     dcterms:title "Duchenne Parent Project: FAIR Data" ;
     ns1:SIO_000628 <https://w3id.org/duchenne-fdp/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://w3id.org/duchenne-fdp/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
-    ns4:repositoryIdentifier <https://w3id.org/duchenne-fdp#identifier> ;
-    dcat:contactPoint [ a ns3:Agent ;
-            ns3:url <https://www.worldduchenne.org/> ] ;
+    ns3:repositoryIdentifier <https://w3id.org/duchenne-fdp#identifier> ;
+    dcat:contactPoint [ a ns4:Agent ;
+            ns4:url <https://www.worldduchenne.org/> ] ;
     dcat:endpointURL <https://w3id.org/duchenne-fdp> ;
     dcat:keyword "Becker Muscular Dystrophy",
         "Duchenne Muscular Dystrophy" ;
@@ -426,8 +426,8 @@
     dcterms:title "Duchenne Parent Project Dataset" ;
     ns1:SIO_000628 <https://w3id.org/duchenne-fdp/dataset/f002b691-697e-42f8-ad8a-94df3f4ab115/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://w3id.org/duchenne-fdp/dataset/f002b691-697e-42f8-ad8a-94df3f4ab115/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
-    dcat:contactPoint [ a ns3:Agent ;
-            ns3:url <https://worldduchenne.org> ] ;
+    dcat:contactPoint [ a ns4:Agent ;
+            ns4:url <https://worldduchenne.org> ] ;
     dcat:distribution <https://w3id.org/duchenne-fdp/distribution/2bfb89eb-219b-43a7-b9be-dfcf946aacb5> ;
     dcat:keyword "Becker Muscular Dystrophy",
         "Duchenne Muscular Dystrophy" ;
@@ -544,8 +544,8 @@
     dcterms:title "Duchenne Data Platform Catalog" ;
     ns1:SIO_000628 <https://w3id.org/duchenne-fdp/catalog/198a1aa7-433a-4092-aadd-0c3c9529dac3/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://w3id.org/duchenne-fdp/catalog/198a1aa7-433a-4092-aadd-0c3c9529dac3/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
-    dcat:contactPoint [ a ns3:Agent ;
-            ns3:url <https://worldduchenne.org> ] ;
+    dcat:contactPoint [ a ns4:Agent ;
+            ns4:url <https://worldduchenne.org> ] ;
     dcat:dataset <https://w3id.org/duchenne-fdp/dataset/f002b691-697e-42f8-ad8a-94df3f4ab115> ;
     dcat:keyword "Becker Muscular Dystrophy",
         "Duchenne Muscular Dystrophy" ;
@@ -672,8 +672,8 @@
         <https://w3id.org/duchenne-fdp/dataservice1/75c6eb7f-90b8-486a-8de8-c48ec722f1bc>,
         <https://w3id.org/duchenne-fdp/dataservice1/ad5f1578-2dd6-4358-8585-92000df9c09b>,
         <https://w3id.org/duchenne-fdp/dataservice1/c9c68f83-8487-44ef-b675-64fa8a2b4bb8> ;
-    dcat:contactPoint [ a ns3:Agent ;
-            ns3:url <https://www.worldduchenne.org/> ] ;
+    dcat:contactPoint [ a ns4:Agent ;
+            ns4:url <https://www.worldduchenne.org/> ] ;
     dcat:keyword "Becker Muscular Dystrophy",
         "Duchenne Muscular Dystrophy" ;
     dcat:landingPage <https://dpp.worldduchenne.org/> ;

@@ -1,63 +1,5 @@
 [
   {
-    "@id": "http://fairdatapointorphanet.info:7070",
-    "@type": [
-      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
-      "http://www.w3.org/ns/dcat#DataService"
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-15T07:51:23.749155+00:00"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": ""
-      }
-    ],
-    "http://www.w3.org/ns/dcat#endpointURL": [
-      {
-        "@id": "http://fairdatapointorphanet.info:7070"
-      }
-    ],
-    "https://schema.org/numberOfItems": [
-      {
-        "@value": 2
-      }
-    ]
-  },
-  {
-    "@id": "https://dpp.worldduchenne.org",
-    "@type": [
-      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
-      "http://www.w3.org/ns/dcat#DataService"
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-15T07:51:23.749155+00:00"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": ""
-      }
-    ],
-    "http://www.w3.org/ns/dcat#endpointURL": [
-      {
-        "@id": "https://dpp.worldduchenne.org"
-      }
-    ],
-    "https://schema.org/numberOfItems": [
-      {
-        "@value": 1
-      }
-    ]
-  },
-  {
     "@id": "https://staticfdp.github.io/fdp-index/",
     "@type": [
       "http://www.w3.org/ns/dcat#Catalog"
@@ -76,7 +18,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-15T07:51:23.749155+00:00"
+        "@value": "2026-10-16T07:40:27.519389+00:00"
       }
     ],
     "http://purl.org/dc/terms/publisher": [
@@ -109,7 +51,7 @@
     ]
   },
   {
-    "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl",
+    "@id": "http://fairdatapointorphanet.info:7070",
     "@type": [
       "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
       "http://www.w3.org/ns/dcat#DataService"
@@ -117,7 +59,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-15T07:51:23.749155+00:00"
+        "@value": "2026-10-16T07:40:27.519389+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -128,12 +70,12 @@
     ],
     "http://www.w3.org/ns/dcat#endpointURL": [
       {
-        "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl"
+        "@id": "http://fairdatapointorphanet.info:7070"
       }
     ],
     "https://schema.org/numberOfItems": [
       {
-        "@value": 16
+        "@value": 2
       }
     ]
   },
@@ -152,7 +94,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-15T07:51:23.749155+00:00"
+        "@value": "2026-10-16T07:40:27.519389+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -187,7 +129,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-15T07:51:23.749155+00:00"
+        "@value": "2026-10-16T07:40:27.519389+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -204,6 +146,64 @@
     "https://schema.org/numberOfItems": [
       {
         "@value": 20
+      }
+    ]
+  },
+  {
+    "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl",
+    "@type": [
+      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
+      "http://www.w3.org/ns/dcat#DataService"
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-10-16T07:40:27.519389+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": ""
+      }
+    ],
+    "http://www.w3.org/ns/dcat#endpointURL": [
+      {
+        "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl"
+      }
+    ],
+    "https://schema.org/numberOfItems": [
+      {
+        "@value": 16
+      }
+    ]
+  },
+  {
+    "@id": "https://dpp.worldduchenne.org",
+    "@type": [
+      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
+      "http://www.w3.org/ns/dcat#DataService"
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-10-16T07:40:27.519389+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": ""
+      }
+    ],
+    "http://www.w3.org/ns/dcat#endpointURL": [
+      {
+        "@id": "https://dpp.worldduchenne.org"
+      }
+    ],
+    "https://schema.org/numberOfItems": [
+      {
+        "@value": 1
       }
     ]
   }
