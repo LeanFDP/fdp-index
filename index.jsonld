@@ -1,30 +1,55 @@
 [
   {
-    "@id": "https://dpp.worldduchenne.org",
+    "@id": "https://staticfdp.github.io/fdp-index/",
     "@type": [
-      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
-      "http://www.w3.org/ns/dcat#DataService"
+      "http://www.w3.org/ns/dcat#Catalog"
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Daily-crawled index of FAIR Data Points hosted via StaticFDP / fdpCloud."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     ],
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-18T07:33:21.683163+00:00"
+        "@value": "2026-10-19T08:16:24.770996+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "https://github.com/StaticFDP"
       }
     ],
     "http://purl.org/dc/terms/title": [
       {
         "@language": "en",
-        "@value": ""
+        "@value": "StaticFDP Index"
       }
     ],
-    "http://www.w3.org/ns/dcat#endpointURL": [
+    "http://www.w3.org/ns/dcat#dataset": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org"
+      },
+      {
+        "@id": "https://fdp.wikipathways.org/index.ttl"
+      },
+      {
+        "@id": "https://fdp.dcc.sib.swiss"
+      },
+      {
+        "@id": "http://fairdatapointorphanet.info:7070"
+      },
       {
         "@id": "https://dpp.worldduchenne.org"
-      }
-    ],
-    "https://schema.org/numberOfItems": [
+      },
       {
-        "@value": 1
+        "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl"
       }
     ]
   },
@@ -37,7 +62,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-18T07:33:21.683163+00:00"
+        "@value": "2026-10-19T08:16:24.770996+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -72,7 +97,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-18T07:33:21.683163+00:00"
+        "@value": "2026-10-19T08:16:24.770996+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -93,37 +118,31 @@
     ]
   },
   {
-    "@id": "https://fdp.wikipathways.org/index.ttl",
+    "@id": "https://dpp.worldduchenne.org",
     "@type": [
       "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
       "http://www.w3.org/ns/dcat#DataService"
     ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "This FAIR Data Point deployment is used to describe WikiPathways."
-      }
-    ],
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-18T07:33:21.683163+00:00"
+        "@value": "2026-10-19T08:16:24.770996+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
       {
         "@language": "en",
-        "@value": "WikiPathways FAIR Data Point"
+        "@value": ""
       }
     ],
     "http://www.w3.org/ns/dcat#endpointURL": [
       {
-        "@id": "https://fdp.wikipathways.org/index.ttl"
+        "@id": "https://dpp.worldduchenne.org"
       }
     ],
     "https://schema.org/numberOfItems": [
       {
-        "@value": 2
+        "@value": 1
       }
     ]
   },
@@ -136,7 +155,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-18T07:33:21.683163+00:00"
+        "@value": "2026-10-19T08:16:24.770996+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -157,6 +176,41 @@
     ]
   },
   {
+    "@id": "https://fdp.wikipathways.org/index.ttl",
+    "@type": [
+      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
+      "http://www.w3.org/ns/dcat#DataService"
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "This FAIR Data Point deployment is used to describe WikiPathways."
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-10-19T08:16:24.770996+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "WikiPathways FAIR Data Point"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#endpointURL": [
+      {
+        "@id": "https://fdp.wikipathways.org/index.ttl"
+      }
+    ],
+    "https://schema.org/numberOfItems": [
+      {
+        "@value": 2
+      }
+    ]
+  },
+  {
     "@id": "http://fairdatapointorphanet.info:7070",
     "@type": [
       "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
@@ -165,7 +219,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-18T07:33:21.683163+00:00"
+        "@value": "2026-10-19T08:16:24.770996+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -182,60 +236,6 @@
     "https://schema.org/numberOfItems": [
       {
         "@value": 2
-      }
-    ]
-  },
-  {
-    "@id": "https://staticfdp.github.io/fdp-index/",
-    "@type": [
-      "http://www.w3.org/ns/dcat#Catalog"
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Daily-crawled index of FAIR Data Points hosted via StaticFDP / fdpCloud."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "https://creativecommons.org/licenses/by/4.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-18T07:33:21.683163+00:00"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@id": "https://github.com/StaticFDP"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "StaticFDP Index"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#dataset": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org"
-      },
-      {
-        "@id": "https://fdp.wikipathways.org/index.ttl"
-      },
-      {
-        "@id": "https://fdp.dcc.sib.swiss"
-      },
-      {
-        "@id": "http://fairdatapointorphanet.info:7070"
-      },
-      {
-        "@id": "https://dpp.worldduchenne.org"
-      },
-      {
-        "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl"
       }
     ]
   }
