@@ -199,6 +199,7 @@ HTML_TEMPLATE = """\
     <a href="index.ttl">Turtle</a>
     <a href="crawl-report.json">Crawl report (JSON)</a>
     <a href="https://github.com/StaticFDP/fdp-index">Source on GitHub</a>
+    <a href="register.html">Register your FDP</a>
   </div>
 
   <h2>Registered FAIR Data Points</h2>
@@ -211,9 +212,7 @@ HTML_TEMPLATE = """\
   <p>
     Data indexed under
     <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> ·
-    Validation: <a href="https://shex.io/">ShEx</a> (primary) +
-                <a href="https://www.w3.org/TR/shacl/">SHACL</a> (generated) ·
-    <a href="https://github.com/StaticFDP/fdp-index">Add your FDP</a>
+    <a href="register.html">Register your FDP</a>
   </p>
 </footer>
 
@@ -320,6 +319,11 @@ def main():
 
     out = OUTPUT / "index.html"
     out.write_text(html, encoding="utf-8")
+
+    # Static pages (the registration form) are published next to the index.
+    pages = Path(__file__).resolve().parent.parent / "pages"
+    for page in sorted(pages.glob("*.html")):
+        (OUTPUT / page.name).write_text(page.read_text(encoding="utf-8"), encoding="utf-8")
     print(f"HTML index written to {out}")
 
 

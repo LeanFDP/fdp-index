@@ -1,0 +1,56 @@
+name: Register a FAIR Data Point
+description: Add an FDP to this index. A bot checks the URL and opens a pull request that adds it to registry.yaml.
+title: "Register FDP: "
+labels: ["fdp-registration"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Prefer a guided form with organisation lookup? Use the [registration page](https://fdp.semscape.org/fdp-index/register.html).
+        After you submit, a GitHub Action fetches the URL, checks that it returns RDF, and opens a pull request. Edit the issue to run the check again.
+  - type: input
+    id: url
+    attributes:
+      label: FDP root URL
+      description: The FDP root, or the index catalog.ttl of a static FDP. It must return RDF (Turtle, JSON-LD or RDF/XML).
+      placeholder: https://fdp.example.org
+    validations:
+      required: true
+  - type: input
+    id: label
+    attributes:
+      label: Name
+      placeholder: Example Registry FAIR Data Point
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One or two sentences on what this FDP describes.
+  - type: input
+    id: publisher
+    attributes:
+      label: Publisher
+      description: The organisation that runs the FDP.
+  - type: input
+    id: publisher_ror
+    attributes:
+      label: Publisher ROR
+      description: ROR identifier of that organisation, e.g. https://ror.org/05grdyy37
+  - type: input
+    id: contact
+    attributes:
+      label: Contact
+      description: E-mail address or web page of the maintainer.
+  - type: input
+    id: orcid
+    attributes:
+      label: Your ORCID iD
+      description: Optional. Recorded as the person who registered the FDP.
+      placeholder: 0000-0001-9773-4008
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes for the crawler
+      description: Optional. Known quirks, e.g. HTTP only, non-standard port, very large catalogs.
