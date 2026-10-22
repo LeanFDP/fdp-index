@@ -14,7 +14,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-21T08:07:42.968274+00:00"
+        "@value": "2026-10-22T08:08:17.162097+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -26,6 +26,35 @@
     "http://www.w3.org/ns/dcat#endpointURL": [
       {
         "@id": "https://fdp.wikipathways.org/index.ttl"
+      }
+    ],
+    "https://schema.org/numberOfItems": [
+      {
+        "@value": 2
+      }
+    ]
+  },
+  {
+    "@id": "http://fairdatapointorphanet.info:7070",
+    "@type": [
+      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
+      "http://www.w3.org/ns/dcat#DataService"
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-10-22T08:08:17.162097+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": ""
+      }
+    ],
+    "http://www.w3.org/ns/dcat#endpointURL": [
+      {
+        "@id": "http://fairdatapointorphanet.info:7070"
       }
     ],
     "https://schema.org/numberOfItems": [
@@ -53,7 +82,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-21T08:07:42.968274+00:00"
+        "@value": "2026-10-22T08:08:17.162097+00:00"
       }
     ],
     "http://purl.org/dc/terms/publisher": [
@@ -89,42 +118,7 @@
     ]
   },
   {
-    "@id": "https://fdp.dcc.sib.swiss",
-    "@type": [
-      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
-      "http://www.w3.org/ns/dcat#DataService"
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "The SPHN Metadata Catalog provides an overview of health research datasets available in Switzerland. It describes standardized metadata of each dataset, including the scope of the data, creation date, and access conditions. While the underlying data come from diverse sources and domains, the metadata comply with the HealthDCAT-AP (https://healthdataeu.pages.code.europa.eu/healthdcat-ap/releases/release-6) standard of the European Health Data Space (EHDS)."
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-21T08:07:42.968274+00:00"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "My FAIR Data Point"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#endpointURL": [
-      {
-        "@id": "https://fdp.dcc.sib.swiss"
-      }
-    ],
-    "https://schema.org/numberOfItems": [
-      {
-        "@value": 20
-      }
-    ]
-  },
-  {
-    "@id": "http://fairdatapointorphanet.info:7070",
+    "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl",
     "@type": [
       "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
       "http://www.w3.org/ns/dcat#DataService"
@@ -132,7 +126,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-21T08:07:42.968274+00:00"
+        "@value": "2026-10-22T08:08:17.162097+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -143,12 +137,12 @@
     ],
     "http://www.w3.org/ns/dcat#endpointURL": [
       {
-        "@id": "http://fairdatapointorphanet.info:7070"
+        "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl"
       }
     ],
     "https://schema.org/numberOfItems": [
       {
-        "@value": 2
+        "@value": 16
       }
     ]
   },
@@ -161,7 +155,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-21T08:07:42.968274+00:00"
+        "@value": "2026-10-22T08:08:17.162097+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -182,6 +176,41 @@
     ]
   },
   {
+    "@id": "https://fdp.dcc.sib.swiss",
+    "@type": [
+      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
+      "http://www.w3.org/ns/dcat#DataService"
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "The SPHN Metadata Catalog provides an overview of health research datasets available in Switzerland. It describes standardized metadata of each dataset, including the scope of the data, creation date, and access conditions. While the underlying data come from diverse sources and domains, the metadata comply with the HealthDCAT-AP (https://healthdataeu.pages.code.europa.eu/healthdcat-ap/releases/release-6) standard of the European Health Data Space (EHDS)."
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-10-22T08:08:17.162097+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "My FAIR Data Point"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#endpointURL": [
+      {
+        "@id": "https://fdp.dcc.sib.swiss"
+      }
+    ],
+    "https://schema.org/numberOfItems": [
+      {
+        "@value": 20
+      }
+    ]
+  },
+  {
     "@id": "https://dpp.worldduchenne.org",
     "@type": [
       "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
@@ -190,7 +219,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-21T08:07:42.968274+00:00"
+        "@value": "2026-10-22T08:08:17.162097+00:00"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -207,35 +236,6 @@
     "https://schema.org/numberOfItems": [
       {
         "@value": 1
-      }
-    ]
-  },
-  {
-    "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl",
-    "@type": [
-      "https://w3id.org/fdp/fdp-o#FAIRDataPoint",
-      "http://www.w3.org/ns/dcat#DataService"
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-10-21T08:07:42.968274+00:00"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": ""
-      }
-    ],
-    "http://www.w3.org/ns/dcat#endpointURL": [
-      {
-        "@id": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl"
-      }
-    ],
-    "https://schema.org/numberOfItems": [
-      {
-        "@value": 16
       }
     ]
   }
