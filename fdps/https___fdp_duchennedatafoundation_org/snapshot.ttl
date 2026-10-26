@@ -3,8 +3,8 @@
 @prefix fdp-o: <https://w3id.org/fdp/fdp-o#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ldp: <http://www.w3.org/ns/ldp#> .
-@prefix ns1: <http://www.re3data.org/schema/3-0#> .
-@prefix ns2: <http://semanticscience.org/resource/> .
+@prefix ns1: <http://semanticscience.org/resource/> .
+@prefix ns2: <http://www.re3data.org/schema/3-0#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -59,11 +59,11 @@
 <https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae#identifier> a <http://purl.org/spar/datacite/Identifier> ;
     dcterms:identifier "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae" .
 
-<https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/445c0a70d1e214e545b261559e2842f4> ns2:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt> ;
-    ns2:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt> .
+<https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/445c0a70d1e214e545b261559e2842f4> ns1:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt> ;
+    ns1:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt> .
 
-<https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/5d27e854a9e78eb3f663331cd47cdc13> ns2:SIO_000332 <https://www.wikidata.org/wiki/Q8777> ;
-    ns2:SIO_000628 <https://www.wikidata.org/wiki/Q8777> .
+<https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/5d27e854a9e78eb3f663331cd47cdc13> ns1:SIO_000332 <https://www.wikidata.org/wiki/Q8777> ;
+    ns1:SIO_000628 <https://www.wikidata.org/wiki/Q8777> .
 
 <https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#accessRights> a dcterms:RightsStatement ;
     dcterms:description "This resource has no access restriction" .
@@ -71,11 +71,11 @@
 <https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#identifier> a <http://purl.org/spar/datacite/Identifier> ;
     dcterms:identifier "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc" .
 
-<https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/445c0a70d1e214e545b261559e2842f4> ns2:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt> ;
-    ns2:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt> .
+<https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/445c0a70d1e214e545b261559e2842f4> ns1:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt> ;
+    ns1:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt> .
 
-<https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/5d27e854a9e78eb3f663331cd47cdc13> ns2:SIO_000332 <https://www.wikidata.org/wiki/Q8777> ;
-    ns2:SIO_000628 <https://www.wikidata.org/wiki/Q8777> .
+<https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/5d27e854a9e78eb3f663331cd47cdc13> ns1:SIO_000332 <https://www.wikidata.org/wiki/Q8777> ;
+    ns1:SIO_000628 <https://www.wikidata.org/wiki/Q8777> .
 
 <https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3#accessRights> a dcterms:RightsStatement ;
     dcterms:description "This resource has no access restriction" .
@@ -83,17 +83,17 @@
 <https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3#identifier> a <http://purl.org/spar/datacite/Identifier> ;
     dcterms:identifier "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3" .
 
-<https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/445c0a70d1e214e545b261559e2842f4> ns2:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt> ;
-    ns2:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt> .
+<https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/445c0a70d1e214e545b261559e2842f4> ns1:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt> ;
+    ns1:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt> .
 
-<https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/5d27e854a9e78eb3f663331cd47cdc13> ns2:SIO_000332 <https://www.wikidata.org/wiki/Q8777> ;
-    ns2:SIO_000628 <https://www.wikidata.org/wiki/Q8777> .
+<https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/5d27e854a9e78eb3f663331cd47cdc13> ns1:SIO_000332 <https://www.wikidata.org/wiki/Q8777> ;
+    ns1:SIO_000628 <https://www.wikidata.org/wiki/Q8777> .
 
-<https://fdp.duchennedatafoundation.org/metrics/445c0a70d1e214e545b261559e2842f4> ns2:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt> ;
-    ns2:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt> .
+<https://fdp.duchennedatafoundation.org/metrics/445c0a70d1e214e545b261559e2842f4> ns1:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt> ;
+    ns1:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt> .
 
-<https://fdp.duchennedatafoundation.org/metrics/5d27e854a9e78eb3f663331cd47cdc13> ns2:SIO_000332 <https://www.wikidata.org/wiki/Q8777> ;
-    ns2:SIO_000628 <https://www.wikidata.org/wiki/Q8777> .
+<https://fdp.duchennedatafoundation.org/metrics/5d27e854a9e78eb3f663331cd47cdc13> ns1:SIO_000332 <https://www.wikidata.org/wiki/Q8777> ;
+    ns1:SIO_000628 <https://www.wikidata.org/wiki/Q8777> .
 
 <https://fdp.duchennedatafoundation.org/profile/77aaad6a-0136-4c6e-88b9-07ffccd0ee4c> rdfs:label "FAIR Data Point Profile" .
 
@@ -115,9 +115,9 @@
     dcterms:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0> ;
     dcterms:publisher <https://fdp.duchennedatafoundation.org#publisher> ;
     dcterms:title "Duchenne FAIR Data Point" ;
-    ns2:SIO_000628 <https://fdp.duchennedatafoundation.org/metrics/445c0a70d1e214e545b261559e2842f4>,
+    ns1:SIO_000628 <https://fdp.duchennedatafoundation.org/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://fdp.duchennedatafoundation.org/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
-    ns1:repositoryIdentifier <https://fdp.duchennedatafoundation.org#identifier> ;
+    ns2:repositoryIdentifier <https://fdp.duchennedatafoundation.org#identifier> ;
     dcat:endpointURL <https://fdp.duchennedatafoundation.org> ;
     dcat:version "1.0" ;
     fdp-o:fdpSoftwareVersion "FDP:v1.17.1~9604e79" ;
@@ -137,7 +137,7 @@
     dcterms:publisher [ a foaf:Agent ;
             foaf:name "Duchenne Data Foundation" ] ;
     dcterms:title "Subject Metadata" ;
-    ns2:SIO_000628 <https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/445c0a70d1e214e545b261559e2842f4>,
+    ns1:SIO_000628 <https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
     dcat:theme <http://purl.obolibrary.org/obo/AGRO_00010151>,
         <http://purl.obolibrary.org/obo/NCIT_C164368>,
@@ -168,7 +168,7 @@
     dcterms:publisher [ a foaf:Agent ;
             foaf:name "Duchenne Data Foundation" ] ;
     dcterms:title "Tissue Metadata" ;
-    ns2:SIO_000628 <https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/445c0a70d1e214e545b261559e2842f4>,
+    ns1:SIO_000628 <https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
     dcat:theme <http://purl.obolibrary.org/obo/AGRO_00010151>,
         <http://purl.obolibrary.org/obo/NCIT_C164368>,
@@ -195,7 +195,7 @@
     dcterms:publisher [ a foaf:Agent ;
             foaf:name "Duchenne Data Foundation" ] ;
     dcterms:title "BIND Metadata Schema" ;
-    ns2:SIO_000628 <https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/445c0a70d1e214e545b261559e2842f4>,
+    ns1:SIO_000628 <https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/445c0a70d1e214e545b261559e2842f4>,
         <https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/5d27e854a9e78eb3f663331cd47cdc13> ;
     dcat:dataset <https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc>,
         <https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3> ;
