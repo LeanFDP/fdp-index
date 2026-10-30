@@ -14,7 +14,7 @@ the ROR id looks like one, and the URL returns RDF (with the crawler's own fetch
 A URL that does not answer is still added, flagged in the pull request, because the
 daily crawl records reachability anyway.
 
-Ported from StaticFDP/staticfdp-index (issue template and register.html, April 2026).
+Ported from LeanFDP/staticfdp-index (issue template and register.html, April 2026).
 """
 import argparse
 import datetime

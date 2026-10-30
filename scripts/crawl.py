@@ -192,15 +192,15 @@ def build_index(crawl_results: list[dict]) -> Graph:
     ]:
         g.bind(prefix, ns)
 
-    index_uri = URIRef("https://staticfdp.github.io/fdp-index/")
+    index_uri = URIRef("https://fdp.semscape.org/fdp-index/")
 
     g.add((index_uri, RDF.type,           DCAT.Catalog))
-    g.add((index_uri, DCTERMS.title,      Literal("StaticFDP Index", lang="en")))
+    g.add((index_uri, DCTERMS.title,      Literal("Lean FDP Index", lang="en")))
     g.add((index_uri, DCTERMS.description,
-           Literal("Daily-crawled index of FAIR Data Points hosted via StaticFDP / fdpCloud.", lang="en")))
+           Literal("Daily-crawled index of FAIR Data Points hosted via Lean FDP / fdpCloud.", lang="en")))
     g.add((index_uri, DCTERMS.modified,   now))
     g.add((index_uri, DCTERMS.publisher,
-           URIRef("https://github.com/StaticFDP")))
+           URIRef("https://github.com/LeanFDP")))
     g.add((index_uri, DCTERMS.license,
            URIRef("https://creativecommons.org/licenses/by/4.0/")))
 
