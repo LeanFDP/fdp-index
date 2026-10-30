@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Register an FDP · StaticFDP Index</title>
-  <!-- Registration form for the StaticFDP Index. Ported from StaticFDP/staticfdp-index (docs/register.html):
+  <title>Register an FDP · Lean FDP Index</title>
+  <!-- Registration form for the Lean FDP Index. Ported from LeanFDP/staticfdp-index (docs/register.html):
        organisation lookup in ROR, ORCID check. No server: it opens a prefilled GitHub issue, which the
        "Register FDP from issue" workflow turns into a pull request on registry.yaml. -->
   <style>
@@ -46,13 +46,13 @@
 <body>
 <header>
   <h1>Register a FAIR Data Point</h1>
-  <p>Add an FDP to the <a href="./">StaticFDP Index</a>. It is crawled every day; the index records whether it answers.</p>
+  <p>Add an FDP to the <a href="./">Lean FDP Index</a>. It is crawled every day; the index records whether it answers.</p>
 </header>
 <main>
   <div class="card">
     <form id="reg" novalidate>
       <label for="url">FDP root URL</label>
-      <p class="hint">The FDP root, or the index <code>catalog.ttl</code> of a static FDP. It must return RDF.</p>
+      <p class="hint">The FDP root, or the index <code>catalog.ttl</code> of a Lean FDP. It must return RDF.</p>
       <input id="url" type="url" required placeholder="https://fdp.example.org">
 
       <label for="label">Name</label>
@@ -85,14 +85,14 @@
   </div>
 
   <h2 style="font-size:1.1rem;margin-top:2rem">Or open a pull request yourself</h2>
-  <p class="hint">Add this entry to <a href="https://github.com/StaticFDP/fdp-index/edit/main/registry.yaml">registry.yaml</a>, at the end of the live section.</p>
+  <p class="hint">Add this entry to <a href="https://github.com/LeanFDP/fdp-index/edit/main/registry.yaml">registry.yaml</a>, at the end of the live section.</p>
   <pre id="yaml"></pre>
 </main>
 
 <script>
 (function () {
   "use strict";
-  var REPO = "StaticFDP/fdp-index";
+  var REPO = "LeanFDP/fdp-index";
   var $ = function (id) { return document.getElementById(id); };
   var v = function (id) { return ($(id).value || "").trim(); };
 

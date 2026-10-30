@@ -12,7 +12,7 @@ body:
     id: url
     attributes:
       label: FDP root URL
-      description: The FDP root, or the index catalog.ttl of a static FDP. It must return RDF (Turtle, JSON-LD or RDF/XML).
+      description: The FDP root, or the index catalog.ttl of a Lean FDP. It must return RDF (Turtle, JSON-LD or RDF/XML).
       placeholder: https://fdp.example.org
     validations:
       required: true

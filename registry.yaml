@@ -75,7 +75,7 @@ fdps:
     added:   "2026-10-08"
     contact: "https://github.com/Koetai/biodiversity-fdp"
     notes:   >
-      Static FDP built with StaticFDP/fdp-ecosystem-template; served as text/turtle by GitHub Pages.
+      Lean FDP built with LeanFDP/fdp-ecosystem-template; served as text/turtle by GitHub Pages.
       The index lists its catalog documents with ldp:contains (and fdp:hasCatalog → rdfs:seeAlso);
       canonical IRIs are https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/…,
       the same files are served with text/turtle under https://koetai.github.io/biodiversity-fdp/fdp/….

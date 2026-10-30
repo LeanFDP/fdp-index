@@ -19,7 +19,7 @@ HTML_TEMPLATE = """\
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>StaticFDP Index</title>
+  <title>Lean FDP Index</title>
   <style>
     :root {{
       --bg:       #f9f9f9;
@@ -162,9 +162,9 @@ HTML_TEMPLATE = """\
 <body>
 
 <header>
-  <h1>StaticFDP Index</h1>
+  <h1>Lean FDP Index</h1>
   <p>Daily-crawled index of <a href="https://www.go-fair.org/fair-principles/" style="color:var(--accent)">FAIR Data Points</a>
-     hosted via <a href="https://github.com/StaticFDP" style="color:var(--accent)">StaticFDP / fdpCloud</a>.
+     hosted via <a href="https://github.com/LeanFDP" style="color:var(--accent)">Lean FDP / fdpCloud</a>.
      GitHub is the canonical source — no server required.</p>
 </header>
 
@@ -198,7 +198,7 @@ HTML_TEMPLATE = """\
     <a href="index.jsonld">JSON-LD</a>
     <a href="index.ttl">Turtle</a>
     <a href="crawl-report.json">Crawl report (JSON)</a>
-    <a href="https://github.com/StaticFDP/fdp-index">Source on GitHub</a>
+    <a href="https://github.com/LeanFDP/fdp-index">Source on GitHub</a>
     <a href="register.html">Register your FDP</a>
   </div>
 
