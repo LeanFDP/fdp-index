@@ -1,6 +1,6 @@
 # FDP Index
 
-A serverless FAIR Data Point index backed entirely by GitHub.
+A serverless FAIR Data Point index backed entirely by GitHub. This is the canonical index of the [StaticFDP](https://fdp.semscape.org) family; it replaces [staticfdp-index](https://github.com/StaticFDP/staticfdp-index), whose registration form now lives here.
 
 - **Registry** — `registry.yaml` in this repo lists every FDP root to crawl
 - **Crawl** — a GitHub Actions workflow runs every day at 03:00 UTC, crawls all registered FDPs, and commits results to the `gh-pages` branch
@@ -9,10 +9,13 @@ A serverless FAIR Data Point index backed entirely by GitHub.
 
 ## Adding your FDP
 
-**Option A — Pull request (recommended):**
-Add a line to `registry.yaml` and open a PR. Once merged, your FDP will be crawled in the next daily run.
+**Option A — Registration form (recommended):**
+Fill in the [registration page](https://fdp.semscape.org/fdp-index/register.html). It looks up your organisation in [ROR](https://ror.org) and checks your ORCID iD, then opens a prefilled issue ([*Register a FAIR Data Point*](https://github.com/StaticFDP/fdp-index/issues/new?template=register-fdp.yml)). The *Register FDP from issue* workflow (`scripts/register_from_issue.py`) checks the URL, fetches it once to see that it returns RDF, and opens a pull request that adds the entry to `registry.yaml`. Edit the issue to run it again. Once merged, your FDP is crawled in the next daily run. The publisher's ROR id is added to the index as `dcterms:publisher` when the FDP does not state a publisher itself.
 
-**Option B — Automated ping from your FDP repo:**
+**Option B — Pull request:**
+Add an entry to `registry.yaml` yourself and open a PR. The registration page also shows the entry to paste.
+
+**Option C — Automated ping from your FDP repo:**
 In your FDP repo's `publish.yml`, add:
 ```yaml
 - name: Ping FDP index
@@ -40,7 +43,4 @@ On first ping your FDP is added to `registry.yaml` automatically.
 
 ## Schemas
 
-Validation uses **ShEx as primary**, with SHACL generated automatically:
-- `profiles/FairDataPoint.shex` → `profiles/FairDataPoint-SHACL.ttl` (generated)
-- `profiles/Catalog.shex`       → `profiles/Catalog-SHACL.ttl` (generated)
-- `profiles/Dataset.shex`       → `profiles/Dataset-SHACL.ttl` (generated)
+Shape validation of FDP metadata lives in the publish layer: the [FDP ecosystem template](https://github.com/StaticFDP/fdp-ecosystem-template) checks every node against ShEx shapes (`scripts/shapes/fdp-ecosystem.shex`, ported from [static-fdp](https://github.com/StaticFDP/static-fdp)). This index does not validate; it records what each FDP returns.

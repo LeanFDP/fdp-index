@@ -223,6 +223,14 @@ def build_index(crawl_results: list[dict]) -> Graph:
         if desc:
             g.add((fdp_uri, DCTERMS.description, Literal(desc, lang="en")))
 
+        # Publisher from the registration form (ROR), when the FDP itself does not say
+        entry = result.get("entry") or {}
+        if entry.get("publisher_ror") and (fdp_uri, DCTERMS.publisher, None) not in entry_g:
+            ror = URIRef(entry["publisher_ror"])
+            g.add((fdp_uri, DCTERMS.publisher, ror))
+            if entry.get("publisher"):
+                g.add((ror, FOAF.name, Literal(entry["publisher"])))
+
         # Catalog count as schema:numberOfItems
         if result["stats"]["catalogs"]:
             g.add((fdp_uri, SCHEMA.numberOfItems,
@@ -272,6 +280,7 @@ def main():
         result = {
             "root_url":  root_url,
             "label":     result_label,
+            "entry":     entry,
             "status":    "ok" if ok else "error",
             "graph":     g,
             "stats":     stats,

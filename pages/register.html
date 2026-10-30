@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register an FDP · StaticFDP Index</title>
+  <!-- Registration form for the StaticFDP Index. Ported from StaticFDP/staticfdp-index (docs/register.html):
+       organisation lookup in ROR, ORCID check. No server: it opens a prefilled GitHub issue, which the
+       "Register FDP from issue" workflow turns into a pull request on registry.yaml. -->
+  <style>
+    :root {
+      --bg: #f9f9f9; --surface: #ffffff; --border: #dde1e7; --accent: #2563eb;
+      --ok: #16a34a; --err: #dc2626; --text: #1e293b; --muted: #64748b; --radius: 8px;
+      --mono: "SFMono-Regular", Consolas, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0f172a; --surface: #1e293b; --border: #334155; --text: #e2e8f0; --muted: #94a3b8; color-scheme: dark; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1.5rem max(16px, 2rem); }
+    header h1 { font-size: 1.5rem; margin: 0; } header p { color: var(--muted); font-size: .9rem; margin: .25rem 0 0; }
+    a { color: var(--accent); }
+    main { max-width: 44rem; margin: 2rem auto; padding: 0 max(16px, 1.5rem); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    label { display: block; font-weight: 600; margin: 1rem 0 .2rem; }
+    .hint { font-size: .85rem; color: var(--muted); margin: 0 0 .35rem; }
+    .opt { font-weight: 400; color: var(--muted); }
+    input, textarea { width: 100%; font: inherit; padding: .55rem .65rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); }
+    textarea { min-height: 4.5rem; }
+    .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .5rem; }
+    .results { list-style: none; margin: .35rem 0 0; padding: 0; border: 1px solid var(--border); border-radius: 6px; max-height: 14rem; overflow: auto; }
+    .results:empty { display: none; }
+    .results button { all: unset; display: block; width: 100%; padding: .45rem .65rem; cursor: pointer; box-sizing: border-box; }
+    .results button:hover, .results button:focus-visible { background: var(--bg); }
+    .results small { color: var(--muted); }
+    .status { font-size: .85rem; margin-top: .3rem; min-height: 1.2em; }
+    .status.ok { color: var(--ok); } .status.err { color: var(--err); }
+    .btn { display: inline-block; margin-top: 1.5rem; padding: .7rem 1.2rem; border: 0; border-radius: 6px; background: var(--accent); color: #fff; font: 600 1rem system-ui, sans-serif; text-decoration: none; cursor: pointer; }
+    .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); margin-left: .5rem; }
+    .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+    pre { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: .75rem; overflow-x: auto; font: .8rem/1.5 var(--mono); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Register a FAIR Data Point</h1>
+  <p>Add an FDP to the <a href="./">StaticFDP Index</a>. It is crawled every day; the index records whether it answers.</p>
+</header>
+<main>
+  <div class="card">
+    <form id="reg" novalidate>
+      <label for="url">FDP root URL</label>
+      <p class="hint">The FDP root, or the index <code>catalog.ttl</code> of a static FDP. It must return RDF.</p>
+      <input id="url" type="url" required placeholder="https://fdp.example.org">
+
+      <label for="label">Name</label>
+      <input id="label" required placeholder="Example Registry FAIR Data Point">
+
+      <label for="description">Description <span class="opt">optional</span></label>
+      <textarea id="description"></textarea>
+
+      <label for="org-q">Publisher</label>
+      <p class="hint">Search the Research Organization Registry. Pick a result to fill in the name and ROR id.</p>
+      <div class="row"><input id="org-q" autocomplete="off" placeholder="e.g. Amsterdam UMC"><button type="button" class="btn ghost" id="org-search" style="margin:0">Search</button></div>
+      <ul class="results" id="org-results" aria-label="ROR results"></ul>
+      <input id="publisher" type="hidden"><input id="publisher_ror" type="hidden">
+      <div class="status" id="org-status" aria-live="polite"></div>
+
+      <label for="contact">Contact <span class="opt">optional</span></label>
+      <input id="contact" placeholder="data-access@example.org or https://…">
+
+      <label for="orcid">Your ORCID iD <span class="opt">optional</span></label>
+      <p class="hint">Recorded as the person who registered the FDP.</p>
+      <input id="orcid" placeholder="0000-0001-9773-4008" inputmode="numeric">
+      <div class="status" id="orcid-status" aria-live="polite"></div>
+
+      <label for="notes">Notes for the crawler <span class="opt">optional</span></label>
+      <textarea id="notes" placeholder="HTTP only, non-standard port, very large catalogs…"></textarea>
+
+      <a class="btn" id="go" aria-disabled="true" target="_blank" rel="noopener" href="#">Continue on GitHub</a>
+      <p class="hint" style="margin-top:.6rem">Opens a prefilled issue. Submit it there; a bot checks the URL and opens a pull request. You need a GitHub account.</p>
+    </form>
+  </div>
+
+  <h2 style="font-size:1.1rem;margin-top:2rem">Or open a pull request yourself</h2>
+  <p class="hint">Add this entry to <a href="https://github.com/StaticFDP/fdp-index/edit/main/registry.yaml">registry.yaml</a>, at the end of the live section.</p>
+  <pre id="yaml"></pre>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var REPO = "StaticFDP/fdp-index";
+  var $ = function (id) { return document.getElementById(id); };
+  var v = function (id) { return ($(id).value || "").trim(); };
+
+  function orcidValid(id) {
+    if (!/^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/.test(id)) return false;
+    var d = id.replace(/-/g, ""), total = 0;
+    for (var i = 0; i < 15; i++) total = (total + Number(d[i])) * 2;
+    var c = (12 - total % 11) % 11;
+    return d[15] === (c === 10 ? "X" : String(c));
+  }
+  function urlValid(u) { try { var p = new URL(u); return p.protocol === "https:" || p.protocol === "http:"; } catch (e) { return false; } }
+  var q = function (s) { return JSON.stringify(s); };
+
+  function update() {
+    var ok = urlValid(v("url")) && v("label") && (!v("orcid") || orcidValid(v("orcid")));
+    var e = { url: v("url"), label: v("label"), added: new Date().toISOString().slice(0, 10), contact: v("contact") };
+    var y = "  - url:     " + q(e.url) + "\n    label:   " + q(e.label) + "\n    added:   " + q(e.added) + "\n    contact: " + q(e.contact) + "\n";
+    if (v("publisher")) y += "    publisher: " + q(v("publisher")) + "\n";
+    if (v("publisher_ror")) y += "    publisher_ror: " + q(v("publisher_ror")) + "\n";
+    if (v("orcid") && orcidValid(v("orcid"))) y += "    registered_by: " + q("https://orcid.org/" + v("orcid")) + "\n";
+    if (v("description")) y += "    description: " + q(v("description").replace(/\s+/g, " ")) + "\n";
+    if (v("notes")) y += "    notes:   >\n" + v("notes").split("\n").map(function (l) { return "      " + l; }).join("\n") + "\n";
+    $("yaml").textContent = y;
+    var p = new URLSearchParams({ template: "register-fdp.yml", title: "Register FDP: " + v("label"), url: v("url"), label: v("label"),
+      description: v("description"), publisher: v("publisher"), publisher_ror: v("publisher_ror"), contact: v("contact"), orcid: v("orcid"), notes: v("notes") });
+    $("go").href = "https://github.com/" + REPO + "/issues/new?" + p.toString();
+    $("go").setAttribute("aria-disabled", String(!ok));
+  }
+
+  /* ROR lookup (api.ror.org v2, CORS open) */
+  function searchOrg() {
+    var term = v("org-q"); if (!term) return;
+    $("org-status").textContent = "Searching ROR…"; $("org-status").className = "status";
+    fetch("https://api.ror.org/v2/organizations?query=" + encodeURIComponent(term))
+      .then(function (r) { if (!r.ok) throw new Error("ROR answered " + r.status); return r.json(); })
+      .then(function (d) {
+        var list = $("org-results"); list.innerHTML = "";
+        (d.items || []).slice(0, 8).forEach(function (o) {
+          var name = ((o.names || []).find(function (n) { return n.types.indexOf("ror_display") > -1; }) || {}).value || o.id;
+          var loc = (o.locations || [])[0], where = loc && loc.geonames_details ? loc.geonames_details.name + ", " + loc.geonames_details.country_name : "";
+          var li = document.createElement("li"), b = document.createElement("button");
+          b.type = "button"; b.textContent = name; var sm = document.createElement("small"); sm.textContent = " " + where + " · " + o.id.replace("https://", ""); b.appendChild(sm);
+          b.addEventListener("click", function () {
+            $("publisher").value = name; $("publisher_ror").value = o.id; $("org-q").value = name; list.innerHTML = "";
+            $("org-status").textContent = "Selected " + name + " (" + o.id + ")"; $("org-status").className = "status ok"; update();
+          });
+          li.appendChild(b); list.appendChild(li);
+        });
+        $("org-status").textContent = d.items && d.items.length ? "" : "No organisation found. You can leave the publisher empty.";
+      })
+      .catch(function (e) { $("org-status").textContent = "ROR lookup failed: " + e.message; $("org-status").className = "status err"; });
+  }
+  $("org-search").addEventListener("click", searchOrg);
+  $("org-q").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); searchOrg(); } });
+  $("org-q").addEventListener("input", function () { $("publisher").value = ""; $("publisher_ror").value = ""; $("org-status").textContent = ""; update(); });
+
+  /* ORCID: checksum, then the public name (pub.orcid.org, CORS open) */
+  $("orcid").addEventListener("change", function () {
+    var id = v("orcid").replace("https://orcid.org/", ""); $("orcid").value = id; var st = $("orcid-status");
+    if (!id) { st.textContent = ""; update(); return; }
+    if (!orcidValid(id)) { st.textContent = "This is not a valid ORCID iD (the checksum does not match)."; st.className = "status err"; update(); return; }
+    st.textContent = "Valid ORCID iD."; st.className = "status ok"; update();
+    fetch("https://pub.orcid.org/v3.0/" + id + "/person", { headers: { Accept: "application/json" } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { var n = d && d.name; if (n && n["given-names"]) st.textContent = "Valid ORCID iD: " + n["given-names"].value + (n["family-name"] ? " " + n["family-name"].value : "") + "."; })
+      .catch(function () {});
+  });
+
+  ["url", "label", "description", "contact", "orcid", "notes"].forEach(function (id) { $(id).addEventListener("input", update); });
+  $("reg").addEventListener("submit", function (e) { e.preventDefault(); });
+  update();
+})();
+</script>
+</body>
+</html>
