@@ -7,7 +7,7 @@
 <https://staticfdp.github.io/fdp-index/> a dcat:Catalog ;
     dcterms:description "Daily-crawled index of FAIR Data Points hosted via StaticFDP / fdpCloud."@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-10-30T09:18:53.551284+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-10-30T12:53:33.583836+00:00"^^xsd:dateTime ;
     dcterms:publisher <https://github.com/StaticFDP> ;
     dcterms:title "StaticFDP Index"@en ;
     dcat:dataset <http://fairdatapointorphanet.info:7070>,
@@ -19,14 +19,14 @@
 
 <http://fairdatapointorphanet.info:7070> a dcat:DataService,
         fdp-o:FAIRDataPoint ;
-    dcterms:modified "2026-10-30T09:18:53.551284+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-10-30T12:53:33.583836+00:00"^^xsd:dateTime ;
     dcterms:title ""@en ;
     dcat:endpointURL <http://fairdatapointorphanet.info:7070> ;
     schema:numberOfItems 2 .
 
 <https://dpp.worldduchenne.org> a dcat:DataService,
         fdp-o:FAIRDataPoint ;
-    dcterms:modified "2026-10-30T09:18:53.551284+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-10-30T12:53:33.583836+00:00"^^xsd:dateTime ;
     dcterms:title ""@en ;
     dcat:endpointURL <https://dpp.worldduchenne.org> ;
     schema:numberOfItems 1 .
@@ -34,14 +34,14 @@
 <https://fdp.dcc.sib.swiss> a dcat:DataService,
         fdp-o:FAIRDataPoint ;
     dcterms:description "The SPHN Metadata Catalog provides an overview of health research datasets available in Switzerland. It describes standardized metadata of each dataset, including the scope of the data, creation date, and access conditions. While the underlying data come from diverse sources and domains, the metadata comply with the HealthDCAT-AP (https://healthdataeu.pages.code.europa.eu/healthdcat-ap/releases/release-6) standard of the European Health Data Space (EHDS)."@en ;
-    dcterms:modified "2026-10-30T09:18:53.551284+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-10-30T12:53:33.583836+00:00"^^xsd:dateTime ;
     dcterms:title "My FAIR Data Point"@en ;
     dcat:endpointURL <https://fdp.dcc.sib.swiss> ;
     schema:numberOfItems 20 .
 
 <https://fdp.duchennedatafoundation.org> a dcat:DataService,
         fdp-o:FAIRDataPoint ;
-    dcterms:modified "2026-10-30T09:18:53.551284+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-10-30T12:53:33.583836+00:00"^^xsd:dateTime ;
     dcterms:title "Duchenne FAIR Data Point"@en ;
     dcat:endpointURL <https://fdp.duchennedatafoundation.org> ;
     schema:numberOfItems 1 .
@@ -49,14 +49,14 @@
 <https://fdp.wikipathways.org/index.ttl> a dcat:DataService,
         fdp-o:FAIRDataPoint ;
     dcterms:description "This FAIR Data Point deployment is used to describe WikiPathways."@en ;
-    dcterms:modified "2026-10-30T09:18:53.551284+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-10-30T12:53:33.583836+00:00"^^xsd:dateTime ;
     dcterms:title "WikiPathways FAIR Data Point"@en ;
     dcat:endpointURL <https://fdp.wikipathways.org/index.ttl> ;
     schema:numberOfItems 2 .
 
 <https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl> a dcat:DataService,
         fdp-o:FAIRDataPoint ;
-    dcterms:modified "2026-10-30T09:18:53.551284+00:00"^^xsd:dateTime ;
+    dcterms:modified "2026-10-30T12:53:33.583836+00:00"^^xsd:dateTime ;
     dcterms:title ""@en ;
     dcat:endpointURL <https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl> ;
     schema:numberOfItems 16 .
