@@ -1,13 +1,303 @@
 [
   {
-    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc",
+    "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae#identifier",
+    "@type": [
+      "http://purl.org/spar/datacite/Identifier"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/dataservice2/",
+    "@type": [
+      "http://www.w3.org/ns/ldp#DirectContainer"
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "Data Services"
+      }
+    ],
+    "http://www.w3.org/ns/ldp#hasMemberRelation": [
+      {
+        "@id": "http://www.w3.org/ns/dcat#service"
+      }
+    ],
+    "http://www.w3.org/ns/ldp#membershipResource": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/dataset/",
+    "@type": [
+      "http://www.w3.org/ns/ldp#DirectContainer"
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "Datasets"
+      }
+    ],
+    "http://www.w3.org/ns/ldp#contains": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3"
+      },
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc"
+      }
+    ],
+    "http://www.w3.org/ns/ldp#hasMemberRelation": [
+      {
+        "@id": "http://www.w3.org/ns/dcat#dataset"
+      }
+    ],
+    "http://www.w3.org/ns/ldp#membershipResource": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/profile/2f08228e-1789-40f8-84cd-28e3288c3604",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Dataset Profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Catalog",
+      "http://www.w3.org/ns/dcat#Resource"
+    ],
+    "http://purl.org/dc/terms/accessRights": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae#accessRights"
+      }
+    ],
+    "http://purl.org/dc/terms/conformsTo": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/profile/a0949e72-4466-4d53-8900-9436d1049a4b"
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org"
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-04-29T06:17:41.374813+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/language": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/iso639-1/en"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-04-29T06:17:41.374813+00:00"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "_:na1b7f358d50f40ddae53a41e9ef58660b1"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "BIND Metadata Schema"
+      }
+    ],
+    "http://semanticscience.org/resource/SIO_000628": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/445c0a70d1e214e545b261559e2842f4"
+      },
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/5d27e854a9e78eb3f663331cd47cdc13"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "BIND Metadata Schema"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#dataset": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3"
+      },
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#themeTaxonomy": [
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C83083"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C70835"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C20189"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/PATO_0000047"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C20587"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C25150"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C81328"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C171083"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C69275"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C94171"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/AGRO_00010151"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C83399"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C45293"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C164368"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#version": [
+      {
+        "@value": "1.0"
+      }
+    ],
+    "https://w3id.org/fdp/fdp-o#metadataIdentifier": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae#identifier"
+      }
+    ],
+    "https://w3id.org/fdp/fdp-o#metadataIssued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-04-29T06:17:41.374813+00:00"
+      }
+    ],
+    "https://w3id.org/fdp/fdp-o#metadataModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2024-04-29T06:20:15.804928+00:00"
+      }
+    ]
+  },
+  {
+    "@id": "_:na1b7f358d50f40ddae53a41e9ef58660b1",
+    "@type": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Duchenne Data Foundation"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae#accessRights",
+    "@type": [
+      "http://purl.org/dc/terms/RightsStatement"
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "This resource has no access restriction"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/catalog/",
+    "@type": [
+      "http://www.w3.org/ns/ldp#DirectContainer"
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "Catalogs"
+      }
+    ],
+    "http://www.w3.org/ns/ldp#contains": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
+      }
+    ],
+    "http://www.w3.org/ns/ldp#hasMemberRelation": [
+      {
+        "@id": "https://w3id.org/fdp/fdp-o#metadataCatalog"
+      }
+    ],
+    "http://www.w3.org/ns/ldp#membershipResource": [
+      {
+        "@id": "https://fdp.duchennedatafoundation.org"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/profile/a0949e72-4466-4d53-8900-9436d1049a4b",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Catalog Profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#identifier",
+    "@type": [
+      "http://purl.org/spar/datacite/Identifier"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/445c0a70d1e214e545b261559e2842f4",
+    "http://semanticscience.org/resource/SIO_000332": [
+      {
+        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
+      }
+    ],
+    "http://semanticscience.org/resource/SIO_000628": [
+      {
+        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3",
     "@type": [
       "http://www.w3.org/ns/dcat#Resource",
       "http://www.w3.org/ns/dcat#Dataset"
     ],
     "http://purl.org/dc/terms/accessRights": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#accessRights"
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3#accessRights"
       }
     ],
     "http://purl.org/dc/terms/conformsTo": [
@@ -32,66 +322,48 @@
     ],
     "http://purl.org/dc/terms/publisher": [
       {
-        "@id": "_:nd8e2665244094a2dae1b3c17aa6201e0b1"
+        "@id": "_:nc708475503774bf3949eedb2b4db28d7b1"
       }
     ],
     "http://purl.org/dc/terms/title": [
       {
-        "@value": "Subject Metadata"
+        "@value": "Tissue Metadata"
       }
     ],
     "http://semanticscience.org/resource/SIO_000628": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/445c0a70d1e214e545b261559e2842f4"
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/5d27e854a9e78eb3f663331cd47cdc13"
       },
       {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/5d27e854a9e78eb3f663331cd47cdc13"
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/445c0a70d1e214e545b261559e2842f4"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "Subject Metadata"
+        "@value": "Tissue Metadata"
       }
     ],
     "http://www.w3.org/ns/dcat#theme": [
       {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C20587"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/PATO_0000047"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C25150"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C83399"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C45293"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C164368"
-      },
-      {
         "@id": "http://purl.obolibrary.org/obo/NCIT_C83083"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C20189"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C81328"
       },
       {
         "@id": "http://purl.obolibrary.org/obo/AGRO_00010151"
       },
       {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C70835"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C83399"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C20189"
+      },
+      {
         "@id": "http://purl.obolibrary.org/obo/NCIT_C171083"
       },
       {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C69275"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C94171"
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C164368"
       }
     ],
     "http://www.w3.org/ns/dcat#version": [
@@ -101,38 +373,30 @@
     ],
     "https://w3id.org/fdp/fdp-o#metadataIdentifier": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#identifier"
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3#identifier"
       }
     ],
     "https://w3id.org/fdp/fdp-o#metadataIssued": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-04-29T06:19:20.018168+00:00"
+        "@value": "2024-04-29T06:20:15.687337+00:00"
       }
     ],
     "https://w3id.org/fdp/fdp-o#metadataModified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-04-29T06:19:20.018168+00:00"
+        "@value": "2024-04-29T06:20:15.687337+00:00"
       }
     ]
   },
   {
-    "@id": "_:nd8e2665244094a2dae1b3c17aa6201e0b1",
+    "@id": "_:nc708475503774bf3949eedb2b4db28d7b1",
     "@type": [
       "http://xmlns.com/foaf/0.1/Agent"
     ],
     "http://xmlns.com/foaf/0.1/name": [
       {
         "@value": "Duchenne Data Foundation"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/profile/2f08228e-1789-40f8-84cd-28e3288c3604",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Dataset Profile"
       }
     ]
   },
@@ -150,23 +414,52 @@
     ]
   },
   {
-    "@id": "https://fdp.duchennedatafoundation.org/biobank/",
+    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/445c0a70d1e214e545b261559e2842f4",
+    "http://semanticscience.org/resource/SIO_000332": [
+      {
+        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
+      }
+    ],
+    "http://semanticscience.org/resource/SIO_000628": [
+      {
+        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/metrics/5d27e854a9e78eb3f663331cd47cdc13",
+    "http://semanticscience.org/resource/SIO_000332": [
+      {
+        "@id": "https://www.wikidata.org/wiki/Q8777"
+      }
+    ],
+    "http://semanticscience.org/resource/SIO_000628": [
+      {
+        "@id": "https://www.wikidata.org/wiki/Q8777"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/distribution/",
     "@type": [
       "http://www.w3.org/ns/ldp#DirectContainer"
     ],
     "http://purl.org/dc/terms/title": [
       {
-        "@value": "Biobank"
+        "@value": "Distributions"
       }
     ],
     "http://www.w3.org/ns/ldp#hasMemberRelation": [
       {
-        "@id": "http://purl.org/dc/terms/hasPart"
+        "@id": "http://www.w3.org/ns/dcat#distribution"
       }
     ],
     "http://www.w3.org/ns/ldp#membershipResource": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc"
+      },
+      {
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3"
       }
     ]
   },
@@ -210,10 +503,10 @@
     ],
     "http://semanticscience.org/resource/SIO_000628": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/metrics/5d27e854a9e78eb3f663331cd47cdc13"
+        "@id": "https://fdp.duchennedatafoundation.org/metrics/445c0a70d1e214e545b261559e2842f4"
       },
       {
-        "@id": "https://fdp.duchennedatafoundation.org/metrics/445c0a70d1e214e545b261559e2842f4"
+        "@id": "https://fdp.duchennedatafoundation.org/metrics/5d27e854a9e78eb3f663331cd47cdc13"
       }
     ],
     "http://www.re3data.org/schema/3-0#repositoryIdentifier": [
@@ -265,91 +558,6 @@
     ]
   },
   {
-    "@id": "https://fdp.duchennedatafoundation.org/dataset/",
-    "@type": [
-      "http://www.w3.org/ns/ldp#DirectContainer"
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "Datasets"
-      }
-    ],
-    "http://www.w3.org/ns/ldp#contains": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc"
-      },
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3"
-      }
-    ],
-    "http://www.w3.org/ns/ldp#hasMemberRelation": [
-      {
-        "@id": "http://www.w3.org/ns/dcat#dataset"
-      }
-    ],
-    "http://www.w3.org/ns/ldp#membershipResource": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/catalog/",
-    "@type": [
-      "http://www.w3.org/ns/ldp#DirectContainer"
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "Catalogs"
-      }
-    ],
-    "http://www.w3.org/ns/ldp#contains": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
-      }
-    ],
-    "http://www.w3.org/ns/ldp#hasMemberRelation": [
-      {
-        "@id": "https://w3id.org/fdp/fdp-o#metadataCatalog"
-      }
-    ],
-    "http://www.w3.org/ns/ldp#membershipResource": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/profile/a0949e72-4466-4d53-8900-9436d1049a4b",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Catalog Profile"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae#accessRights",
-    "@type": [
-      "http://purl.org/dc/terms/RightsStatement"
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "This resource has no access restriction"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org#publisher",
-    "@type": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "Duchenne Data Foundation"
-      }
-    ]
-  },
-  {
     "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3#accessRights",
     "@type": [
       "http://purl.org/dc/terms/RightsStatement"
@@ -361,28 +569,26 @@
     ]
   },
   {
-    "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/5d27e854a9e78eb3f663331cd47cdc13",
-    "http://semanticscience.org/resource/SIO_000332": [
-      {
-        "@id": "https://www.wikidata.org/wiki/Q8777"
-      }
+    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#accessRights",
+    "@type": [
+      "http://purl.org/dc/terms/RightsStatement"
     ],
-    "http://semanticscience.org/resource/SIO_000628": [
+    "http://purl.org/dc/terms/description": [
       {
-        "@id": "https://www.wikidata.org/wiki/Q8777"
+        "@value": "This resource has no access restriction"
       }
     ]
   },
   {
-    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/5d27e854a9e78eb3f663331cd47cdc13",
+    "@id": "https://fdp.duchennedatafoundation.org/metrics/445c0a70d1e214e545b261559e2842f4",
     "http://semanticscience.org/resource/SIO_000332": [
       {
-        "@id": "https://www.wikidata.org/wiki/Q8777"
+        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
       }
     ],
     "http://semanticscience.org/resource/SIO_000628": [
       {
-        "@id": "https://www.wikidata.org/wiki/Q8777"
+        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
       }
     ]
   },
@@ -408,44 +614,21 @@
     ]
   },
   {
+    "@id": "https://fdp.duchennedatafoundation.org#identifier",
+    "@type": [
+      "http://purl.org/spar/datacite/Identifier"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "https://fdp.duchennedatafoundation.org"
+      }
+    ]
+  },
+  {
     "@id": "https://fdp.duchennedatafoundation.org/profile/77aaad6a-0136-4c6e-88b9-07ffccd0ee4c",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "FAIR Data Point Profile"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/metrics/5d27e854a9e78eb3f663331cd47cdc13",
-    "http://semanticscience.org/resource/SIO_000332": [
-      {
-        "@id": "https://www.wikidata.org/wiki/Q8777"
-      }
-    ],
-    "http://semanticscience.org/resource/SIO_000628": [
-      {
-        "@id": "https://www.wikidata.org/wiki/Q8777"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/dataservice2/",
-    "@type": [
-      "http://www.w3.org/ns/ldp#DirectContainer"
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "Data Services"
-      }
-    ],
-    "http://www.w3.org/ns/ldp#hasMemberRelation": [
-      {
-        "@id": "http://www.w3.org/ns/dcat#service"
-      }
-    ],
-    "http://www.w3.org/ns/ldp#membershipResource": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
       }
     ]
   },
@@ -461,198 +644,23 @@
     ]
   },
   {
-    "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/445c0a70d1e214e545b261559e2842f4",
-    "http://semanticscience.org/resource/SIO_000332": [
-      {
-        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
-      }
-    ],
-    "http://semanticscience.org/resource/SIO_000628": [
-      {
-        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/distribution/",
+    "@id": "https://fdp.duchennedatafoundation.org/biobank/",
     "@type": [
       "http://www.w3.org/ns/ldp#DirectContainer"
     ],
     "http://purl.org/dc/terms/title": [
       {
-        "@value": "Distributions"
+        "@value": "Biobank"
       }
     ],
     "http://www.w3.org/ns/ldp#hasMemberRelation": [
       {
-        "@id": "http://www.w3.org/ns/dcat#distribution"
+        "@id": "http://purl.org/dc/terms/hasPart"
       }
     ],
     "http://www.w3.org/ns/ldp#membershipResource": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc"
-      },
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org#accessRights",
-    "@type": [
-      "http://purl.org/dc/terms/RightsStatement"
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "This resource has no access restriction"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3",
-    "@type": [
-      "http://www.w3.org/ns/dcat#Resource",
-      "http://www.w3.org/ns/dcat#Dataset"
-    ],
-    "http://purl.org/dc/terms/accessRights": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3#accessRights"
-      }
-    ],
-    "http://purl.org/dc/terms/conformsTo": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/profile/2f08228e-1789-40f8-84cd-28e3288c3604"
-      }
-    ],
-    "http://purl.org/dc/terms/isPartOf": [
-      {
         "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
-      }
-    ],
-    "http://purl.org/dc/terms/language": [
-      {
-        "@id": "http://id.loc.gov/vocabulary/iso639-1/en"
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@id": "_:n097ccf45e0df4e2487a8067ea5e623a6b1"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "Tissue Metadata"
-      }
-    ],
-    "http://semanticscience.org/resource/SIO_000628": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/5d27e854a9e78eb3f663331cd47cdc13"
-      },
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/445c0a70d1e214e545b261559e2842f4"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Tissue Metadata"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#theme": [
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C171083"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C70835"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C83399"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C164368"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C83083"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C20189"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/AGRO_00010151"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#version": [
-      {
-        "@value": "1.0"
-      }
-    ],
-    "https://w3id.org/fdp/fdp-o#metadataIdentifier": [
-      {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3#identifier"
-      }
-    ],
-    "https://w3id.org/fdp/fdp-o#metadataIssued": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-04-29T06:20:15.687337+00:00"
-      }
-    ],
-    "https://w3id.org/fdp/fdp-o#metadataModified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-04-29T06:20:15.687337+00:00"
-      }
-    ]
-  },
-  {
-    "@id": "_:n097ccf45e0df4e2487a8067ea5e623a6b1",
-    "@type": [
-      "http://xmlns.com/foaf/0.1/Agent"
-    ],
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "Duchenne Data Foundation"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/445c0a70d1e214e545b261559e2842f4",
-    "http://semanticscience.org/resource/SIO_000332": [
-      {
-        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
-      }
-    ],
-    "http://semanticscience.org/resource/SIO_000628": [
-      {
-        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#identifier",
-    "@type": [
-      "http://purl.org/spar/datacite/Identifier"
-    ],
-    "http://purl.org/dc/terms/identifier": [
-      {
-        "@value": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/5d27e854a9e78eb3f663331cd47cdc13",
-    "http://semanticscience.org/resource/SIO_000332": [
-      {
-        "@id": "https://www.wikidata.org/wiki/Q8777"
-      }
-    ],
-    "http://semanticscience.org/resource/SIO_000628": [
-      {
-        "@id": "https://www.wikidata.org/wiki/Q8777"
       }
     ]
   },
@@ -678,41 +686,37 @@
     ]
   },
   {
-    "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae#identifier",
-    "@type": [
-      "http://purl.org/spar/datacite/Identifier"
-    ],
-    "http://purl.org/dc/terms/identifier": [
+    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/5d27e854a9e78eb3f663331cd47cdc13",
+    "http://semanticscience.org/resource/SIO_000332": [
       {
-        "@value": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
+        "@id": "https://www.wikidata.org/wiki/Q8777"
+      }
+    ],
+    "http://semanticscience.org/resource/SIO_000628": [
+      {
+        "@id": "https://www.wikidata.org/wiki/Q8777"
       }
     ]
   },
   {
-    "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae",
+    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc",
     "@type": [
       "http://www.w3.org/ns/dcat#Resource",
-      "http://www.w3.org/ns/dcat#Catalog"
+      "http://www.w3.org/ns/dcat#Dataset"
     ],
     "http://purl.org/dc/terms/accessRights": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae#accessRights"
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#accessRights"
       }
     ],
     "http://purl.org/dc/terms/conformsTo": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/profile/a0949e72-4466-4d53-8900-9436d1049a4b"
+        "@id": "https://fdp.duchennedatafoundation.org/profile/2f08228e-1789-40f8-84cd-28e3288c3604"
       }
     ],
     "http://purl.org/dc/terms/isPartOf": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org"
-      }
-    ],
-    "http://purl.org/dc/terms/issued": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-04-29T06:17:41.374813+00:00"
+        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae"
       }
     ],
     "http://purl.org/dc/terms/language": [
@@ -725,44 +729,42 @@
         "@id": "http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0"
       }
     ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-04-29T06:17:41.374813+00:00"
-      }
-    ],
     "http://purl.org/dc/terms/publisher": [
       {
-        "@id": "_:n76266465639e43709051389d5aebb39cb1"
+        "@id": "_:n72475bc0d0714cea9890be63836e7610b1"
       }
     ],
     "http://purl.org/dc/terms/title": [
       {
-        "@value": "BIND Metadata Schema"
+        "@value": "Subject Metadata"
       }
     ],
     "http://semanticscience.org/resource/SIO_000628": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/5d27e854a9e78eb3f663331cd47cdc13"
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/5d27e854a9e78eb3f663331cd47cdc13"
       },
       {
-        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/445c0a70d1e214e545b261559e2842f4"
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc/metrics/445c0a70d1e214e545b261559e2842f4"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "BIND Metadata Schema"
+        "@value": "Subject Metadata"
       }
     ],
-    "http://www.w3.org/ns/dcat#dataset": [
+    "http://www.w3.org/ns/dcat#theme": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3"
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C20587"
       },
       {
-        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#themeTaxonomy": [
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C45293"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C25150"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C81328"
+      },
       {
         "@id": "http://purl.obolibrary.org/obo/NCIT_C171083"
       },
@@ -773,37 +775,22 @@
         "@id": "http://purl.obolibrary.org/obo/NCIT_C83083"
       },
       {
-        "@id": "http://purl.obolibrary.org/obo/AGRO_00010151"
-      },
-      {
         "@id": "http://purl.obolibrary.org/obo/NCIT_C69275"
       },
       {
         "@id": "http://purl.obolibrary.org/obo/NCIT_C94171"
       },
       {
-        "@id": "http://purl.obolibrary.org/obo/PATO_0000047"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C20587"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C70835"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C83399"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C25150"
-      },
-      {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C45293"
+        "@id": "http://purl.obolibrary.org/obo/AGRO_00010151"
       },
       {
         "@id": "http://purl.obolibrary.org/obo/NCIT_C20189"
       },
       {
-        "@id": "http://purl.obolibrary.org/obo/NCIT_C81328"
+        "@id": "http://purl.obolibrary.org/obo/PATO_0000047"
+      },
+      {
+        "@id": "http://purl.obolibrary.org/obo/NCIT_C83399"
       }
     ],
     "http://www.w3.org/ns/dcat#version": [
@@ -813,24 +800,24 @@
     ],
     "https://w3id.org/fdp/fdp-o#metadataIdentifier": [
       {
-        "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae#identifier"
+        "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#identifier"
       }
     ],
     "https://w3id.org/fdp/fdp-o#metadataIssued": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-04-29T06:17:41.374813+00:00"
+        "@value": "2024-04-29T06:19:20.018168+00:00"
       }
     ],
     "https://w3id.org/fdp/fdp-o#metadataModified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2024-04-29T06:20:15.804928+00:00"
+        "@value": "2024-04-29T06:19:20.018168+00:00"
       }
     ]
   },
   {
-    "@id": "_:n76266465639e43709051389d5aebb39cb1",
+    "@id": "_:n72475bc0d0714cea9890be63836e7610b1",
     "@type": [
       "http://xmlns.com/foaf/0.1/Agent"
     ],
@@ -841,37 +828,50 @@
     ]
   },
   {
-    "@id": "https://fdp.duchennedatafoundation.org/dataset/4f50eb87-9c9a-440e-a3a2-77eba32b62bc#accessRights",
+    "@id": "https://fdp.duchennedatafoundation.org#publisher",
+    "@type": [
+      "http://xmlns.com/foaf/0.1/Agent"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Duchenne Data Foundation"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/dataset/695ec961-88d8-4ffd-b815-aa01eb16fda3/metrics/5d27e854a9e78eb3f663331cd47cdc13",
+    "http://semanticscience.org/resource/SIO_000332": [
+      {
+        "@id": "https://www.wikidata.org/wiki/Q8777"
+      }
+    ],
+    "http://semanticscience.org/resource/SIO_000628": [
+      {
+        "@id": "https://www.wikidata.org/wiki/Q8777"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org/catalog/7cac8ae0-6e33-4d5a-8355-e047db41e8ae/metrics/5d27e854a9e78eb3f663331cd47cdc13",
+    "http://semanticscience.org/resource/SIO_000332": [
+      {
+        "@id": "https://www.wikidata.org/wiki/Q8777"
+      }
+    ],
+    "http://semanticscience.org/resource/SIO_000628": [
+      {
+        "@id": "https://www.wikidata.org/wiki/Q8777"
+      }
+    ]
+  },
+  {
+    "@id": "https://fdp.duchennedatafoundation.org#accessRights",
     "@type": [
       "http://purl.org/dc/terms/RightsStatement"
     ],
     "http://purl.org/dc/terms/description": [
       {
         "@value": "This resource has no access restriction"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org#identifier",
-    "@type": [
-      "http://purl.org/spar/datacite/Identifier"
-    ],
-    "http://purl.org/dc/terms/identifier": [
-      {
-        "@value": "https://fdp.duchennedatafoundation.org"
-      }
-    ]
-  },
-  {
-    "@id": "https://fdp.duchennedatafoundation.org/metrics/445c0a70d1e214e545b261559e2842f4",
-    "http://semanticscience.org/resource/SIO_000332": [
-      {
-        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
-      }
-    ],
-    "http://semanticscience.org/resource/SIO_000628": [
-      {
-        "@id": "https://www.ietf.org/rfc/rfc3986.txt"
       }
     ]
   }
