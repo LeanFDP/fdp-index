@@ -76,6 +76,10 @@
       <input id="orcid" placeholder="0000-0001-9773-4008" inputmode="numeric">
       <div class="status" id="orcid-status" aria-live="polite"></div>
 
+      <label for="watchers">GitHub accounts to notify <span class="opt">optional</span></label>
+      <p class="hint">Mentioned in the issue that opens when this FDP stops answering. Whoever submits the issue is added automatically.</p>
+      <input id="watchers" placeholder="octocat, another-maintainer" autocomplete="off">
+
       <label for="notes">Notes for the crawler <span class="opt">optional</span></label>
       <textarea id="notes" placeholder="HTTP only, non-standard port, very large catalogs…"></textarea>
 
@@ -113,11 +117,13 @@
     if (v("publisher")) y += "    publisher: " + q(v("publisher")) + "\n";
     if (v("publisher_ror")) y += "    publisher_ror: " + q(v("publisher_ror")) + "\n";
     if (v("orcid") && orcidValid(v("orcid"))) y += "    registered_by: " + q("https://orcid.org/" + v("orcid")) + "\n";
+    var w = v("watchers").split(/[,\s]+/).map(function (x) { return x.replace(/^@/, ""); }).filter(Boolean);
+    if (w.length) y += "    watchers: " + JSON.stringify(w) + "\n";
     if (v("description")) y += "    description: " + q(v("description").replace(/\s+/g, " ")) + "\n";
     if (v("notes")) y += "    notes:   >\n" + v("notes").split("\n").map(function (l) { return "      " + l; }).join("\n") + "\n";
     $("yaml").textContent = y;
     var p = new URLSearchParams({ template: "register-fdp.yml", title: "Register FDP: " + v("label"), url: v("url"), label: v("label"),
-      description: v("description"), publisher: v("publisher"), publisher_ror: v("publisher_ror"), contact: v("contact"), orcid: v("orcid"), notes: v("notes") });
+      description: v("description"), publisher: v("publisher"), publisher_ror: v("publisher_ror"), contact: v("contact"), orcid: v("orcid"), watchers: v("watchers"), notes: v("notes") });
     $("go").href = "https://github.com/" + REPO + "/issues/new?" + p.toString();
     $("go").setAttribute("aria-disabled", String(!ok));
   }
@@ -161,7 +167,7 @@
       .catch(function () {});
   });
 
-  ["url", "label", "description", "contact", "orcid", "notes"].forEach(function (id) { $(id).addEventListener("input", update); });
+  ["url", "label", "description", "contact", "orcid", "watchers", "notes"].forEach(function (id) { $(id).addEventListener("input", update); });
   $("reg").addEventListener("submit", function (e) { e.preventDefault(); });
   update();
 })();

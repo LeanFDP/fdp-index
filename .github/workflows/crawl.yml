@@ -19,9 +19,16 @@ on:
     types: [fdp-ping]
 
 permissions:
-  contents: write    # needed to commit crawl results to gh-pages
-  pages:    write
-  id-token: write
+  contents:      write    # needed to commit crawl results to gh-pages
+  pages:         write
+  id-token:      write
+  issues:        write    # outage issues (scripts/status.py)
+  pull-requests: write    # reviewed-removal pull requests (scripts/status.py)
+
+# One crawl at a time, so the status history is never written by two runs at once.
+concurrency:
+  group: crawl
+  cancel-in-progress: false
 
 jobs:
   crawl:
@@ -76,6 +83,7 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages
+          fetch-depth: 0          # status.py rebuilds the outage history from it if status.json is missing
         continue-on-error: true   # branch may not exist yet on first run
 
       - name: Initialise gh-pages if branch is new
@@ -105,6 +113,16 @@ jobs:
           SINGLE_URL: ${{ github.event.inputs.single_url }}
         run: |
           python3 scripts/crawl.py
+
+      # ── 5b. Status history, outage issues, Atom feeds, removal PRs ──────────
+      - name: Update FDP status and notify
+        working-directory: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 scripts/status.py --previous ../gh-pages/status.json --history ../gh-pages --github
 
       # ── 6. Generate HTML index page ──────────────────────────────────────────
       - name: Generate HTML index

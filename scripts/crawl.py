@@ -38,6 +38,8 @@ OUTPUT    = Path("output")
 
 ACCEPT = "text/turtle;q=1.0, application/ld+json;q=0.8, application/rdf+xml;q=0.5"
 
+FETCH_ERRORS: dict[str, str] = {}   # url → why the last fetch failed (for the status report)
+
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 def slug(url: str) -> str:
@@ -74,10 +76,13 @@ def fetch_rdf(url: str) -> Optional[Graph]:
         return g
 
     except requests.exceptions.Timeout:
+        FETCH_ERRORS[url] = f"timeout after {TIMEOUT}s"
         print(f"    ⏱  Timeout: {url}", file=sys.stderr)
     except requests.exceptions.HTTPError as e:
+        FETCH_ERRORS[url] = f"HTTP {e.response.status_code}"
         print(f"    ✗  HTTP {e.response.status_code}: {url}", file=sys.stderr)
     except Exception as e:
+        FETCH_ERRORS[url] = f"{type(e).__name__}: {str(e)[:200]}"
         print(f"    ✗  {type(e).__name__}: {url} — {e}", file=sys.stderr)
     return None
 
@@ -308,6 +313,7 @@ def main():
             "url":       root_url,
             "label":     result_label,
             "status":    result["status"],
+            "error":     None if ok else FETCH_ERRORS.get(root_url, "no RDF resources retrieved"),
             "stats":     stats,
             "elapsed_s": result["elapsed_s"],
         })

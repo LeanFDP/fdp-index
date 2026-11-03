@@ -30,6 +30,33 @@ In your FDP repo's `publish.yml`, add:
 `FDPINDEX_DISPATCH_TOKEN` must be a fine-grained PAT with `contents:write` on this repo.
 On first ping your FDP is added to `registry.yaml` automatically.
 
+## Dead FDPs and notifications
+
+After every crawl, `scripts/status.py` compares the result with the previous one and keeps, for each FDP, since when it fails and why (`status.json` on the site).
+
+| When | What happens |
+|---|---|
+| 3 failed crawls in a row | The FDP is marked **down** on the index page, and an issue labelled [`fdp-down`](https://github.com/LeanFDP/fdp-index/issues?q=label%3Afdp-down) is opened with the error, the date it started and the contact from the registry |
+| Failing for 30 days (and at least 10 crawls) | A pull request proposes removing it from `registry.yaml`. Nothing is removed until a maintainer merges it; if the FDP has moved, change its URL instead |
+| It answers again | The issue gets a comment and is closed; an open removal PR is closed too |
+
+The thresholds are at the top of `scripts/status.py`. If GitHub Actions may not open pull requests in this repository (*Settings → Actions → General*), the removal is pushed to a `status/remove-…` branch and the issue links to it.
+
+**Getting told when your FDP stops answering:**
+
+- **GitHub:** list your account under `watchers:` for your entry in `registry.yaml` (the registration form has a field for it, and adds whoever submits it). Watchers are mentioned in the outage issue, so GitHub notifies them by e-mail and keeps them subscribed until it closes. Anyone can also subscribe to an open `fdp-down` issue, or watch the repository for issues.
+- **No GitHub account:** follow an Atom feed in any feed reader, or a feed-to-e-mail service:
+  - all outages and recoveries: <https://fdp.semscape.org/fdp-index/status.atom>
+  - one FDP: `https://fdp.semscape.org/fdp-index/fdps/{slug}/status.atom` (linked from its card on the index page)
+
+```yaml
+  - url:      https://fdp.example.org
+    label:    "Example FDP"
+    watchers: ["your-github-login"]
+```
+
+If `status.json` is missing, the history is rebuilt from the earlier crawl reports on the `gh-pages` branch, so existing outages keep their start date.
+
 ## Index outputs (gh-pages)
 
 | File | Format | Description |
@@ -40,6 +67,9 @@ On first ping your FDP is added to `registry.yaml` automatically.
 | `fdps/{slug}/snapshot.jsonld` | JSON-LD | Per-FDP metadata snapshot |
 | `fdps/{slug}/snapshot.ttl` | Turtle | Per-FDP metadata snapshot |
 | `crawl-report.json` | JSON | Last crawl stats + errors |
+| `status.json` | JSON | Per-FDP state (up, failing, down, removal proposed), failing since, last error, issue; last 100 events |
+| `status.atom` | Atom | Outages and recoveries of all FDPs |
+| `fdps/{slug}/status.atom` | Atom | Outages and recoveries of one FDP |
 
 ## Schemas
 
