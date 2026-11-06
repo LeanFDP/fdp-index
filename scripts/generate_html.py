@@ -197,6 +197,7 @@ HTML_TEMPLATE = """\
     <strong style="align-self:center;margin-right:0.25rem">Download index:</strong>
     <a href="index.jsonld">JSON-LD</a>
     <a href="index.ttl">Turtle</a>
+    <a href="sparql.html">Query with SPARQL</a>
     <a href="crawl-report.json">Crawl report (JSON)</a>
     <a href="https://github.com/LeanFDP/fdp-index">Source on GitHub</a>
     <a href="register.html">Register your FDP</a>
@@ -212,7 +213,8 @@ HTML_TEMPLATE = """\
   <p>
     Data indexed under
     <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> ·
-    <a href="register.html">Register your FDP</a>
+    <a href="register.html">Register your FDP</a> ·
+    <a href="sparql.html">Query with SPARQL</a>
   </p>
 </footer>
 
