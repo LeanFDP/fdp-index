@@ -26,6 +26,7 @@ jobs:
     env:
       ISSUE_NUMBER: ${{ github.event.issue.number }}
       ISSUE_BODY: ${{ github.event.issue.body }}
+      ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
       GH_TOKEN: ${{ github.token }}
       BRANCH: registry/issue-${{ github.event.issue.number }}
     steps:
@@ -42,7 +43,7 @@ jobs:
         run: |
           printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/issue.md"
           if python scripts/register_from_issue.py --issue-body "$RUNNER_TEMP/issue.md" \
-               --summary "$RUNNER_TEMP/pr.md" --title-file "$RUNNER_TEMP/title.txt" \
+               --summary "$RUNNER_TEMP/pr.md" --title-file "$RUNNER_TEMP/title.txt" --author "$ISSUE_AUTHOR" \
                2> "$RUNNER_TEMP/error.txt"; then
             echo "ok=true" >> "$GITHUB_OUTPUT"
           else

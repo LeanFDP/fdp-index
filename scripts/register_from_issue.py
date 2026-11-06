@@ -31,7 +31,8 @@ REGISTRY = ROOT / "registry.yaml"
 NO_RESPONSE = {"", "_no response_", "none", "n/a", "-"}
 LABELS = {"fdp root url": "url", "name": "label", "description": "description", "publisher": "publisher",
           "publisher ror": "publisher_ror", "contact": "contact", "your orcid id": "orcid",
-          "notes for the crawler": "notes"}
+          "github accounts to notify": "watchers", "notes for the crawler": "notes"}
+GITHUB_LOGIN = re.compile(r"^[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}$")
 PENDING_MARKER = "# ── Pending deployment"
 
 
@@ -61,7 +62,7 @@ def orcid_ok(orcid: str) -> bool:
     return digits[-1] == ("X" if check == 10 else str(check))
 
 
-def entry_from_fields(f: dict, registered: set) -> dict:
+def entry_from_fields(f: dict, registered: set, author: str = "") -> dict:
     url = (f.get("url") or "").strip()
     p = urlparse(url)
     if p.scheme not in ("http", "https") or not p.netloc or any(c in url for c in " \n\"'<>"):
@@ -86,6 +87,14 @@ def entry_from_fields(f: dict, registered: set) -> dict:
         if not orcid_ok(orcid):
             raise RegistrationError(f"{orcid} is not a valid ORCID iD (the checksum does not match).")
         entry["registered_by"] = f"https://orcid.org/{orcid}"
+    watchers = [w.strip().lstrip("@") for w in re.split(r"[,\s]+", f.get("watchers") or "") if w.strip()]
+    if author and not author.endswith("[bot]"):
+        watchers = [author] + watchers
+    bad = [w for w in watchers if not GITHUB_LOGIN.fullmatch(w)]
+    if bad:
+        raise RegistrationError(f"{', '.join(bad)} is not a GitHub username.")
+    if watchers:
+        entry["watchers"] = list(dict.fromkeys(watchers))[:20]
     if f.get("description"):
         entry["description"] = " ".join(f["description"].split())[:1000]
     if f.get("notes"):
@@ -98,7 +107,9 @@ def entry_yaml(entry: dict) -> str:
     lines = []
     for i, (k, v) in enumerate(entry.items()):
         prefix = "  - " if i == 0 else "    "
-        if k == "notes":
+        if k == "watchers":
+            lines.append(f"{prefix}watchers: {json.dumps(v)}")
+        elif k == "notes":
             body = "\n".join("      " + l for l in v.splitlines())
             lines.append(f"{prefix}{k}:   >\n{body}")
         else:
@@ -132,13 +143,14 @@ def main():
     ap.add_argument("--issue-body", required=True)
     ap.add_argument("--summary", required=True)
     ap.add_argument("--title-file", required=True)
+    ap.add_argument("--author", default="", help="GitHub login of the issue author, added as a watcher")
     ap.add_argument("--no-fetch", action="store_true", help="skip the RDF check (offline tests)")
     args = ap.parse_args()
 
     text = REGISTRY.read_text()
     registered = {e["url"] for e in (yaml.safe_load(text) or {}).get("fdps", []) or []}
     try:
-        entry = entry_from_fields(fields_from_issue(Path(args.issue_body).read_text()), registered)
+        entry = entry_from_fields(fields_from_issue(Path(args.issue_body).read_text()), registered, args.author)
     except RegistrationError as e:
         print(e, file=sys.stderr)
         sys.exit(1)
@@ -156,6 +168,7 @@ def main():
         f"- URL: {entry['url']}\n"
         + (f"- Publisher: {entry.get('publisher', '')} {entry.get('publisher_ror', '')}\n" if entry.get("publisher") or entry.get("publisher_ror") else "")
         + (f"- Registered by: {entry['registered_by']}\n" if entry.get("registered_by") else "")
+        + (f"- Notified when it stops answering: {', '.join('@' + w for w in entry['watchers'])}\n" if entry.get("watchers") else "")
         + f"\n{check}\n\n```yaml\n{block}```\n\nAfter the merge, the next crawl (daily at 03:00 UTC, or *Run workflow*) includes it.\n")
     print(f"added {entry['url']}")
 

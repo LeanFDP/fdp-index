@@ -6,6 +6,7 @@
 #   label:   human-readable name (optional, discovered from metadata if absent)
 #   added:   ISO 8601 date first registered
 #   contact: maintainer (optional)
+#   watchers: GitHub usernames to mention when the FDP stops answering (optional)
 #   notes:   any known quirks for the crawler (optional)
 #
 # Only add URLs that are actually deployed and reachable.

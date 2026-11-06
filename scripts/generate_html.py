@@ -20,6 +20,7 @@ HTML_TEMPLATE = """\
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lean FDP Index</title>
+  <link rel="alternate" type="application/atom+xml" title="Outages and recoveries" href="status.atom">
   <style>
     :root {{
       --bg:       #f9f9f9;
@@ -199,6 +200,8 @@ HTML_TEMPLATE = """\
     <a href="index.ttl">Turtle</a>
     <a href="sparql.html">Query with SPARQL</a>
     <a href="crawl-report.json">Crawl report (JSON)</a>
+    <a href="status.json">Status history (JSON)</a>
+    <a href="status.atom">Outage feed (Atom)</a>
     <a href="https://github.com/LeanFDP/fdp-index">Source on GitHub</a>
     <a href="register.html">Register your FDP</a>
   </div>
@@ -239,6 +242,8 @@ FDP_CARD_OK = """\
     <span>{elapsed}s crawl time</span>
   </div>
   <div class="fdp-links">
+    <a href="{feed}" target="_blank">Status feed</a>
+    <span class="sep">·</span>
     <a href="{snapshot_jsonld}" target="_blank">Snapshot JSON-LD</a>
     <span class="sep">·</span>
     <a href="{snapshot_ttl}"    target="_blank">Snapshot Turtle</a>
@@ -258,9 +263,17 @@ FDP_CARD_ERR = """\
       <div class="fdp-url"><a href="{url}" target="_blank" rel="noopener">{url}</a></div>
     </div>
   </div>
-  <div class="error-msg">Crawl failed — 0 resources retrieved. Check the FDP root URL is accessible.</div>
+  <div class="error-msg">{error_msg}</div>
+  <div class="fdp-links">
+    {issue_link}<a href="{feed}">Status feed (Atom)</a>
+  </div>
 </div>
 """
+
+
+def html_escape(s: str) -> str:
+    import html
+    return html.escape(str(s))
 
 
 def url_to_slug(url: str) -> str:
@@ -288,6 +301,10 @@ def main():
     total_resources = sum(e["stats"].get("resources", 0) for e in report["fdps"])
     total_datasets  = sum(e["stats"].get("datasets",  0) for e in report["fdps"])
 
+    # Status history (written by status.py; optional)
+    status_path = OUTPUT / "status.json"
+    status = json.loads(status_path.read_text()).get("fdps", {}) if status_path.exists() else {}
+
     # Build FDP cards
     cards = []
     for entry in report["fdps"]:
@@ -303,11 +320,26 @@ def main():
                 elapsed         = entry.get("elapsed_s", "?"),
                 snapshot_jsonld = f"{base}/snapshot.jsonld",
                 snapshot_ttl    = f"{base}/snapshot.ttl",
+                feed            = f"{base}/status.atom",
             ))
         else:
+            st  = status.get(entry["url"], {})
+            why = html_escape(entry.get("error") or st.get("last_error") or "0 resources retrieved")
+            if st.get("first_failure"):
+                msg = (f"Not answering since {st['first_failure'][:10]} "
+                       f"({st.get('consecutive_failures', 1)} crawls in a row): {why}.")
+                if st.get("state") == "removal-proposed":
+                    msg += " Removal from the registry has been proposed."
+            else:
+                msg = f"Crawl failed: {why}. Check that the FDP root URL is accessible."
+            issue = st.get("issue")
             cards.append(FDP_CARD_ERR.format(
-                label = entry.get("label") or entry["url"],
-                url   = entry["url"],
+                label      = entry.get("label") or entry["url"],
+                url        = entry["url"],
+                error_msg  = msg,
+                issue_link = (f'<a href="https://github.com/LeanFDP/fdp-index/issues/{issue}">Issue #{issue}</a>'
+                              '<span class="sep">·</span>') if issue else "",
+                feed       = f"{base}/status.atom",
             ))
 
     html = HTML_TEMPLATE.format(

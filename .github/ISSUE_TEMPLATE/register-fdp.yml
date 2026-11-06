@@ -49,6 +49,12 @@ body:
       label: Your ORCID iD
       description: Optional. Recorded as the person who registered the FDP.
       placeholder: 0000-0001-9773-4008
+  - type: input
+    id: watchers
+    attributes:
+      label: GitHub accounts to notify
+      description: Optional. Comma-separated GitHub usernames, mentioned in the issue that opens when this FDP stops answering. You are added automatically.
+      placeholder: octocat, another-maintainer
   - type: textarea
     id: notes
     attributes:

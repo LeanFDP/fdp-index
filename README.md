@@ -38,6 +38,33 @@ You can add your own sources: any RDF file, or `sparql@https://…/sparql` for a
 
 This is not a SPARQL *endpoint* that other software can call: GitHub Pages only serves files. For that, point a SPARQL server (for example [Comunica's `comunica-sparql-file-http`](https://comunica.dev/docs/query/getting_started/setup_endpoint/)) at `index.ttl` and the snapshots.
 
+## Dead FDPs and notifications
+
+After every crawl, `scripts/status.py` compares the result with the previous one and keeps, for each FDP, since when it fails and why (`status.json` on the site).
+
+| When | What happens |
+|---|---|
+| 3 failed crawls in a row | The FDP is marked **down** on the index page, and an issue labelled [`fdp-down`](https://github.com/LeanFDP/fdp-index/issues?q=label%3Afdp-down) is opened with the error, the date it started and the contact from the registry |
+| Failing for 30 days (and at least 10 crawls) | A pull request proposes removing it from `registry.yaml`. Nothing is removed until a maintainer merges it; if the FDP has moved, change its URL instead |
+| It answers again | The issue gets a comment and is closed; an open removal PR is closed too |
+
+The thresholds are at the top of `scripts/status.py`. If GitHub Actions may not open pull requests in this repository (*Settings → Actions → General*), the removal is pushed to a `status/remove-…` branch and the issue links to it.
+
+**Getting told when your FDP stops answering:**
+
+- **GitHub:** list your account under `watchers:` for your entry in `registry.yaml` (the registration form has a field for it, and adds whoever submits it). Watchers are mentioned in the outage issue, so GitHub notifies them by e-mail and keeps them subscribed until it closes. Anyone can also subscribe to an open `fdp-down` issue, or watch the repository for issues.
+- **No GitHub account:** follow an Atom feed in any feed reader, or a feed-to-e-mail service:
+  - all outages and recoveries: <https://fdp.semscape.org/fdp-index/status.atom>
+  - one FDP: `https://fdp.semscape.org/fdp-index/fdps/{slug}/status.atom` (linked from its card on the index page)
+
+```yaml
+  - url:      https://fdp.example.org
+    label:    "Example FDP"
+    watchers: ["your-github-login"]
+```
+
+If `status.json` is missing, the history is rebuilt from the earlier crawl reports on the `gh-pages` branch, so existing outages keep their start date.
+
 ## Related: the Lean FDP Index service
 
 Mark Wilkinson's [Lean FDP Index](https://github.com/markwilkinson/lean-fdp-index) does the same job as a hosted service, running for ERDERA at <https://erdera-vp-index.linkeddata.systems/>. The two follow the same idea: a small index that records what each FDP returns, rechecks it daily and needs nothing from the FDP beyond its RDF. They differ in where they run and how you register.
@@ -47,7 +74,7 @@ Mark Wilkinson's [Lean FDP Index](https://github.com/markwilkinson/lean-fdp-inde
 | Runs on | GitHub Actions and Pages, no server | A server with a triplestore (Virtuoso) |
 | Register | Issue form or pull request on `registry.yaml`, reviewed | `POST /` with `{"clientUrl": …}`, the FDP reference implementation's own ping, no review |
 | Granularity | One entry per FDP root | One entry per resource: FDPs, catalogs, datasets, distributions and data services found by traversal |
-| Daily recheck | Crawls every entry; failures are reported | Rechecks every entry; entries that keep failing are removed |
+| Daily recheck | Crawls every entry; an FDP that keeps failing gets an outage issue and a removal PR for review (see above) | Rechecks every entry; entries that keep failing are removed |
 | Query | Static `index.ttl` / `index.jsonld`; SPARQL in the browser with `sparql.html` | Public SPARQL endpoint (`/sparql`), `GET /entries` JSON |
 
 Static FDPs work with both: the service already indexes the document-based ERDERA WP13 FDP on GitHub Pages. You can register a Lean FDP in both places.
@@ -63,6 +90,9 @@ Static FDPs work with both: the service already indexes the document-based ERDER
 | `fdps/{slug}/snapshot.jsonld` | JSON-LD | Per-FDP metadata snapshot |
 | `fdps/{slug}/snapshot.ttl` | Turtle | Per-FDP metadata snapshot |
 | `crawl-report.json` | JSON | Last crawl stats + errors |
+| `status.json` | JSON | Per-FDP state (up, failing, down, removal proposed), failing since, last error, issue; last 100 events |
+| `status.atom` | Atom | Outages and recoveries of all FDPs |
+| `fdps/{slug}/status.atom` | Atom | Outages and recoveries of one FDP |
 
 ## Schemas
 
