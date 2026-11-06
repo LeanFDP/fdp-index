@@ -65,6 +65,20 @@ The thresholds are at the top of `scripts/status.py`. If GitHub Actions may not 
 
 If `status.json` is missing, the history is rebuilt from the earlier crawl reports on the `gh-pages` branch, so existing outages keep their start date.
 
+## Related: the Lean FDP Index service
+
+Mark Wilkinson's [Lean FDP Index](https://github.com/markwilkinson/lean-fdp-index) does the same job as a hosted service, running for ERDERA at <https://erdera-vp-index.linkeddata.systems/>. The two follow the same idea: a small index that records what each FDP returns, rechecks it daily and needs nothing from the FDP beyond its RDF. They differ in where they run and how you register.
+
+| | This repository (fdp-index) | Lean FDP Index service |
+|---|---|---|
+| Runs on | GitHub Actions and Pages, no server | A server with a triplestore (Virtuoso) |
+| Register | Issue form or pull request on `registry.yaml`, reviewed | `POST /` with `{"clientUrl": …}`, the FDP reference implementation's own ping, no review |
+| Granularity | One entry per FDP root | One entry per resource: FDPs, catalogs, datasets, distributions and data services found by traversal |
+| Daily recheck | Crawls every entry; an FDP that keeps failing gets an outage issue and a removal PR for review (see above) | Rechecks every entry; entries that keep failing are removed |
+| Query | Static `index.ttl` / `index.jsonld`; SPARQL in the browser with `sparql.html` | Public SPARQL endpoint (`/sparql`), `GET /entries` JSON |
+
+Static FDPs work with both: the service already indexes the document-based ERDERA WP13 FDP on GitHub Pages. You can register a Lean FDP in both places.
+
 ## Index outputs (gh-pages)
 
 | File | Format | Description |
