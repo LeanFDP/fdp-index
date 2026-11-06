@@ -66,11 +66,6 @@ fdps:
       FAIR Data Systems S.L. on behalf of Duchenne Parent Project.
       Conceptual metadata only — for data access contact the publisher.
 
-  - url:     https://rajaramzfdp.fdpcloud.org/fdp-content/repository
-    label:   "rajaramz-fdp demo"
-    added:   "2026-04-16"
-    contact: ""
-
   - url:     https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl
     label:   "Biodiversity FDP"
     added:   "2026-10-08"
