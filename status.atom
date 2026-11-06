@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>FDP Index: outages and recoveries</title>
+  <id>https://fdp.semscape.org/fdp-index/status.atom</id>
+  <link rel="self" href="https://fdp.semscape.org/fdp-index/status.atom"/>
+  <link href="https://fdp.semscape.org/fdp-index/"/>
+  <updated>2026-10-18T07:29:53.534391+00:00</updated>
+  <author><name>FDP Index</name></author>
+  <entry>
+    <title>Back up: Duchenne FAIR Data Point</title>
+    <id>https://fdp.semscape.org/fdp-index/#2026-10-18T07:29:53.534391+00:00/recovered/https___fdp_duchennedatafoundation_org</id>
+    <link href="https://fdp.duchennedatafoundation.org"/>
+    <updated>2026-10-18T07:29:53.534391+00:00</updated>
+    <summary>Duchenne FAIR Data Point answers again, after failing since 2026-10-14.</summary>
+    <category term="recovered"/>
+  </entry>
+  <entry>
+    <title>Down: Duchenne FAIR Data Point</title>
+    <id>https://fdp.semscape.org/fdp-index/#2026-10-16T07:36:49.690701+00:00/down/https___fdp_duchennedatafoundation_org</id>
+    <link href="https://fdp.duchennedatafoundation.org"/>
+    <updated>2026-10-16T07:36:49.690701+00:00</updated>
+    <summary>Duchenne FAIR Data Point has not answered in 3 crawls (since 2026-10-14): no RDF resources retrieved.</summary>
+    <category term="down"/>
+  </entry>
+  <entry>
+    <title>Back up: Duchenne Parent Project — FAIR Data Point</title>
+    <id>https://fdp.semscape.org/fdp-index/#2026-08-08T04:02:25.306198+00:00/recovered/https___dpp_worldduchenne_org</id>
+    <link href="https://dpp.worldduchenne.org"/>
+    <updated>2026-08-08T04:02:25.306198+00:00</updated>
+    <summary>Duchenne Parent Project — FAIR Data Point answers again, after failing since 2026-07-01.</summary>
+    <category term="recovered"/>
+  </entry>
+  <entry>
+    <title>Removal proposed: Duchenne Parent Project — FAIR Data Point</title>
+    <id>https://fdp.semscape.org/fdp-index/#2026-08-01T05:44:32.266349+00:00/removal-proposed/https___dpp_worldduchenne_org</id>
+    <link href="https://dpp.worldduchenne.org"/>
+    <updated>2026-08-01T05:44:32.266349+00:00</updated>
+    <summary>Duchenne Parent Project — FAIR Data Point has failed for 30 days; a pull request proposes removing it from the registry.</summary>
+    <category term="removal-proposed"/>
+  </entry>
+  <entry>
+    <title>Down: Duchenne Parent Project — FAIR Data Point</title>
+    <id>https://fdp.semscape.org/fdp-index/#2026-07-03T06:19:58.187088+00:00/down/https___dpp_worldduchenne_org</id>
+    <link href="https://dpp.worldduchenne.org"/>
+    <updated>2026-07-03T06:19:58.187088+00:00</updated>
+    <summary>Duchenne Parent Project — FAIR Data Point has not answered in 3 crawls (since 2026-07-01): no RDF resources retrieved.</summary>
+    <category term="down"/>
+  </entry>
+  <entry>
+    <title>Removal proposed: rajaramz-fdp demo</title>
+    <id>https://fdp.semscape.org/fdp-index/#2026-05-13T06:16:06.913278+00:00/removal-proposed/https___rajaramzfdp_fdpcloud_org_fdp-content_repository</id>
+    <link href="https://github.com/LeanFDP/fdp-index/issues/6"/>
+    <updated>2026-05-13T06:16:06.913278+00:00</updated>
+    <summary>rajaramz-fdp demo has failed for 30 days; a pull request proposes removing it from the registry.</summary>
+    <category term="removal-proposed"/>
+  </entry>
+  <entry>
+    <title>Down: rajaramz-fdp demo</title>
+    <id>https://fdp.semscape.org/fdp-index/#2026-04-12T16:09:56.462983+00:00/down/https___rajaramzfdp_fdpcloud_org_fdp-content_repository</id>
+    <link href="https://github.com/LeanFDP/fdp-index/issues/6"/>
+    <updated>2026-04-12T16:09:56.462983+00:00</updated>
+    <summary>rajaramz-fdp demo has not answered in 3 crawls (since 2026-04-12): no RDF resources retrieved.</summary>
+    <category term="down"/>
+  </entry>
+</feed>

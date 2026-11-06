@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPARQL · Lean FDP Index</title>
+  <!-- SPARQL over the FDP Index, run in the browser by Comunica (https://comunica.dev). No server:
+       the sources are the published index.ttl and the per-FDP snapshots next to this page, plus any
+       extra files or SPARQL endpoints the visitor adds. The query is kept in the URL (?query=…). -->
+  <style>
+    :root {
+      --bg: #f9f9f9; --surface: #ffffff; --border: #dde1e7; --accent: #2563eb;
+      --ok: #16a34a; --err: #dc2626; --text: #1e293b; --muted: #64748b; --radius: 8px;
+      --mono: "SFMono-Regular", Consolas, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0f172a; --surface: #1e293b; --border: #334155; --text: #e2e8f0; --muted: #94a3b8; color-scheme: dark; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1.5rem max(16px, 2rem); }
+    header h1 { font-size: 1.5rem; margin: 0; } header p { color: var(--muted); font-size: .9rem; margin: .25rem 0 0; }
+    a { color: var(--accent); }
+    main { max-width: 64rem; margin: 2rem auto; padding: 0 max(16px, 1.5rem); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.25rem; }
+    label, .lbl { display: block; font-weight: 600; margin: 0 0 .3rem; }
+    .hint { font-size: .85rem; color: var(--muted); margin: 0 0 .5rem; }
+    select, input, textarea { font: inherit; padding: .5rem .6rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); }
+    textarea { width: 100%; min-height: 15rem; font: .85rem/1.5 var(--mono); tab-size: 2; }
+    input[type=text] { width: 100%; }
+    .row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-bottom: .75rem; }
+    .sources { display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: .25rem .75rem; margin: .25rem 0 .75rem; font-size: .9rem; }
+    .sources label { font-weight: 400; display: flex; gap: .4rem; align-items: baseline; margin: 0; }
+    .sources small { color: var(--muted); }
+    .btn { display: inline-block; padding: .6rem 1.1rem; border: 0; border-radius: 6px; background: var(--accent); color: #fff; font: 600 .95rem system-ui, sans-serif; cursor: pointer; text-decoration: none; }
+    .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+    .btn[disabled] { opacity: .5; cursor: progress; }
+    .status { font-size: .9rem; color: var(--muted); }
+    .status.err { color: var(--err); white-space: pre-wrap; font-family: var(--mono); font-size: .8rem; }
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+    th, td { text-align: left; padding: .4rem .55rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { font-weight: 600; color: var(--muted); position: sticky; top: 0; background: var(--surface); }
+    td { overflow-wrap: anywhere; }
+    td .lit { color: var(--text); } td .dt { color: var(--muted); font-size: .75rem; }
+    pre { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: .75rem; overflow-x: auto; font: .8rem/1.5 var(--mono); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Query the FDP Index with SPARQL</h1>
+  <p>Runs in your browser with <a href="https://comunica.dev">Comunica</a>, over the <a href="./">index</a> and the metadata snapshot of every FDP it crawled. Nothing is sent to a server.</p>
+</header>
+<main>
+  <div class="card">
+    <div class="row">
+      <label for="example" style="margin:0">Example</label>
+      <select id="example"></select>
+    </div>
+    <label for="query" style="position:absolute;left:-9999px">SPARQL query</label>
+    <textarea id="query" spellcheck="false"></textarea>
+
+    <p class="lbl" style="margin-top:1rem">Sources</p>
+    <p class="hint">The index and the latest crawl snapshot of each FDP. Fewer sources answer faster.</p>
+    <div class="sources" id="sources"><span class="status">Loading the list of FDPs…</span></div>
+    <label for="extra" style="font-weight:400" class="hint">Extra sources, one per line: an RDF file, or <code>sparql@https://…/sparql</code> for a SPARQL endpoint (it must allow CORS)</label>
+    <textarea id="extra" style="min-height:3.2rem" placeholder="sparql@https://sparql.uniprot.org/sparql"></textarea>
+
+    <div class="row" style="margin-top:1rem">
+      <button class="btn" id="run" type="button">Run query</button>
+      <button class="btn ghost" id="share" type="button">Copy link</button>
+      <span class="status" id="status" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <div class="card" id="results-card" hidden>
+    <div class="row">
+      <strong id="count"></strong>
+      <span style="margin-left:auto"></span>
+      <a class="btn ghost" id="dl-csv" download="results.csv" href="#">CSV</a>
+      <a class="btn ghost" id="dl-json" download="results.json" href="#">JSON</a>
+    </div>
+    <div class="table-wrap" id="results"></div>
+  </div>
+</main>
+
+<script src="https://rdf.js.org/comunica-browser/versions/v5/engines/query-sparql/comunica-browser.js"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var BASE = new URL("./", location.href).href;
+  var PREFIXES = [
+    "PREFIX dcat:    <http://www.w3.org/ns/dcat#>",
+    "PREFIX dcterms: <http://purl.org/dc/terms/>",
+    "PREFIX fdp:     <https://w3id.org/fdp/fdp-o#>",
+    "PREFIX foaf:    <http://xmlns.com/foaf/0.1/>",
+    "PREFIX ldp:     <http://www.w3.org/ns/ldp#>",
+    "PREFIX schema:  <https://schema.org/>",
+    "PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>", ""].join("\n");
+  var EXAMPLES = [
+    ["FDPs in the index", "SELECT ?fdp ?title ?catalogs WHERE {\n  ?fdp a fdp:FAIRDataPoint .\n  OPTIONAL { ?fdp dcterms:title ?title }\n  OPTIONAL { ?fdp schema:numberOfItems ?catalogs }\n}\nORDER BY DESC(?catalogs)", "index"],
+    ["Catalogs and their number of datasets", "SELECT ?catalog (SAMPLE(?t) AS ?title) (COUNT(DISTINCT ?dataset) AS ?datasets) WHERE {\n  ?catalog a dcat:Catalog .\n  OPTIONAL { ?catalog dcterms:title ?t }\n  OPTIONAL { ?catalog dcat:dataset ?dataset }\n}\nGROUP BY ?catalog\nORDER BY DESC(?datasets)\nLIMIT 100"],
+    ["Search dataset titles and descriptions", "SELECT DISTINCT ?dataset ?title WHERE {\n  ?dataset a dcat:Dataset ; dcterms:title ?title .\n  OPTIONAL { ?dataset dcterms:description ?description }\n  FILTER (CONTAINS(LCASE(CONCAT(STR(?title), \" \", COALESCE(STR(?description), \"\"))), \"cancer\"))\n}\nORDER BY ?title\nLIMIT 200"],
+    ["Most used themes", "SELECT ?theme (COUNT(DISTINCT ?dataset) AS ?datasets) WHERE {\n  ?dataset a dcat:Dataset ; dcat:theme ?theme .\n}\nGROUP BY ?theme\nORDER BY DESC(?datasets)\nLIMIT 50"],
+    ["Publishers", "SELECT ?publisher (SAMPLE(?n) AS ?name) (COUNT(DISTINCT ?resource) AS ?resources) WHERE {\n  ?resource dcterms:publisher ?publisher .\n  OPTIONAL { ?publisher foaf:name ?n }\n}\nGROUP BY ?publisher\nORDER BY DESC(?resources)\nLIMIT 100"],
+    ["Licences", "SELECT ?license (COUNT(DISTINCT ?resource) AS ?resources) WHERE {\n  ?resource dcterms:license ?license .\n}\nGROUP BY ?license\nORDER BY DESC(?resources)"],
+    ["Ways to get the data (distributions)", "SELECT ?dataset ?distribution ?access ?download ?mediaType WHERE {\n  ?dataset dcat:distribution ?distribution .\n  OPTIONAL { ?distribution dcat:accessURL ?access }\n  OPTIONAL { ?distribution dcat:downloadURL ?download }\n  OPTIONAL { ?distribution dcat:mediaType ?mediaType }\n}\nLIMIT 200"],
+    ["Classes and how often they occur", "SELECT ?class (COUNT(?s) AS ?instances) WHERE {\n  ?s a ?class .\n}\nGROUP BY ?class\nORDER BY DESC(?instances)"]
+  ];
+
+  var engine = null, last = null;
+
+  // Same slug as scripts/crawl.py: non [a-zA-Z0-9_-] → "_", first 80 characters.
+  function slug(url) { return url.replace(/[^a-zA-Z0-9_-]/g, "_").slice(0, 80); }
+
+  EXAMPLES.forEach(function (e, i) { var o = document.createElement("option"); o.value = i; o.textContent = e[0]; $("example").appendChild(o); });
+  $("example").addEventListener("change", function () { setExample(+this.value); });
+  function setExample(i) {
+    $("query").value = PREFIXES + EXAMPLES[i][1];
+    document.querySelectorAll("#sources input").forEach(function (c) { c.checked = EXAMPLES[i][2] !== "index" || c.dataset.key === "index"; });
+  }
+
+  /* Sources from the last crawl report */
+  fetch("crawl-report.json").then(function (r) { return r.json(); }).then(function (rep) {
+    var box = $("sources"); box.innerHTML = "";
+    addSource(box, "index", BASE + "index.ttl", "Index", "all FDPs, one line each");
+    rep.fdps.filter(function (f) { return f.status === "ok"; }).forEach(function (f) {
+      addSource(box, f.url, BASE + "fdps/" + slug(f.url) + "/snapshot.ttl", f.label || f.url, (f.stats.resources || 0) + " resources");
+    });
+    var q = new URLSearchParams(location.search);
+    if (q.get("sources")) selectSources(q.get("sources").split(" "));
+    else if (!q.get("query") && EXAMPLES[+$("example").value][2] === "index") selectSources(["index"]);
+  }).catch(function (e) { $("sources").innerHTML = '<span class="status err">Could not read crawl-report.json: ' + esc(e.message) + "</span>"; });
+
+  function addSource(box, key, url, label, note) {
+    var l = document.createElement("label"), c = document.createElement("input"), s = document.createElement("small");
+    c.type = "checkbox"; c.checked = true; c.value = url; c.dataset.key = key;
+    s.textContent = note; l.appendChild(c); l.appendChild(document.createTextNode(label + " ")); l.appendChild(s); box.appendChild(l);
+  }
+  function selectSources(keys) {
+    document.querySelectorAll("#sources input").forEach(function (c) { c.checked = keys.indexOf(c.dataset.key) > -1; });
+  }
+  function sources() {
+    var list = [].map.call(document.querySelectorAll("#sources input:checked"), function (c) { return c.value; });
+    $("extra").value.split("\n").map(function (s) { return s.trim(); }).filter(Boolean).forEach(function (s) {
+      list.push(s.indexOf("sparql@") === 0 ? { type: "sparql", value: s.slice(7) } : s);
+    });
+    return list;
+  }
+
+  /* Run */
+  $("run").addEventListener("click", run);
+  $("query").addEventListener("keydown", function (e) { if ((e.ctrlKey || e.metaKey) && e.key === "Enter") run(); });
+  async function run() {
+    var src = sources();
+    if (!src.length) { status("Select at least one source.", true); return; }
+    $("run").disabled = true; status("Loading sources and running…");
+    var t0 = performance.now();
+    try {
+      engine = engine || new Comunica.QueryEngine();
+      var result = await engine.query($("query").value, { sources: src, lenient: true });
+      if (result.resultType === "bindings") {
+        var vars = (await result.metadata()).variables.map(function (v) { return (v.variable || v).value; });
+        var rows = await (await result.execute()).toArray();
+        show(vars, rows.map(function (b) { var o = {}; vars.forEach(function (v) { o[v] = b.get(v); }); return o; }), t0);
+      } else if (result.resultType === "boolean") {
+        show(["result"], [{ result: { termType: "Literal", value: String(await result.execute()) } }], t0);
+      } else {
+        var quads = await (await result.execute()).toArray();
+        show(["subject", "predicate", "object"], quads.map(function (q) { return { subject: q.subject, predicate: q.predicate, object: q.object }; }), t0);
+      }
+      history.replaceState(null, "", "?query=" + encodeURIComponent($("query").value) + "&sources=" + encodeURIComponent(selectedKeys().join(" ")));
+    } catch (e) {
+      status(e.message || String(e), true); $("results-card").hidden = true;
+    } finally { $("run").disabled = false; }
+  }
+  function selectedKeys() { return [].map.call(document.querySelectorAll("#sources input:checked"), function (c) { return c.dataset.key; }); }
+
+  function show(vars, rows, t0) {
+    last = { vars: vars, rows: rows };
+    status(rows.length + " result" + (rows.length === 1 ? "" : "s") + " in " + ((performance.now() - t0) / 1000).toFixed(1) + " s.");
+    $("count").textContent = rows.length + " result" + (rows.length === 1 ? "" : "s");
+    var h = "<table><thead><tr>" + vars.map(function (v) { return "<th>" + esc(v) + "</th>"; }).join("") + "</tr></thead><tbody>";
+    rows.slice(0, 2000).forEach(function (r) { h += "<tr>" + vars.map(function (v) { return "<td>" + cell(r[v]) + "</td>"; }).join("") + "</tr>"; });
+    h += "</tbody></table>" + (rows.length > 2000 ? '<p class="hint">Showing the first 2,000; the downloads have all of them.</p>' : "");
+    $("results").innerHTML = h; $("results-card").hidden = false;
+    $("dl-csv").href = URL.createObjectURL(new Blob([csv(vars, rows)], { type: "text/csv" }));
+    $("dl-json").href = URL.createObjectURL(new Blob([JSON.stringify(json(vars, rows), null, 2)], { type: "application/sparql-results+json" }));
+  }
+  function cell(t) {
+    if (!t) return "";
+    if (t.termType === "NamedNode") return /^https?:/.test(t.value) ? '<a href="' + esc(t.value) + '" target="_blank" rel="noopener">' + esc(short(t.value)) + "</a>" : esc(t.value);
+    if (t.termType === "BlankNode") return "_:" + esc(t.value);
+    var s = '<span class="lit">' + esc(t.value.length > 400 ? t.value.slice(0, 400) + "…" : t.value) + "</span>";
+    if (t.language) s += ' <span class="dt">@' + esc(t.language) + "</span>";
+    return s;
+  }
+  var SHORT = { "http://www.w3.org/ns/dcat#": "dcat:", "http://purl.org/dc/terms/": "dcterms:", "https://w3id.org/fdp/fdp-o#": "fdp:",
+    "http://xmlns.com/foaf/0.1/": "foaf:", "http://www.w3.org/ns/ldp#": "ldp:", "https://schema.org/": "schema:",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#": "rdf:", "http://www.w3.org/2000/01/rdf-schema#": "rdfs:" };
+  function short(u) { for (var k in SHORT) if (u.indexOf(k) === 0) return SHORT[k] + u.slice(k.length); return u; }
+  function csv(vars, rows) {
+    var q = function (s) { return '"' + String(s).replace(/"/g, '""') + '"'; };
+    return [vars.map(q).join(",")].concat(rows.map(function (r) { return vars.map(function (v) { return q(r[v] ? r[v].value : ""); }).join(","); })).join("\r\n");
+  }
+  function json(vars, rows) {
+    return { head: { vars: vars }, results: { bindings: rows.map(function (r) {
+      var o = {}; vars.forEach(function (v) { var t = r[v]; if (!t) return;
+        o[v] = t.termType === "NamedNode" ? { type: "uri", value: t.value } : t.termType === "BlankNode" ? { type: "bnode", value: t.value }
+          : Object.assign({ type: "literal", value: t.value }, t.language ? { "xml:lang": t.language } : t.datatype && t.datatype.value !== "http://www.w3.org/2001/XMLSchema#string" ? { datatype: t.datatype.value } : {}); });
+      return o; }) } };
+  }
+  function status(msg, err) { $("status").textContent = msg; $("status").className = "status" + (err ? " err" : ""); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+
+  $("share").addEventListener("click", function () {
+    var u = location.origin + location.pathname + "?query=" + encodeURIComponent($("query").value) + "&sources=" + encodeURIComponent(selectedKeys().join(" "));
+    (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(function () { status("Link copied."); }, function () { prompt("Link to this query:", u); });
+  });
+
+  var q0 = new URLSearchParams(location.search).get("query");
+  if (q0) $("query").value = q0; else setExample(0);
+})();
+</script>
+</body>
+</html>

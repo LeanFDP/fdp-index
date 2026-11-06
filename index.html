@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lean FDP Index</title>
+  <link rel="alternate" type="application/atom+xml" title="Outages and recoveries" href="status.atom">
   <style>
     :root {
       --bg:       #f9f9f9;
@@ -172,7 +173,7 @@
       <span class="label">Datasets discovered</span>
     </div>
     <div class="stat" style="margin-left:auto">
-      <span class="value" style="font-size:0.95rem;color:var(--muted)">2026-11-06 10:02</span>
+      <span class="value" style="font-size:0.95rem;color:var(--muted)">2026-11-06 10:49</span>
       <span class="label">Last crawl (UTC)</span>
     </div>
   </div>
@@ -181,7 +182,10 @@
     <strong style="align-self:center;margin-right:0.25rem">Download index:</strong>
     <a href="index.jsonld">JSON-LD</a>
     <a href="index.ttl">Turtle</a>
+    <a href="sparql.html">Query with SPARQL</a>
     <a href="crawl-report.json">Crawl report (JSON)</a>
+    <a href="status.json">Status history (JSON)</a>
+    <a href="status.atom">Outage feed (Atom)</a>
     <a href="https://github.com/LeanFDP/fdp-index">Source on GitHub</a>
     <a href="register.html">Register your FDP</a>
   </div>
@@ -200,9 +204,11 @@
     <span class="chip">4 resources</span>
     <span class="chip">1 catalog(s)</span>
     <span class="chip">2 dataset(s)</span>
-    <span>1.27s crawl time</span>
+    <span>1.7s crawl time</span>
   </div>
   <div class="fdp-links">
+    <a href="fdps/https___fdp_duchennedatafoundation_org/status.atom" target="_blank">Status feed</a>
+    <span class="sep">·</span>
     <a href="fdps/https___fdp_duchennedatafoundation_org/snapshot.jsonld" target="_blank">Snapshot JSON-LD</a>
     <span class="sep">·</span>
     <a href="fdps/https___fdp_duchennedatafoundation_org/snapshot.ttl"    target="_blank">Snapshot Turtle</a>
@@ -223,9 +229,11 @@
     <span class="chip">7 resources</span>
     <span class="chip">2 catalog(s)</span>
     <span class="chip">3 dataset(s)</span>
-    <span>0.75s crawl time</span>
+    <span>1.2s crawl time</span>
   </div>
   <div class="fdp-links">
+    <a href="fdps/https___fdp_wikipathways_org_index_ttl/status.atom" target="_blank">Status feed</a>
+    <span class="sep">·</span>
     <a href="fdps/https___fdp_wikipathways_org_index_ttl/snapshot.jsonld" target="_blank">Snapshot JSON-LD</a>
     <span class="sep">·</span>
     <a href="fdps/https___fdp_wikipathways_org_index_ttl/snapshot.ttl"    target="_blank">Snapshot Turtle</a>
@@ -246,9 +254,11 @@
     <span class="chip">199 resources</span>
     <span class="chip">20 catalog(s)</span>
     <span class="chip">49 dataset(s)</span>
-    <span>149.52s crawl time</span>
+    <span>176.62s crawl time</span>
   </div>
   <div class="fdp-links">
+    <a href="fdps/https___fdp_dcc_sib_swiss/status.atom" target="_blank">Status feed</a>
+    <span class="sep">·</span>
     <a href="fdps/https___fdp_dcc_sib_swiss/snapshot.jsonld" target="_blank">Snapshot JSON-LD</a>
     <span class="sep">·</span>
     <a href="fdps/https___fdp_dcc_sib_swiss/snapshot.ttl"    target="_blank">Snapshot Turtle</a>
@@ -269,9 +279,11 @@
     <span class="chip">199 resources</span>
     <span class="chip">2 catalog(s)</span>
     <span class="chip">0 dataset(s)</span>
-    <span>58.4s crawl time</span>
+    <span>66.19s crawl time</span>
   </div>
   <div class="fdp-links">
+    <a href="fdps/http___fairdatapointorphanet_info_7070/status.atom" target="_blank">Status feed</a>
+    <span class="sep">·</span>
     <a href="fdps/http___fairdatapointorphanet_info_7070/snapshot.jsonld" target="_blank">Snapshot JSON-LD</a>
     <span class="sep">·</span>
     <a href="fdps/http___fairdatapointorphanet_info_7070/snapshot.ttl"    target="_blank">Snapshot Turtle</a>
@@ -288,7 +300,10 @@
       <div class="fdp-url"><a href="https://dpp.worldduchenne.org" target="_blank" rel="noopener">https://dpp.worldduchenne.org</a></div>
     </div>
   </div>
-  <div class="error-msg">Crawl failed — 0 resources retrieved. Check the FDP root URL is accessible.</div>
+  <div class="error-msg">Not answering since 2026-11-06 (2 crawls in a row): HTTP 503.</div>
+  <div class="fdp-links">
+    <a href="fdps/https___dpp_worldduchenne_org/status.atom">Status feed (Atom)</a>
+  </div>
 </div>
 
 <div class="fdp-card error">
@@ -299,7 +314,10 @@
       <div class="fdp-url"><a href="https://rajaramzfdp.fdpcloud.org/fdp-content/repository" target="_blank" rel="noopener">https://rajaramzfdp.fdpcloud.org/fdp-content/repository</a></div>
     </div>
   </div>
-  <div class="error-msg">Crawl failed — 0 resources retrieved. Check the FDP root URL is accessible.</div>
+  <div class="error-msg">Not answering since 2026-04-12 (214 crawls in a row): SSLError: HTTPSConnectionPool(host=&#x27;rajaramzfdp.fdpcloud.org&#x27;, port=443): Max retries exceeded with url: /fdp-content/repository (Caused by SSLError(SSLCertVerificationError(1, &quot;[SSL: CERTIFICATE_VERIFY_FAILED]. Removal from the registry has been proposed.</div>
+  <div class="fdp-links">
+    <a href="https://github.com/LeanFDP/fdp-index/issues/6">Issue #6</a><span class="sep">·</span><a href="fdps/https___rajaramzfdp_fdpcloud_org_fdp-content_repository/status.atom">Status feed (Atom)</a>
+  </div>
 </div>
 
 <div class="fdp-card ok">
@@ -314,9 +332,11 @@
     <span class="chip">9 resources</span>
     <span class="chip">16 catalog(s)</span>
     <span class="chip">26 dataset(s)</span>
-    <span>18.57s crawl time</span>
+    <span>20.55s crawl time</span>
   </div>
   <div class="fdp-links">
+    <a href="fdps/https___koetai_github_io_biodiversity-fdp_fdp_biodiversity-index_catalog_ttl/status.atom" target="_blank">Status feed</a>
+    <span class="sep">·</span>
     <a href="fdps/https___koetai_github_io_biodiversity-fdp_fdp_biodiversity-index_catalog_ttl/snapshot.jsonld" target="_blank">Snapshot JSON-LD</a>
     <span class="sep">·</span>
     <a href="fdps/https___koetai_github_io_biodiversity-fdp_fdp_biodiversity-index_catalog_ttl/snapshot.ttl"    target="_blank">Snapshot Turtle</a>
@@ -332,7 +352,8 @@
   <p>
     Data indexed under
     <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> ·
-    <a href="register.html">Register your FDP</a>
+    <a href="register.html">Register your FDP</a> ·
+    <a href="sparql.html">Query with SPARQL</a>
   </p>
 </footer>
 

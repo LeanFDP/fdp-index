@@ -1,5 +1,5 @@
 {
-  "crawled_at": "2026-11-06T10:02:55.944080+00:00",
+  "crawled_at": "2026-11-06T10:49:26.274288+00:00",
   "total": 7,
   "succeeded": 5,
   "failed": 2,
@@ -8,6 +8,7 @@
       "url": "https://fdp.duchennedatafoundation.org",
       "label": "Duchenne FAIR Data Point",
       "status": "ok",
+      "error": null,
       "stats": {
         "root": "https://fdp.duchennedatafoundation.org",
         "resources": 4,
@@ -16,12 +17,13 @@
         "errors": 0,
         "skipped": 0
       },
-      "elapsed_s": 1.27
+      "elapsed_s": 1.7
     },
     {
       "url": "https://fdp.wikipathways.org/index.ttl",
       "label": "WikiPathways FAIR Data Point",
       "status": "ok",
+      "error": null,
       "stats": {
         "root": "https://fdp.wikipathways.org/index.ttl",
         "resources": 7,
@@ -30,12 +32,13 @@
         "errors": 0,
         "skipped": 0
       },
-      "elapsed_s": 0.75
+      "elapsed_s": 1.2
     },
     {
       "url": "https://fdp.dcc.sib.swiss",
       "label": "My FAIR Data Point",
       "status": "ok",
+      "error": null,
       "stats": {
         "root": "https://fdp.dcc.sib.swiss",
         "resources": 199,
@@ -44,12 +47,13 @@
         "errors": 0,
         "skipped": 0
       },
-      "elapsed_s": 149.52
+      "elapsed_s": 176.62
     },
     {
       "url": "http://fairdatapointorphanet.info:7070",
       "label": "Orphanet \u2014 Patient Registries & Biobanks + ORPHADATA",
       "status": "ok",
+      "error": null,
       "stats": {
         "root": "http://fairdatapointorphanet.info:7070",
         "resources": 199,
@@ -58,12 +62,13 @@
         "errors": 1,
         "skipped": 1798
       },
-      "elapsed_s": 58.4
+      "elapsed_s": 66.19
     },
     {
       "url": "https://dpp.worldduchenne.org",
       "label": "Duchenne Parent Project \u2014 FAIR Data Point",
       "status": "error",
+      "error": "HTTP 503",
       "stats": {
         "root": "https://dpp.worldduchenne.org",
         "resources": 0,
@@ -72,12 +77,13 @@
         "errors": 1,
         "skipped": 0
       },
-      "elapsed_s": 0.64
+      "elapsed_s": 0.62
     },
     {
       "url": "https://rajaramzfdp.fdpcloud.org/fdp-content/repository",
       "label": "rajaramz-fdp demo",
       "status": "error",
+      "error": "SSLError: HTTPSConnectionPool(host='rajaramzfdp.fdpcloud.org', port=443): Max retries exceeded with url: /fdp-content/repository (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED]",
       "stats": {
         "root": "https://rajaramzfdp.fdpcloud.org/fdp-content/repository",
         "resources": 0,
@@ -86,12 +92,13 @@
         "errors": 1,
         "skipped": 0
       },
-      "elapsed_s": 0.54
+      "elapsed_s": 0.82
     },
     {
       "url": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl",
       "label": "Biodiversity FDP",
       "status": "ok",
+      "error": null,
       "stats": {
         "root": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl",
         "resources": 9,
@@ -100,7 +107,7 @@
         "errors": 143,
         "skipped": 0
       },
-      "elapsed_s": 18.57
+      "elapsed_s": 20.55
     }
   ]
 }
