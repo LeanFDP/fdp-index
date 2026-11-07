@@ -5,8 +5,8 @@
       "state": "up",
       "consecutive_failures": 0,
       "first_failure": null,
-      "last_ok": "2026-11-06T10:49:26.274288+00:00",
-      "last_checked": "2026-11-06T10:49:26.274288+00:00",
+      "last_ok": "2026-11-07T09:22:49.046970+00:00",
+      "last_checked": "2026-11-07T09:22:49.046970+00:00",
       "last_error": null,
       "issue": null,
       "removal_pr": null
@@ -16,8 +16,8 @@
       "state": "up",
       "consecutive_failures": 0,
       "first_failure": null,
-      "last_ok": "2026-11-06T10:49:26.274288+00:00",
-      "last_checked": "2026-11-06T10:49:26.274288+00:00",
+      "last_ok": "2026-11-07T09:22:49.046970+00:00",
+      "last_checked": "2026-11-07T09:22:49.046970+00:00",
       "last_error": null,
       "issue": null,
       "removal_pr": null
@@ -27,8 +27,8 @@
       "state": "up",
       "consecutive_failures": 0,
       "first_failure": null,
-      "last_ok": "2026-11-06T10:49:26.274288+00:00",
-      "last_checked": "2026-11-06T10:49:26.274288+00:00",
+      "last_ok": "2026-11-07T09:22:49.046970+00:00",
+      "last_checked": "2026-11-07T09:22:49.046970+00:00",
       "last_error": null,
       "issue": null,
       "removal_pr": null
@@ -36,10 +36,10 @@
     "https://rajaramzfdp.fdpcloud.org/fdp-content/repository": {
       "label": "rajaramz-fdp demo",
       "state": "removal-proposed",
-      "consecutive_failures": 214,
+      "consecutive_failures": 215,
       "first_failure": "2026-04-12T14:20:56.648305+00:00",
       "last_ok": null,
-      "last_checked": "2026-11-06T10:49:26.274288+00:00",
+      "last_checked": "2026-11-07T09:22:49.046970+00:00",
       "last_error": "SSLError: HTTPSConnectionPool(host='rajaramzfdp.fdpcloud.org', port=443): Max retries exceeded with url: /fdp-content/repository (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED]",
       "issue": 6,
       "removal_pr": 0
@@ -49,21 +49,21 @@
       "state": "up",
       "consecutive_failures": 0,
       "first_failure": null,
-      "last_ok": "2026-11-06T10:49:26.274288+00:00",
-      "last_checked": "2026-11-06T10:49:26.274288+00:00",
+      "last_ok": "2026-11-07T09:22:49.046970+00:00",
+      "last_checked": "2026-11-07T09:22:49.046970+00:00",
       "last_error": null,
       "issue": null,
       "removal_pr": null
     },
     "https://dpp.worldduchenne.org": {
       "label": "Duchenne Parent Project — FAIR Data Point",
-      "state": "failing",
-      "consecutive_failures": 2,
+      "state": "down",
+      "consecutive_failures": 3,
       "first_failure": "2026-11-06T10:02:55.944080+00:00",
       "last_ok": "2026-11-05T09:59:50.597171+00:00",
-      "last_checked": "2026-11-06T10:49:26.274288+00:00",
+      "last_checked": "2026-11-07T09:22:49.046970+00:00",
       "last_error": "HTTP 503",
-      "issue": null,
+      "issue": 7,
       "removal_pr": null
     },
     "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl": {
@@ -71,8 +71,8 @@
       "state": "up",
       "consecutive_failures": 0,
       "first_failure": null,
-      "last_ok": "2026-11-06T10:49:26.274288+00:00",
-      "last_checked": "2026-11-06T10:49:26.274288+00:00",
+      "last_ok": "2026-11-07T09:22:49.046970+00:00",
+      "last_checked": "2026-11-07T09:22:49.046970+00:00",
       "last_error": null,
       "issue": null,
       "removal_pr": null
@@ -103,7 +103,8 @@
       "type": "down",
       "url": "https://dpp.worldduchenne.org",
       "label": "Duchenne Parent Project — FAIR Data Point",
-      "text": "Duchenne Parent Project — FAIR Data Point has not answered in 3 crawls (since 2026-07-01): no RDF resources retrieved."
+      "text": "Duchenne Parent Project — FAIR Data Point has not answered in 3 crawls (since 2026-07-01): no RDF resources retrieved.",
+      "link": "https://github.com/LeanFDP/fdp-index/issues/7"
     },
     {
       "id": "2026-08-01T05:44:32.266349+00:00/removal-proposed/https___dpp_worldduchenne_org",
@@ -111,7 +112,8 @@
       "type": "removal-proposed",
       "url": "https://dpp.worldduchenne.org",
       "label": "Duchenne Parent Project — FAIR Data Point",
-      "text": "Duchenne Parent Project — FAIR Data Point has failed for 30 days; a pull request proposes removing it from the registry."
+      "text": "Duchenne Parent Project — FAIR Data Point has failed for 30 days; a pull request proposes removing it from the registry.",
+      "link": "https://github.com/LeanFDP/fdp-index/issues/7"
     },
     {
       "id": "2026-08-08T04:02:25.306198+00:00/recovered/https___dpp_worldduchenne_org",
@@ -119,7 +121,8 @@
       "type": "recovered",
       "url": "https://dpp.worldduchenne.org",
       "label": "Duchenne Parent Project — FAIR Data Point",
-      "text": "Duchenne Parent Project — FAIR Data Point answers again, after failing since 2026-07-01."
+      "text": "Duchenne Parent Project — FAIR Data Point answers again, after failing since 2026-07-01.",
+      "link": "https://github.com/LeanFDP/fdp-index/issues/7"
     },
     {
       "id": "2026-10-16T07:36:49.690701+00:00/down/https___fdp_duchennedatafoundation_org",
@@ -136,9 +139,18 @@
       "url": "https://fdp.duchennedatafoundation.org",
       "label": "Duchenne FAIR Data Point",
       "text": "Duchenne FAIR Data Point answers again, after failing since 2026-10-14."
+    },
+    {
+      "id": "2026-11-07T09:22:49.046970+00:00/down/https___dpp_worldduchenne_org",
+      "time": "2026-11-07T09:22:49.046970+00:00",
+      "type": "down",
+      "url": "https://dpp.worldduchenne.org",
+      "label": "Duchenne Parent Project — FAIR Data Point",
+      "text": "Duchenne Parent Project — FAIR Data Point has not answered in 3 crawls (since 2026-11-06): HTTP 503.",
+      "link": "https://github.com/LeanFDP/fdp-index/issues/7"
     }
   ],
-  "updated": "2026-11-06T10:49:26.274288+00:00",
+  "updated": "2026-11-07T09:22:49.046970+00:00",
   "rules": {
     "down_after_failed_crawls": 3,
     "removal_after_days": 30,
