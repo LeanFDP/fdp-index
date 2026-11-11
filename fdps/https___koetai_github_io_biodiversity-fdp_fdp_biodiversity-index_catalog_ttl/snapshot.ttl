@@ -5,7 +5,6 @@
 @prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix ns1: <http://www.w3.org/2000/10/swap/pim/doc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
@@ -13,21 +12,20 @@
     dcterms:modified "2026-10-06"^^xsd:date ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/publisher-curator> ;
     dcterms:title "Biodiversity Heritage Library FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog> .
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
     dcterms:description "Static FAIR Data Point index over biodiversity infrastructures. Each sub-catalog describes one resource and lists every way to obtain it: native portal and APIs, bulk files, cloud buckets and copies in aggregators (GBIF, QLever, Koetai). Provenance is preserved, not deduplicated: the iNaturalist subset in GBIF appears under both."@en ;
+    dcterms:hasPart <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/contributors.ttl> ;
     dcterms:identifier "https://koetai.github.io/biodiversity-fdp/",
         "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/" ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    dcterms:modified "2026-10-07"^^xsd:date ;
+    dcterms:modified "2026-11-09"^^xsd:date ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/publisher-curator> ;
+    dcterms:references <https://koetai.semscape.org/fdp>,
+        <https://koetai.semscape.org/mangal> ;
     dcterms:title "Biodiversity FDP — overarching index"@en ;
-    rdfs:seeAlso <https://koetai.semscape.org/fdp>,
-        <https://koetai.semscape.org/mangal>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/contributors.ttl>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl> ;
     ns1:persistencePolicy <https://github.com/Koetai/biodiversity-fdp/blob/main/PERSISTENCE.md> ;
     dcat:landingPage <https://koetai.github.io/biodiversity-fdp/> ;
     ldp:contains <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl>,
@@ -38,63 +36,63 @@
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl> ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-bhl>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-flair-gg>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-gbif>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-geonames>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-inaturalist>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-openstreetmap>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-plazi>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-uniprot> .
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl#catalog>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog.ttl#catalog>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl#catalog>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog.ttl#catalog>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog.ttl#catalog>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl#catalog>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl#catalog>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
     dcterms:modified "2026-10-07"^^xsd:date ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-curator> ;
     dcterms:title "FLAIR-GG FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog> .
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
     dcterms:modified "2026-10-06"^^xsd:date ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/publisher-curator> ;
     dcterms:title "GBIF FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog> .
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
     dcterms:modified "2026-10-06"^^xsd:date ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/publisher-curator> ;
     dcterms:title "GeoNames FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog> .
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
     dcterms:modified "2026-10-06"^^xsd:date ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/publisher-curator> ;
     dcterms:title "iNaturalist FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog> .
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
     dcterms:modified "2026-10-06"^^xsd:date ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/publisher-curator> ;
     dcterms:title "OpenStreetMap FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog> .
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
     dcterms:modified "2026-10-06"^^xsd:date ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/publisher-curator> ;
     dcterms:title "Plazi FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog> .
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
     dcterms:modified "2026-10-06"^^xsd:date ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/publisher-curator> ;
     dcterms:title "UniProt FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog> .
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/bhl-koetai-sample> a dcat:Dataset ;
     dcterms:description "Small but structurally complete sample of the BHL RDF (whole titles with all their items, pages, parts and creators), same schema as the full graph. Meant for schema discovery and whole-graph tools."@en ;
@@ -121,24 +119,11 @@
     dcat:landingPage <https://www.biodiversitylibrary.org> ;
     dcat:version "live (described 2026-10-06)" .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog> a dcat:Catalog ;
-    dcterms:description "Open-access digitised biodiversity literature: titles, items, pages, parts, creators, subjects and page-level scientific-name mentions. Native access on biodiversitylibrary.org and its API and data export, plus RDF conversions on Koetai nodes of the Mangal network."@en ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/publisher-bhl> ;
-    dcterms:rights <https://about.biodiversitylibrary.org/help/copyright-and-reuse/> ;
-    dcterms:title "BHL — Biodiversity Heritage Library"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/bhl-koetai-rdf>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/bhl-koetai-sample>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/bhl-native> ;
-    dcat:keyword "digitisation"@en,
-        "literature"@en,
-        "taxonomic names"@en ;
-    dcat:landingPage <https://www.biodiversitylibrary.org> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bhl-api3> a dcat:Distribution ;
     dcterms:description "How to get it: request a free API key, then GET https://www.biodiversitylibrary.org/api3?op=PublicationSearch&searchterm=...&format=json&apikey=KEY (ops include GetTitleMetadata, GetPageMetadata, NameSearch, GetPartMetadata)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
     dcterms:title "BHL API v3 — JSON / XML"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/svc-bhl-api3> ;
     dcat:accessURL <https://www.biodiversitylibrary.org/api3> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -146,22 +131,22 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bhl-archive-org> a dcat:Distribution ;
     dcterms:description "How to get it: every BHL item is also an Internet Archive item (collection: biodiversity); fetch page images, OCR text and djvu XML with the ia CLI (ia download IDENTIFIER) or archive.org APIs."@en ;
     dcterms:title "BHL scans and OCR on the Internet Archive"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://archive.org/details/biodiversity> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/plain> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bhl-web> a dcat:Distribution ;
     dcterms:description "How to get it: search titles, authors and scientific names; stable URLs for /bibliography/ID, /item/ID, /page/ID, /part/ID and /name/NAME."@en ;
     dcterms:title "biodiversitylibrary.org — browse, read and search"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://www.biodiversitylibrary.org> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bionames-bhl> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL at koetai.bionames.org, a second Koetai node in the Mangal run by Roderic Page; an independent BHL graph, so schema and coverage may differ from the semscape copy."@en ;
+    dcterms:isPartOf <https://koetai.semscape.org/mangal> ;
     dcterms:title "BHL on Koetai @ bionames (Oxigraph, Mangal node)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#aggregator-mirror> ;
-    rdfs:seeAlso <https://koetai.semscape.org/mangal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#aggregator-mirror> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/svc-bionames-bhl> ;
     dcat:accessURL <https://koetai.bionames.org/u/0000-0002-7101-9767/bhl> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -169,28 +154,28 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-koetai-bhl-examples> a dcat:Distribution ;
     dcterms:description "How to get it: open the examples page and run a query in the editor; start here before writing your own."@en ;
     dcterms:title "Koetai BHL — example SPARQL queries"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://koetai.semscape.org/u/0000-0001-9773-4008/bhl/examples> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-koetai-bhl-sample-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 against the Fuseki endpoint; small enough for CONSTRUCT of the whole graph."@en ;
     dcterms:title "Koetai BHL sample — SPARQL endpoint (Fuseki)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessURL <https://koetai.semscape.org/u/0000-0001-9773-4008/bhl-sample/sparql> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-koetai-bhl-shapes> a dcat:Distribution ;
     dcterms:description "How to get it: the shapes page documents the graph schema (classes and predicates per node type)."@en ;
     dcterms:title "Koetai BHL — ShEx / SHACL shapes"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://koetai.semscape.org/u/0000-0001-9773-4008/bhl/shapes> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-koetai-bhl-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: POST or GET a SPARQL 1.1 query to the endpoint; anonymous read access, no ORCID sign-in needed for queries."@en ;
     dcterms:title "Koetai BHL — SPARQL endpoint (QLever)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/svc-koetai-bhl> ;
     dcat:accessURL <https://koetai.semscape.org/u/0000-0001-9773-4008/bhl/sparql> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -198,7 +183,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-koetai-bhl-sparqlist> a dcat:Distribution ;
     dcterms:description "How to get it: parameterised SPARQL queries exposed as plain REST/JSON calls, for clients that do not speak SPARQL."@en ;
     dcterms:title "Koetai BHL — SPARQList REST API"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessURL <https://koetai.semscape.org/u/0000-0001-9773-4008/bhl/sparqlist> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
 
@@ -206,7 +191,7 @@
     dcterms:description "How to get it: curl -H 'Accept: text/turtle' on the VoID URL for class and property partition counts."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "Koetai BHL — VoID statistics"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessURL <https://koetai.semscape.org/fdp/void/0000-0001-9773-4008/bhl> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
@@ -232,44 +217,6 @@
     dcat:endpointDescription <https://koetai.semscape.org/fdp/void/0000-0001-9773-4008/bhl> ;
     dcat:endpointURL <https://koetai.semscape.org/u/0000-0001-9773-4008/bhl/sparql> .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-bhl> a dcat:Catalog ;
-    dcterms:title "Biodiversity Heritage Library (native + RDF on Koetai)"@en ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-flair-gg> a dcat:Catalog ;
-    dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
-    dcterms:title "FLAIR-GG — FAIR network of Spanish plant germplasm banks"@en ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog.ttl> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-gbif> a dcat:Catalog ;
-    dcterms:title "GBIF — occurrences and backbone (native, AWS Parquet, QLever)"@en ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-geonames> a dcat:Catalog ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:title "GeoNames — geographical names gazetteer"@en ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog.ttl> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-inaturalist> a dcat:Catalog ;
-    dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
-    dcterms:title "iNaturalist — citizen-science observations (native + GBIF subset)"@en ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog.ttl> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-openstreetmap> a dcat:Catalog ;
-    dcterms:license <https://opendatacommons.org/licenses/odbl/1-0/> ;
-    dcterms:title "OpenStreetMap (native + osm2rdf on QLever)"@en ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-plazi> a dcat:Catalog ;
-    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    dcterms:title "Plazi — TreatmentBank and Biodiversity Literature Repository"@en ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/catalog-uniprot> a dcat:Catalog ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:title "UniProt — protein sequences and annotation (native + QLever)"@en ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/publisher-curator> a foaf:Person ;
     foaf:homepage <https://orcid.org/0000-0001-9773-4008> ;
     foaf:name "Andra Waagmeester" .
@@ -277,10 +224,10 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/bgusal-2025-02> a dcat:Dataset ;
     dcterms:description "Banco de Germoplasma de la Universidad de Salamanca. Seeds of threatened flora of Castilla y León and spores and mycelium of fungi, hosted at CIALE since 2007. Data follow the FLAIR-GG semantic model (FAO/IPGRI multi-crop passport descriptors, SIO, Darwin Core, WFO taxonomy)."@en ;
     dcterms:identifier "https://bgusal.linkeddata.systems" ;
+    dcterms:isReferencedBy <https://vp.bgv.cbgp.upm.es> ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-bgusal> ;
     dcterms:title "BGUSAL germplasm collection — BGUSAL February 2025"@en ;
-    rdfs:seeAlso <https://vp.bgv.cbgp.upm.es> ;
     dcat:distribution <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgusal-fdp>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgusal-germplasm-sparql>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgusal-iucn>,
@@ -292,11 +239,11 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/bgv-2023-06> a dcat:Dataset ;
     dcterms:description "César Gómez Campo Banco de Germoplasma Vegetal de la UPM (Madrid). About 10 000 seed accessions of 3 500 wild plant species, the founding member of FLAIR-GG. Data follow the FLAIR-GG semantic model (FAO/IPGRI multi-crop passport descriptors, SIO, Darwin Core, WFO taxonomy)."@en ;
     dcterms:identifier "https://w3id.org/bgv-fdp" ;
+    dcterms:isReferencedBy <https://vp.bgv.cbgp.upm.es> ;
     dcterms:issued "2023-06-28"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-bgv> ;
     dcterms:title "BGV-UPM germplasm collection — BGV June 2023"@en ;
-    rdfs:seeAlso <https://vp.bgv.cbgp.upm.es> ;
     dcat:distribution <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgv-admin-sparql>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgv-fdp>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgv-fdp-sparql>,
@@ -307,33 +254,11 @@
     dcat:landingPage <https://w3id.org/bgv-fdp> ;
     dcat:version "2023-06" .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog> a dcat:Catalog ;
-    dcterms:description "FLAIR-GG makes seed and germplasm banks FAIR without changing their databases: each bank exports CSV templates, YARRRML turns them into RDF following a shared semantic model (germplasm, location, administrative), and each bank runs its own FAIR Data Point and SPARQL endpoints. A Virtual Platform federates queries across all members. Six banks are live; this catalog lists every way to reach them."@en ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-flairgg> ;
-    dcterms:rights <https://wilkinsonlab.github.io/FLAIR-GG/> ;
-    dcterms:title "FLAIR-GG — FAIR network of Spanish plant germplasm banks"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/bgusal-2025-02>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/bgv-2023-06>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/jbclm-2025-10>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/jbo-2024-08>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/jbs-2025-02>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/semantic-model>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/urjc-2024-11>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/virtual-platform>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/wfo-backbone> ;
-    dcat:keyword "FAIR Data Point"@en,
-        "Spain"@en,
-        "ex situ conservation"@en,
-        "germplasm"@en,
-        "seed bank"@en,
-        "wild flora"@en ;
-    dcat:landingPage <https://wilkinsonlab.github.io/FLAIR-GG/> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgusal-fdp> a dcat:Distribution ;
     dcterms:description "How to get it: open the FDP in a browser, or curl -H 'Accept: text/turtle' https://bgusal.linkeddata.systems and follow fdp:metadataCatalog, dcat:dataset and dcat:distribution to the data services. Runs the FAIR Data Point reference implementation."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "BGUSAL FAIR Data Point (native metadata)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://bgusal.linkeddata.systems> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
@@ -341,7 +266,7 @@
     dcterms:description "How to get it: GET https://bgusal.linkeddata.systems/api-local/IUCN_categories (no parameters) lists every species in the bank that is Vulnerable, Endangered or Critically endangered; send Accept: application/json or text/csv. A grlc-style API over the germplasm SPARQL endpoint."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:title "BGUSAL IUCN risk categorisation lookup — CSV / JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgusal-api> ;
     dcat:accessURL <https://bgusal.linkeddata.systems/api-local/IUCN_categories> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
@@ -350,7 +275,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgusal-species-location> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://bgusal.linkeddata.systems/api-local/species_location?speciesname=Silene%20vulgaris returns accession numbers with latitude and longitude for that species (the parameter is required)."@en ;
     dcterms:title "BGUSAL collecting-site coordinates by species — JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgusal-api> ;
     dcat:accessURL <https://bgusal.linkeddata.systems/api-local/species_location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -359,7 +284,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgv-admin-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://w3id.org/bgv-fdp/repositories/administrative — institute, collecting team and contact information (116 triples on 2026-10-07)."@en ;
     dcterms:title "BGV-UPM administrative data — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgv-admin> ;
     dcat:accessURL <https://w3id.org/bgv-fdp/repositories/administrative> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -368,14 +293,14 @@
     dcterms:description "How to get it: open the FDP in a browser, or curl -H 'Accept: text/turtle' https://w3id.org/bgv-fdp and follow fdp:metadataCatalog, dcat:dataset and dcat:distribution to the data services. Runs the FAIR Data Point reference implementation."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "BGV-UPM FAIR Data Point (native metadata)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://w3id.org/bgv-fdp> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgv-fdp-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://w3id.org/bgv-fdp/repositories/bgv-fdp to query the DCAT metadata of the whole FDP at once (8 898 triples on 2026-10-07)."@en ;
     dcterms:title "BGV-UPM FAIR Data Point metadata — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgv-fdp-sparql> ;
     dcat:accessURL <https://w3id.org/bgv-fdp/repositories/bgv-fdp> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -384,7 +309,7 @@
     dcterms:description "How to get it: GET https://bgv.linkeddata.systems/api-local/IUCN_categories (no parameters) lists every species in the bank that is Vulnerable, Endangered or Critically endangered; send Accept: application/json or text/csv. A grlc-style API over the germplasm SPARQL endpoint."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:title "BGV-UPM IUCN risk categorisation lookup — CSV / JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgv-api> ;
     dcat:accessURL <https://bgv.linkeddata.systems/api-local/IUCN_categories> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
@@ -393,7 +318,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgv-species-location> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://bgv.linkeddata.systems/api-local/species_location?speciesname=Silene%20vulgaris returns accession numbers with latitude and longitude for that species (the parameter is required)."@en ;
     dcterms:title "BGV-UPM collecting-site coordinates by species — JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgv-api> ;
     dcat:accessURL <https://bgv.linkeddata.systems/api-local/species_location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -403,21 +328,21 @@
     dcterms:description "How to get it: export your bank's records into these CSV layouts; they are the only thing a bank has to produce."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:title "CSV input templates (germplasm, location, administrative)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#source-repository> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#source-repository> ;
     dcat:accessURL <https://github.com/wilkinsonlab/FLAIR-GG/tree/main/SemanticModel/CSV> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-flair-in-a-box> a dcat:Distribution ;
     dcterms:description "How to get it: clone the folder and follow its README; docker compose brings up the triplestore, FAIR Data Point, transformation pipeline and lookup APIs for a new member."@en ;
     dcterms:title "FLAIR-in-a-Box — one-command deployment"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#source-repository> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#source-repository> ;
     dcat:accessURL <https://github.com/wilkinsonlab/FLAIR-GG/tree/main/FLAIR-in-a-box> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbclm-fdp> a dcat:Distribution ;
     dcterms:description "How to get it: open the FDP in a browser, or curl -H 'Accept: text/turtle' https://jbclm.linkeddata.systems and follow fdp:metadataCatalog, dcat:dataset and dcat:distribution to the data services. Runs the FAIR Data Point reference implementation."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "BG-JBCLM FAIR Data Point (native metadata)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://jbclm.linkeddata.systems> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
@@ -425,7 +350,7 @@
     dcterms:description "How to get it: GET https://jbclm.linkeddata.systems/api-local/IUCN_categories (no parameters) lists every species in the bank that is Vulnerable, Endangered or Critically endangered; send Accept: application/json or text/csv. A grlc-style API over the germplasm SPARQL endpoint."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:title "BG-JBCLM IUCN risk categorisation lookup — CSV / JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbclm-api> ;
     dcat:accessURL <https://jbclm.linkeddata.systems/api-local/IUCN_categories> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
@@ -434,7 +359,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbclm-species-location> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://jbclm.linkeddata.systems/api-local/species_location?speciesname=Silene%20vulgaris returns accession numbers with latitude and longitude for that species (the parameter is required)."@en ;
     dcterms:title "BG-JBCLM collecting-site coordinates by species — JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbclm-api> ;
     dcat:accessURL <https://jbclm.linkeddata.systems/api-local/species_location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -443,7 +368,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbo-admin-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://jbo.linkeddata.systems/repositories/administrative — institute, collecting team and contact information (70 triples on 2026-10-07)."@en ;
     dcterms:title "JBO administrative data — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbo-admin> ;
     dcat:accessURL <https://jbo.linkeddata.systems/repositories/administrative> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -452,7 +377,7 @@
     dcterms:description "How to get it: open the FDP in a browser, or curl -H 'Accept: text/turtle' https://jbo.linkeddata.systems and follow fdp:metadataCatalog, dcat:dataset and dcat:distribution to the data services. Runs the FAIR Data Point reference implementation."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "JBO FAIR Data Point (native metadata)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://jbo.linkeddata.systems> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
@@ -460,7 +385,7 @@
     dcterms:description "How to get it: GET https://jbo.linkeddata.systems/api-local/IUCN_categories (no parameters) lists every species in the bank that is Vulnerable, Endangered or Critically endangered; send Accept: application/json or text/csv. A grlc-style API over the germplasm SPARQL endpoint."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:title "JBO IUCN risk categorisation lookup — CSV / JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbo-api> ;
     dcat:accessURL <https://jbo.linkeddata.systems/api-local/IUCN_categories> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
@@ -469,7 +394,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbo-species-location> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://jbo.linkeddata.systems/api-local/species_location?speciesname=Silene%20vulgaris returns accession numbers with latitude and longitude for that species (the parameter is required)."@en ;
     dcterms:title "JBO collecting-site coordinates by species — JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbo-api> ;
     dcat:accessURL <https://jbo.linkeddata.systems/api-local/species_location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -479,7 +404,7 @@
     dcterms:description "How to get it: open the FDP in a browser, or curl -H 'Accept: text/turtle' https://jbs.linkeddata.systems and follow fdp:metadataCatalog, dcat:dataset and dcat:distribution to the data services. Runs the FAIR Data Point reference implementation."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "JBS FAIR Data Point (native metadata)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://jbs.linkeddata.systems> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
@@ -487,7 +412,7 @@
     dcterms:description "How to get it: GET https://jbs.linkeddata.systems/api-local/IUCN_categories (no parameters) lists every species in the bank that is Vulnerable, Endangered or Critically endangered; send Accept: application/json or text/csv. A grlc-style API over the germplasm SPARQL endpoint."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:title "JBS IUCN risk categorisation lookup — CSV / JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbs-api> ;
     dcat:accessURL <https://jbs.linkeddata.systems/api-local/IUCN_categories> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
@@ -496,7 +421,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbs-species-location> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://jbs.linkeddata.systems/api-local/species_location?speciesname=Silene%20vulgaris returns accession numbers with latitude and longitude for that species (the parameter is required)."@en ;
     dcterms:title "JBS collecting-site coordinates by species — JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbs-api> ;
     dcat:accessURL <https://jbs.linkeddata.systems/api-local/species_location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -506,7 +431,7 @@
     dcterms:description "How to get it: download the OWL file; terms live in the namespace https://w3id.org/fao-ipgr/multi-passport-descriptor.owl# used by every germplasm graph. NB the link on the FLAIR-GG home page (multi-passport-descriptor.owl) returned 404 on 2026-10-07; this is the current file."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
     dcterms:title "Multi-crop passport descriptor ontology — OWL (RDF/XML)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rdf-dump> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rdf-dump> ;
     dcat:accessURL <https://github.com/wilkinsonlab/multi-crop-passport-descriptor-ontology> ;
     dcat:downloadURL <https://wilkinsonlab.github.io/multi-crop-passport-descriptor-ontology/multi-crop-passport-descriptors.owl> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/rdf+xml> .
@@ -515,7 +440,7 @@
     dcterms:description "How to get it: download the Turtle serialisation of the same ontology."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "Multi-crop passport descriptor ontology — Turtle"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rdf-dump> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rdf-dump> ;
     dcat:accessURL <https://github.com/wilkinsonlab/multi-crop-passport-descriptor-ontology> ;
     dcat:downloadURL <https://wilkinsonlab.github.io/multi-crop-passport-descriptor-ontology/multi-passport-descriptor.ttl> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
@@ -523,14 +448,14 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-onboarding> a dcat:Distribution ;
     dcterms:description "How to get it: step-by-step guide for a germplasm bank joining the network; the FLAIR-GG team can also host a temporary endpoint."@en ;
     dcterms:title "Onboarding documentation"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://github.com/wilkinsonlab/FLAIR-GG/tree/main/Onboarding> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-urjc-admin-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://urjc.linkeddata.systems/repositories/administrative — institute, collecting team and contact information (70 triples on 2026-10-07)."@en ;
     dcterms:title "BG URJC administrative data — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-urjc-admin> ;
     dcat:accessURL <https://urjc.linkeddata.systems/repositories/administrative> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -539,7 +464,7 @@
     dcterms:description "How to get it: open the FDP in a browser, or curl -H 'Accept: text/turtle' https://urjc.linkeddata.systems and follow fdp:metadataCatalog, dcat:dataset and dcat:distribution to the data services. Runs the FAIR Data Point reference implementation."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "BG URJC FAIR Data Point (native metadata)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://urjc.linkeddata.systems> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
@@ -547,7 +472,7 @@
     dcterms:description "How to get it: GET https://urjc.linkeddata.systems/api-local/IUCN_categories (no parameters) lists every species in the bank that is Vulnerable, Endangered or Critically endangered; send Accept: application/json or text/csv. A grlc-style API over the germplasm SPARQL endpoint."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:title "BG URJC IUCN risk categorisation lookup — CSV / JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-urjc-api> ;
     dcat:accessURL <https://urjc.linkeddata.systems/api-local/IUCN_categories> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
@@ -556,7 +481,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-urjc-species-location> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://urjc.linkeddata.systems/api-local/species_location?speciesname=Silene%20vulgaris returns accession numbers with latitude and longitude for that species (the parameter is required)."@en ;
     dcterms:title "BG URJC collecting-site coordinates by species — JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-urjc-api> ;
     dcat:accessURL <https://urjc.linkeddata.systems/api-local/species_location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -567,7 +492,7 @@
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:license <https://opensource.org/license/mit> ;
     dcterms:title "Dríada — legal protection status of Spanish flora"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-vp-driada> ;
     dcat:accessURL <https://vp.linkeddata.systems/wrapped-services/driada/lookup> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> .
@@ -575,7 +500,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-vp-ena> a dcat:Distribution ;
     dcterms:description "How to get it: GET http://togows.org/entry/ebi-ena/ACCESSION to fetch a sequence by its ENA accession; the Virtual Platform uses it to link germplasm species to sequence surveys."@en ;
     dcterms:title "ENA sequence retrieval via TogoWS"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-vp-ena> ;
     dcat:accessURL <http://togows.org/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/plain> .
@@ -584,21 +509,21 @@
     dcterms:description "How to get it: GET https://vp.linkeddata.systems returns a JSON array of every indexed FDP, catalog, dataset and data service (resource, title, type); 60 entries over six banks on 2026-10-07. Handy to discover new members."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
     dcterms:title "Virtual Platform resource index — JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessURL <https://vp.linkeddata.systems> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-vp-portal> a dcat:Distribution ;
     dcterms:description "How to get it: open the portal in a browser to search catalogs, datasets and services of all member banks and run federated queries; no account needed."@en ;
     dcterms:title "FLAIR-GG Virtual Platform portal"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#aggregator-mirror> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#aggregator-mirror> ;
     dcat:accessURL <https://vp.bgv.cbgp.upm.es> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-vp-proxy> a dcat:Distribution ;
     dcterms:description "How to get it: POST {'clientUrl': 'https://my.server.org/my_dcat_record.ttl'} as application/json to the proxy; it adds the metadata the platform requires and indexes your record, so a plain DCAT file is enough to join."@en ;
     dcterms:title "FDP Index Proxy — register a DCAT document"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-vp-proxy> ;
     dcat:accessURL <https://wilkinsonlab.github.io/FLAIR-GG/Proxy/index.html> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -606,7 +531,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-vp-swagger> a dcat:Distribution ;
     dcterms:description "How to get it: try every OpenAPI interface (SPARQL endpoints, lookups, wrapped services) interactively in the browser."@en ;
     dcterms:title "Swagger UI for the FLAIR-GG service interfaces"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://bgv.cbgp.upm.es/swagger> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
@@ -614,32 +539,32 @@
     dcterms:description "How to get it: the latest DwC-A zip (about 105 MB, CC0) is always at doi:10.5281/zenodo.18007552 together with all earlier versions; the WFO download page lists each version with its own DOI. Match names against it in R with the WorldFlora package."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
     dcterms:identifier "https://doi.org/10.5281/zenodo.18007552" ;
+    dcterms:isReferencedBy <https://www.worldfloraonline.org/downloadData> ;
     dcterms:title "WFO taxonomic backbone — Darwin Core Archive (latest static version)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#darwin-core-archive> ;
-    rdfs:seeAlso <https://www.worldfloraonline.org/downloadData> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#darwin-core-archive> ;
     dcat:accessURL <https://doi.org/10.5281/zenodo.18007552> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/zip> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-wfo-fdp> a dcat:Distribution ;
     dcterms:description "How to get it: curl -H 'Accept: text/turtle' on the dataset IRI for the DCAT description FLAIR-GG maintains for WFO."@en ;
     dcterms:title "WFO backbone record in the BGV-UPM FAIR Data Point"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://w3id.org/bgv-fdp/dataset/7f92e351-bd11-4941-8bcb-4a9046038cb0> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-yarrrml> a dcat:Distribution ;
     dcterms:description "How to get it: run the YARRRML files with the yarrrml-rmlmapper-docker image to turn the CSV templates into RDF following the semantic model."@en ;
     dcterms:title "YARRRML mapping templates"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#source-repository> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#source-repository> ;
     dcat:accessURL <https://github.com/wilkinsonlab/FLAIR-GG/tree/main/SemanticModel/YARRRML> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/jbclm-2025-10> a dcat:Dataset ;
     dcterms:description "Banco de Germoplasma del Jardín Botánico de Castilla-La Mancha. Seed bank of wild and threatened flora of Castilla-La Mancha, started in 2007. Data follow the FLAIR-GG semantic model (FAO/IPGRI multi-crop passport descriptors, SIO, Darwin Core, WFO taxonomy)."@en ;
     dcterms:identifier "https://jbclm.linkeddata.systems" ;
+    dcterms:isReferencedBy <https://vp.bgv.cbgp.upm.es> ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-jbclm> ;
     dcterms:title "BG-JBCLM germplasm collection — JBCLM October 2025"@en ;
-    rdfs:seeAlso <https://vp.bgv.cbgp.upm.es> ;
     dcat:distribution <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbclm-fdp>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbclm-germplasm-sparql>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbclm-iucn>,
@@ -651,10 +576,10 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/jbo-2024-08> a dcat:Dataset ;
     dcterms:description "Banco de Germoplasma del Jardín Botánico de Olarizu (Vitoria-Gasteiz). Threatened, endemic and rare wild flora and habitats of community interest of the Basque Country and surroundings. Data follow the FLAIR-GG semantic model (FAO/IPGRI multi-crop passport descriptors, SIO, Darwin Core, WFO taxonomy)."@en ;
     dcterms:identifier "https://jbo.linkeddata.systems" ;
+    dcterms:isReferencedBy <https://vp.bgv.cbgp.upm.es> ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-jbo> ;
     dcterms:title "JBO germplasm collection — JBO August 2024"@en ;
-    rdfs:seeAlso <https://vp.bgv.cbgp.upm.es> ;
     dcat:distribution <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbo-admin-sparql>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbo-fdp>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbo-germplasm-sparql>,
@@ -667,10 +592,10 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/jbs-2025-02> a dcat:Dataset ;
     dcterms:description "Banco de Germoplasma del Jardí Botànic de Sóller (Mallorca). Mediterranean and especially Balearic flora; the garden was founded in 1985. Data follow the FLAIR-GG semantic model (FAO/IPGRI multi-crop passport descriptors, SIO, Darwin Core, WFO taxonomy)."@en ;
     dcterms:identifier "https://jbs.linkeddata.systems" ;
+    dcterms:isReferencedBy <https://vp.bgv.cbgp.upm.es> ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-jbs> ;
     dcterms:title "JBS germplasm collection — JBS February 2025"@en ;
-    rdfs:seeAlso <https://vp.bgv.cbgp.upm.es> ;
     dcat:distribution <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbs-fdp>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbs-germplasm-sparql>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbs-iucn>,
@@ -838,10 +763,10 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/urjc-2024-11> a dcat:Dataset ;
     dcterms:description "Banco de Germoplasma de la Universidad Rey Juan Carlos (Madrid). 512 accessions of 222 wild species in four collections: high mountain, semi-arid, Lupinus and Canary Islands; founded 2008. Data follow the FLAIR-GG semantic model (FAO/IPGRI multi-crop passport descriptors, SIO, Darwin Core, WFO taxonomy)."@en ;
     dcterms:identifier "https://urjc.linkeddata.systems" ;
+    dcterms:isReferencedBy <https://vp.bgv.cbgp.upm.es> ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-urjc> ;
     dcterms:title "BG URJC germplasm collection — BG URJC Nov 2024"@en ;
-    rdfs:seeAlso <https://vp.bgv.cbgp.upm.es> ;
     dcat:distribution <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-urjc-admin-sparql>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-urjc-fdp>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-urjc-germplasm-sparql>,
@@ -855,8 +780,8 @@
     dcterms:description "The Virtual Platform indexes the FAIR Data Points of all member banks plus third-party services and runs federated queries and analytics over them. It also federates UniProt SPARQL (described in the UniProt catalog of this FDP)."@en ;
     dcterms:identifier "FLAIR-GG-VP" ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-flairgg> ;
+    dcterms:references <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl#catalog> ;
     dcterms:title "FLAIR-GG Virtual Platform — federated access to all members"@en ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl> ;
     dcat:distribution <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-vp-driada>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-vp-ena>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-vp-index>,
@@ -877,27 +802,12 @@
     dcat:landingPage <https://www.worldfloraonline.org> ;
     dcat:version "current" .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog> a dcat:Catalog ;
-    dcterms:description "Occurrence records aggregated from tens of thousands of publishers, and the GBIF Backbone Taxonomy. Native access on gbif.org and api.gbif.org, monthly Parquet snapshots on AWS Open Data, and an RDF copy queryable with SPARQL on QLever."@en ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/publisher-gbif> ;
-    dcterms:rights <https://www.gbif.org/terms> ;
-    dcterms:title "GBIF — Global Biodiversity Information Facility"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/gbif-backbone-2023-08-28>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/gbif-occurrence-live>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/gbif-snapshot-2026-09-01>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/gbif-snapshot-2026-10-01> ;
-    dcat:keyword "Darwin Core"@en,
-        "occurrence"@en,
-        "specimen"@en,
-        "taxonomy"@en ;
-    dcat:landingPage <https://www.gbif.org> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/dist-2026-09-aws-parquet> a dcat:Distribution ;
     dcterms:description "How to get it: s3://gbif-open-data-REGION/occurrence/2026-09-01/occurrence.parquet/ with --no-sign-request, in any of the five regions."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/PARQUET> ;
     dcterms:issued "2026-09-01"^^xsd:date ;
     dcterms:title "GBIF snapshot 2026-09-01 — Parquet on AWS S3"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#cloud-object-storage> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#cloud-object-storage> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-s3-af-south-1>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-s3-ap-southeast-2>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-s3-eu-central-1>,
@@ -911,8 +821,7 @@
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/PARQUET> ;
     dcterms:issued "2026-10-01"^^xsd:date ;
     dcterms:title "GBIF snapshot 2026-10-01 — Parquet on AWS S3"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#cloud-object-storage> ;
-    rdfs:seeAlso <https://github.com/gbif/occurrence/blob/master/aws-public-data.md> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#cloud-object-storage> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-s3-af-south-1>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-s3-ap-southeast-2>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-s3-eu-central-1>,
@@ -920,12 +829,13 @@
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-s3-us-east-1> ;
     dcat:accessURL <https://registry.opendata.aws/gbif/> ;
     dcat:downloadURL <https://gbif-open-data-eu-central-1.s3.eu-central-1.amazonaws.com/occurrence/2026-10-01/citation.txt> ;
-    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.apache.parquet> .
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.apache.parquet> ;
+    foaf:page <https://github.com/gbif/occurrence/blob/master/aws-public-data.md> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/dist-backbone-api> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://api.gbif.org/v1/species/match?name=... for name matching, /v1/species/KEY for a taxon."@en ;
     dcterms:title "GBIF Species API"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-api> ;
     dcat:accessURL <https://techdocs.gbif.org/en/openapi/v1/species> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -933,7 +843,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/dist-backbone-qlever> a dcat:Distribution ;
     dcterms:description "How to get it: same endpoint as the occurrences (https://qlever.dev/api/gbif); taxa are dwc:Taxon with gbif:rank and gbif:taxonomicStatus IRIs, names on rdfs:label (no skos:prefLabel)."@en ;
     dcterms:title "GBIF Backbone as RDF on QLever"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-qlever> ;
     dcat:accessURL <https://qlever.dev/gbif> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -943,7 +853,7 @@
     dcterms:description "How to get it: GET https://api.gbif.org/v1/occurrence/search?taxonKey=...&country=... (no key; max 300 per page and 100 000 records per query — use the download API beyond that)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
     dcterms:title "GBIF Occurrence API — JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-api> ;
     dcat:accessURL <https://techdocs.gbif.org/en/openapi/v1/occurrence> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -952,7 +862,7 @@
     dcterms:description "How to get it: on gbif.org click Download, or POST a predicate to https://api.gbif.org/v1/occurrence/download/request with a free GBIF account. You get a zip and a DOI to cite. Formats: DWCA, SIMPLE_CSV, SPECIES_LIST, SIMPLE_PARQUET."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
     dcterms:title "GBIF occurrence download — DwC-A, simple CSV, species list or simple Parquet, with DOI"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#darwin-core-archive> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#darwin-core-archive> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-api> ;
     dcat:accessURL <https://techdocs.gbif.org/en/data-use/api-downloads> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/zip> .
@@ -960,14 +870,14 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/dist-live-portal> a dcat:Distribution ;
     dcterms:description "How to get it: search, map and filter on gbif.org; every record has a stable URL https://www.gbif.org/occurrence/GBIFID."@en ;
     dcterms:title "GBIF.org occurrence search"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://www.gbif.org/occurrence/search> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/dist-live-qlever> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://qlever.dev/api/gbif (UI at qlever.dev/gbif). Contains 3 657 852 005 dwc:Occurrence and 7 746 724 dwc:Taxon nodes (2026-10-06); occurrence to taxon via dwciri:toTaxon, hierarchy via skos:broader, coordinates as wdt:P625 WKT. Federates fast with Wikidata and UniProt on the same QLever instance. Load date not published, so treat as a recent copy rather than a fixed snapshot."@en ;
     dcterms:title "GBIF as RDF on QLever — SPARQL"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-qlever> ;
     dcat:accessURL <https://qlever.dev/gbif> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -977,7 +887,7 @@
     dcterms:description "How to get it: POST an SQL query (SELECT / WHERE / GROUP BY over the occurrence table) to the download API with format SQL_TSV_ZIP; result arrives as a zipped TSV with DOI. Good for gridded counts and cubes."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
     dcterms:title "GBIF SQL download API"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sql-query> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sql-query> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-api> ;
     dcat:accessURL <https://techdocs.gbif.org/en/data-use/api-sql-downloads> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/zip> .
@@ -1023,23 +933,12 @@
     foaf:homepage <https://ad.informatik.uni-freiburg.de> ;
     foaf:name "University of Freiburg — Chair of Algorithms and Data Structures (QLever)"@en .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog> a dcat:Catalog ;
-    dcterms:description "Over 12 million place names with coordinates, feature classes and administrative hierarchy; the usual way to resolve locality strings and country/admin codes in occurrence data."@en ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/publisher-geonames> ;
-    dcterms:title "GeoNames — geographical names gazetteer"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/geonames-gazetteer> ;
-    dcat:keyword "gazetteer"@en,
-        "georeferencing"@en,
-        "place names"@en ;
-    dcat:landingPage <https://www.geonames.org> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/dist-dump> a dcat:Distribution ;
     dcterms:description "How to get it: download allCountries.zip (or one file per country, cities500/1000/5000/15000, alternateNamesV2, admin codes, hierarchy) from export/dump; daily modifications and deletes files allow incremental sync."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
     dcterms:modified "2026-10-06"^^xsd:date ;
     dcterms:title "GeoNames daily dump — tab-delimited"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://download.geonames.org/export/dump/> ;
     dcat:downloadURL <https://download.geonames.org/export/dump/allCountries.zip> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/zip> .
@@ -1047,7 +946,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/dist-ontology> a dcat:Distribution ;
     dcterms:description "How to get it: the ontology documentation and OWL file define gn:Feature, gn:featureClass, gn:parentFeature and friends used by the RDF dump and sws.geonames.org URIs."@en ;
     dcterms:title "GeoNames ontology (gn:)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://www.geonames.org/ontology/documentation.html> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
@@ -1056,7 +955,7 @@
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
     dcterms:modified "2020-02-14"^^xsd:date ;
     dcterms:title "GeoNames RDF dump — all-geonames-rdf.zip"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rdf-dump> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rdf-dump> ;
     dcat:accessURL <https://download.geonames.org/> ;
     dcat:downloadURL <https://download.geonames.org/all-geonames-rdf.zip> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/zip> .
@@ -1064,7 +963,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/dist-web> a dcat:Distribution ;
     dcterms:description "How to get it: search by name; each feature has a URI https://sws.geonames.org/ID/ that also dereferences to RDF."@en ;
     dcterms:title "geonames.org — search and feature pages"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://www.geonames.org> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
@@ -1072,7 +971,7 @@
     dcterms:description "How to get it: register a free username, enable web services in your account, then GET http://api.geonames.org/searchJSON?q=...&username=NAME (also findNearbyJSON, countrySubdivisionJSON, hierarchyJSON; 10 000 credits/day)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
     dcterms:title "GeoNames web services — JSON / XML"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/svc-ws> ;
     dcat:accessURL <https://www.geonames.org/export/ws-overview.html> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -1102,24 +1001,11 @@
     dcat:endpointDescription <https://www.geonames.org/export/ws-overview.html> ;
     dcat:endpointURL <http://api.geonames.org/> .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog> a dcat:Catalog ;
-    dcterms:description "Community-sourced, photo-vouchered observations of organisms and the iNaturalist taxonomy. Native access on inaturalist.org, plus the research-grade subset republished through GBIF (portal, API, AWS Parquet snapshots and the QLever RDF graph)."@en ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/publisher-inat> ;
-    dcterms:title "iNaturalist — citizen-science biodiversity observations"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/inat-observations>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/inat-taxonomy> ;
-    dcat:keyword "citizen science"@en,
-        "observation"@en,
-        "occurrence"@en,
-        "taxonomy"@en ;
-    dcat:landingPage <https://www.inaturalist.org> ;
-    dcat:themeTaxonomy <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#scheme> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/dist-obs-api-v1> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://api.inaturalist.org/v1/observations?taxon_id=...&place_id=... (no key for reads; keep under ~60 requests/minute, 10 000 results per query; page with id_above for more)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
     dcterms:title "iNaturalist API v1 — JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/svc-inat-api-v1> ;
     dcat:accessURL <https://api.inaturalist.org/v1/docs/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -1128,7 +1014,7 @@
     dcterms:description "How to get it: GET https://api.inaturalist.org/v2/observations with a fields parameter to return only what you need; same rate limits as v1."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
     dcterms:title "iNaturalist API v2 — JSON with field selection"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/svc-inat-api-v2> ;
     dcat:accessURL <https://api.inaturalist.org/v2/docs/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -1138,18 +1024,18 @@
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/GZIP> ;
     dcterms:issued "2026-09-27"^^xsd:date ;
     dcterms:title "iNaturalist Licensed Observation Images — AWS Open Data (metadata 2026-09-27)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#cloud-object-storage> ;
-    rdfs:seeAlso <https://github.com/inaturalist/inaturalist-open-data> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#cloud-object-storage> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/svc-inat-s3> ;
     dcat:accessURL <https://registry.opendata.aws/inaturalist-open-data/> ;
     dcat:downloadURL <https://inaturalist-open-data.s3.amazonaws.com/metadata/inaturalist-open-data-latest.tar.gz> ;
-    dcat:mediaType <https://www.iana.org/assignments/media-types/application/gzip> .
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/gzip> ;
+    foaf:page <https://github.com/inaturalist/inaturalist-open-data> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/dist-obs-export> a dcat:Distribution ;
     dcterms:description "How to get it: sign in (free account), build a query in the export tool, choose columns, receive a zipped CSV (max ~200 000 rows per export)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:title "iNaturalist observation export — CSV"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://www.inaturalist.org/observations/export> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> .
 
@@ -1158,7 +1044,7 @@
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/PARQUET> ;
     dcterms:issued "2026-10-01"^^xsd:date ;
     dcterms:title "Research-grade subset in the GBIF AWS Parquet snapshot (2026-10-01)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#cloud-object-storage> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#cloud-object-storage> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-s3-eu-central-1> ;
     dcat:accessURL <https://registry.opendata.aws/gbif/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.apache.parquet> ;
@@ -1167,7 +1053,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/dist-obs-gbif-qlever> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL at https://qlever.dev/api/gbif — select ?o with ?o dwc:publishingOrgKey <https://www.gbif.org/publisher/28eb1a3f-1c15-4a95-931a-4af90ecb574d> (146 178 090 occurrences on 2026-10-06; taxa via dwciri:toTaxon, coordinates as wdt:P625 WKT)."@en ;
     dcterms:title "Research-grade subset in the GBIF RDF graph on QLever"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-qlever> ;
     dcat:accessURL <https://qlever.dev/gbif> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -1176,14 +1062,14 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/dist-obs-web> a dcat:Distribution ;
     dcterms:description "How to get it: browse or filter at inaturalist.org/observations; every observation has a stable URL https://www.inaturalist.org/observations/ID."@en ;
     dcterms:title "iNaturalist website — Explore"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://www.inaturalist.org/observations> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/dist-tax-api> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://api.inaturalist.org/v1/taxa?q=NAME or /v1/taxa/ID."@en ;
     dcterms:title "iNaturalist API v1 — taxa"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/svc-inat-api-v1> ;
     dcat:accessURL <https://api.inaturalist.org/v1/docs/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -1192,7 +1078,7 @@
     dcterms:description "How to get it: download the zip; core is Taxon, extension VernacularName per language."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
     dcterms:title "iNaturalist taxonomy — Darwin Core Archive"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#darwin-core-archive> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#darwin-core-archive> ;
     dcat:accessURL <https://www.inaturalist.org/taxa/inaturalist-taxonomy.dwca.zip> ;
     dcat:downloadURL <https://www.inaturalist.org/taxa/inaturalist-taxonomy.dwca.zip> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/zip> .
@@ -1248,25 +1134,11 @@
     dcat:endpointDescription <https://github.com/inaturalist/inaturalist-open-data> ;
     dcat:endpointURL <https://inaturalist-open-data.s3.amazonaws.com/> .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog> a dcat:Catalog ;
-    dcterms:description "Nodes, ways and relations with free-form tags: protected areas, land cover, water bodies, trails and places that give spatial context to biodiversity records. Native APIs and planet files, plus the osm2rdf RDF conversion queryable on QLever."@en ;
-    dcterms:license <https://opendatacommons.org/licenses/odbl/1-0/> ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/publisher-osmf> ;
-    dcterms:title "OpenStreetMap — collaborative map of the world"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/osm-live>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/osm-planet-2026-09-28>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/osm-rdf> ;
-    dcat:keyword "geography"@en,
-        "land cover"@en,
-        "map"@en,
-        "protected area"@en ;
-    dcat:landingPage <https://www.openstreetmap.org> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/dist-live-api06> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://api.openstreetmap.org/api/0.6/way/ID/full or map?bbox=...; meant for editors, not bulk reads (use Overpass or planet files instead)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
     dcterms:title "OSM editing API 0.6 — OSM XML / JSON"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/svc-api06> ;
     dcat:accessURL <https://wiki.openstreetmap.org/wiki/API_v0.6> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/xml> .
@@ -1274,21 +1146,21 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/dist-live-diffs> a dcat:Distribution ;
     dcterms:description "How to get it: apply the osmChange files with osmium apply-changes or pyosmium-up-to-date to keep a planet or extract current."@en ;
     dcterms:title "Replication diffs — minutely, hourly, daily (osmChange)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#change-feed> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#change-feed> ;
     dcat:accessURL <https://planet.openstreetmap.org/replication/minute/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/gzip> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/dist-live-nominatim> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://nominatim.openstreetmap.org/search?q=PLACE&format=jsonv2 or /reverse?lat=..&lon=..; max 1 request/second with a descriptive User-Agent."@en ;
     dcterms:title "Nominatim — geocoding and reverse geocoding"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessURL <https://nominatim.openstreetmap.org/ui/search.html> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/dist-live-overpass> a dcat:Distribution ;
     dcterms:description "How to get it: POST an Overpass QL query, e.g. nwr[boundary=protected_area](area) ; out geom; to the interpreter, or try it in overpass-turbo.eu. Near-real-time, JSON or XML output."@en ;
     dcterms:title "Overpass API — tag and area queries"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/svc-overpass> ;
     dcat:accessURL <https://wiki.openstreetmap.org/wiki/Overpass_API> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -1296,7 +1168,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/dist-live-web> a dcat:Distribution ;
     dcterms:description "How to get it: browse the map; every object has a page such as https://www.openstreetmap.org/way/ID with tags and history. Use Export for a small bounding box."@en ;
     dcterms:title "openstreetmap.org — map, search and object pages"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://www.openstreetmap.org> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
@@ -1304,7 +1176,7 @@
     dcterms:description "How to get it: s3://osm-pds/planet/planet-latest.orc with --no-sign-request (refreshed 2026-10-02); query with Athena or Spark without downloading."@en ;
     dcterms:format "Apache ORC" ;
     dcterms:title "Planet on AWS Open Data — ORC (osm-pds)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#cloud-object-storage> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#cloud-object-storage> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/svc-osm-s3> ;
     dcat:accessURL <https://registry.opendata.aws/osm/> ;
     dcat:downloadURL <https://osm-pds.s3.amazonaws.com/planet/planet-latest.orc> .
@@ -1313,14 +1185,14 @@
     dcterms:description "How to get it: download a continent, country or region as .osm.pbf or shapefile, updated daily; much smaller than the planet."@en ;
     dcterms:format "OSM PBF" ;
     dcterms:title "Geofabrik regional extracts"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://download.geofabrik.de/> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/dist-planet-pbf> a dcat:Distribution ;
     dcterms:description "How to get it: download via HTTPS from a mirror or the .torrent next to it (about 80 GB); process with osmium, osmosis or pyosmium."@en ;
     dcterms:format "OSM PBF" ;
     dcterms:title "Planet — OSM PBF"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://planet.openstreetmap.org/pbf/> ;
     dcat:downloadURL <https://planet.openstreetmap.org/pbf/planet-260928.osm.pbf> .
 
@@ -1328,7 +1200,7 @@
     dcterms:description "How to get it: same content as the PBF in XML, bzip2-compressed; slower to process, use only if your tooling needs XML."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/BZIP2> ;
     dcterms:title "Planet — OSM XML (bzip2)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://planet.openstreetmap.org/planet/> ;
     dcat:downloadURL <https://planet.openstreetmap.org/planet/planet-latest.osm.bz2> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/x-bzip2> .
@@ -1337,14 +1209,14 @@
     dcterms:description "How to get it: download prebuilt .ttl.bz2 files for the planet or per region from osm2rdf.cs.uni-freiburg.de and load them into any triple store."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "osm2rdf Turtle extracts"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rdf-dump> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rdf-dump> ;
     dcat:accessURL <https://osm2rdf.cs.uni-freiburg.de/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/dist-rdf-qlever> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL at https://qlever.dev/api/osm-planet (UI qlever.dev/osm-planet). Prefixes osmkey: for tags, geo:hasGeometry/geo:asWKT for geometry, ogc:sfContains for containment; projecting a WKT column shows a map."@en ;
     dcterms:title "OSM planet RDF on QLever — SPARQL"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/svc-qlever-osm> ;
     dcat:accessURL <https://qlever.dev/osm-planet> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1352,7 +1224,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/dist-rdf-tool> a dcat:Distribution ;
     dcterms:description "How to get it: build or docker-run osm2rdf on a planet or Geofabrik extract to produce your own Turtle with the same schema."@en ;
     dcterms:title "osm2rdf — convert any PBF yourself"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#source-repository> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#source-repository> ;
     dcat:accessURL <https://github.com/ad-freiburg/osm2rdf> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/osm-live> a dcat:Dataset ;
@@ -1414,23 +1286,10 @@
     dcat:endpointDescription <https://qlever.dev/osm-planet> ;
     dcat:endpointURL <https://qlever.dev/api/osm-planet> .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog> a dcat:Catalog ;
-    dcterms:description "Taxonomic treatments, material citations, figures and bibliographic data liberated from published literature. Plazi publishes the same content through many channels: TreatmentBank, its APIs, XML and RDF in git, a SPARQL endpoint, Synospecies, GBIF and Zenodo."@en ;
-    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/publisher-plazi> ;
-    dcterms:title "Plazi — TreatmentBank and the Biodiversity Literature Repository"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/plazi-blr>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/plazi-treatmentbank> ;
-    dcat:keyword "figures"@en,
-        "literature"@en,
-        "material citation"@en,
-        "taxonomic treatment"@en ;
-    dcat:landingPage <https://plazi.org> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/dist-blr-api> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://zenodo.org/api/records?communities=biosyslit&q=...&size=100 (JSON; anonymous allowed, token raises rate limits)."@en ;
     dcterms:title "Zenodo REST API — biosyslit records"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/svc-zenodo-api> ;
     dcat:accessURL <https://zenodo.org/api/records?communities=biosyslit> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -1439,14 +1298,14 @@
     dcterms:description "How to get it: harvest with verb=ListRecords, set=user-biosyslit and metadataPrefix oai_datacite or oai_dc; use from= for incremental updates."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
     dcterms:title "Zenodo OAI-PMH — set user-biosyslit"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#oai-pmh> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#oai-pmh> ;
     dcat:accessURL <https://zenodo.org/oai2d?verb=ListRecords&set=user-biosyslit&metadataPrefix=oai_datacite> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/xml> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/dist-blr-web> a dcat:Distribution ;
     dcterms:description "How to get it: search and browse the community on zenodo.org; every record has a DOI and downloadable files (images, PDF, XML)."@en ;
     dcterms:title "Zenodo community biosyslit"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://zenodo.org/communities/biosyslit> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
@@ -1454,7 +1313,7 @@
     dcterms:description "How to get it: REST calls such as Treatments.search, Treatments.searchForDOI and statistics per author, journal, institution or taxon (TreatmentsForTaxon, MaterialCitations); documented at api.plazi.org/v1."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
     dcterms:title "Plazi TreatmentBank API v1"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/svc-plazi-api> ;
     dcat:accessURL <https://api.plazi.org/v1/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -1463,7 +1322,7 @@
     dcterms:description "How to get it: filter publishingorgkey = '7ce8aef0-9e92-11dc-8738-b8a03c50a862' in the GBIF Parquet snapshot on S3, or dwc:publishingOrgKey <https://www.gbif.org/publisher/7ce8aef0-9e92-11dc-8738-b8a03c50a862> on qlever.dev/api/gbif."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/PARQUET> ;
     dcterms:title "Plazi material citations in GBIF AWS Parquet and QLever"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#cloud-object-storage> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#cloud-object-storage> ;
     dcat:accessURL <https://registry.opendata.aws/gbif/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.apache.parquet> ;
     prov:wasDerivedFrom <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/dist-tb-gbif> .
@@ -1471,7 +1330,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/dist-tb-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at treatment.ld.plazi.org/sparql (returned HTTP 500 when checked on 2026-10-06 — if down, load treatments-rdf yourself)."@en ;
     dcterms:title "Plazi treatment SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/svc-plazi-sparql> ;
     dcat:accessURL <https://treatment.ld.plazi.org/sparql> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -1481,21 +1340,21 @@
     dcterms:description "How to get it: compose a custom table of treatments, material citations or bibliographic fields and export as CSV, JSON or XML."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
     dcterms:title "TreatmentBank statistics / export (srsStats)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://tb.plazi.org/GgServer/srsStats> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/dist-tb-synospecies> a dcat:Distribution ;
     dcterms:description "How to get it: type a taxon name to see all treatments, synonyms and name changes over time; built on the Plazi RDF."@en ;
     dcterms:title "Synospecies — synonymy and treatment browser"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://synospecies.plazi.org/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/dist-tb-web> a dcat:Distribution ;
     dcterms:description "How to get it: full-text and faceted search; each treatment page offers HTML, XML (TaxonX/GoldenGATE) and RDF renderings via its treatment.plazi.org URI."@en ;
     dcterms:title "TreatmentBank search (GgServer)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://tb.plazi.org/GgServer/search> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
@@ -1503,7 +1362,7 @@
     dcterms:description "How to get it: git clone --depth 1 https://github.com/plazi/treatments-xml (large; updated continuously, so git pull gives you the changes)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
     dcterms:title "treatments-xml — all treatments as XML in git"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#source-repository> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#source-repository> ;
     dcat:accessURL <https://github.com/plazi/treatments-xml> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/xml> .
 
@@ -1562,24 +1421,11 @@
     dcat:endpointDescription <https://developers.zenodo.org/> ;
     dcat:endpointURL <https://zenodo.org/api/> .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog> a dcat:Catalog ;
-    dcterms:description "Protein sequences and functional annotation (UniProtKB Swiss-Prot and TrEMBL, UniRef, UniParc, Proteomes) and the UniProt taxonomy. Links to biodiversity via NCBI taxon identifiers and up:scientificName."@en ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/publisher-uniprot> ;
-    dcterms:title "UniProt — Universal Protein Resource"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/uniprot-2026-03>,
-        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/uniprot-previous> ;
-    dcat:keyword "functional annotation"@en,
-        "protein"@en,
-        "sequence"@en,
-        "taxonomy"@en ;
-    dcat:landingPage <https://www.uniprot.org> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/dist-ftp-flat> a dcat:Distribution ;
     dcterms:description "How to get it: wget the files under current_release/knowledgebase/complete/ (uniprot_sprot.dat.gz, uniprot_sprot.xml.gz, uniprot_sprot.fasta.gz and the much larger TrEMBL equivalents)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/GZIP> ;
     dcterms:title "UniProtKB bulk files — flat text, XML, FASTA"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/> ;
     dcat:downloadURL <https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/gzip> .
@@ -1587,21 +1433,21 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/dist-previous-ftp> a dcat:Distribution ;
     dcterms:description "How to get it: wget from previous_releases/release-YYYY_NN/ (knowledgebase, uniref, uniparc tarballs)."@en ;
     dcterms:title "UniProt previous_releases FTP"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://ftp.uniprot.org/pub/databases/uniprot/previous_releases/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/gzip> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/dist-proteins-api> a dcat:Distribution ;
     dcterms:description "How to get it: REST access to UniProt entries plus features, variation and proteomics mapped to the protein, e.g. GET https://www.ebi.ac.uk/proteins/api/proteins/ACCESSION."@en ;
     dcterms:title "EBI Proteins API"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessURL <https://www.ebi.ac.uk/proteins/api/doc/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/dist-qlever> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL at https://qlever.dev/api/uniprot (UI qlever.dev/uniprot); same RDF as the official endpoint, loaded on the QLever instance that also hosts GBIF and Wikidata, so federated SERVICE joins stay inside one engine. Release loaded is not stated by the endpoint."@en ;
     dcterms:title "UniProt RDF on QLever"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/svc-qlever> ;
     dcat:accessURL <https://qlever.dev/uniprot> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> ;
@@ -1611,7 +1457,7 @@
     dcterms:description "How to get it: GET https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606&format=tsv&fields=accession,gene_names ; use /stream for whole result sets and /idmapping for identifier conversion."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
     dcterms:title "UniProt REST API"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rest-api> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rest-api> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/svc-rest> ;
     dcat:accessURL <https://www.uniprot.org/help/api> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -1619,7 +1465,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/dist-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://sparql.uniprot.org/sparql, always the current release; core vocabulary up: = http://purl.uniprot.org/core/."@en ;
     dcterms:title "UniProt SPARQL endpoint (official)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/svc-sparql> ;
     dcat:accessURL <https://sparql.uniprot.org/sparql> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1627,7 +1473,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/dist-web> a dcat:Distribution ;
     dcterms:description "How to get it: query builder and entry pages at https://www.uniprot.org/uniprotkb/ACCESSION; every result list has a download button (FASTA, TSV, JSON, XML, RDF)."@en ;
     dcterms:title "uniprot.org — search and entry pages"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#web-portal> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#web-portal> ;
     dcat:accessURL <https://www.uniprot.org> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/html> .
 
@@ -1691,7 +1537,6 @@
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/publisher-curator> ;
     dcterms:title "BHL as RDF on Koetai"@en ;
-    rdfs:seeAlso <https://koetai.semscape.org/fdp/dataset/0000-0001-9773-4008/bhl> ;
     dcat:distribution <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bionames-bhl>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-koetai-bhl-examples>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-koetai-bhl-shapes>,
@@ -1700,21 +1545,58 @@
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-koetai-bhl-void> ;
     dcat:landingPage <https://koetai.semscape.org/u/0000-0001-9773-4008/bhl> ;
     dcat:version "1.0" ;
-    prov:wasDerivedFrom <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bhl-datazip> .
+    prov:wasDerivedFrom <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bhl-datazip> ;
+    foaf:isPrimaryTopicOf <https://koetai.semscape.org/fdp/dataset/0000-0001-9773-4008/bhl> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl#catalog> a dcat:Catalog ;
+    dcterms:description "Open-access digitised biodiversity literature: titles, items, pages, parts, creators, subjects and page-level scientific-name mentions. Native access on biodiversitylibrary.org and its API and data export, plus RDF conversions on Koetai nodes of the Mangal network."@en ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/publisher-bhl> ;
+    dcterms:rights <https://about.biodiversitylibrary.org/help/copyright-and-reuse/> ;
+    dcterms:title "BHL — Biodiversity Heritage Library"@en ;
+    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/bhl-koetai-rdf>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/bhl-koetai-sample>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/bhl-native> ;
+    dcat:keyword "digitisation"@en,
+        "literature"@en,
+        "taxonomic names"@en ;
+    dcat:landingPage <https://www.biodiversitylibrary.org> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bhl-datazip> a dcat:Distribution ;
     dcterms:description "How to get it: download data.zip; tab-separated tables for titles, items, pages, parts, creators, subjects, identifiers and page names. This is the source of the Koetai RDF conversion."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
     dcterms:title "BHL data export — data.zip (tab-delimited)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#bulk-download> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#bulk-download> ;
     dcat:accessURL <https://about.biodiversitylibrary.org/tools-and-services/developer-and-data-tools/> ;
     dcat:downloadURL <https://www.biodiversitylibrary.org/data/data.zip> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/zip> .
 
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog.ttl#catalog> a dcat:Catalog ;
+    dcterms:description "FLAIR-GG makes seed and germplasm banks FAIR without changing their databases: each bank exports CSV templates, YARRRML turns them into RDF following a shared semantic model (germplasm, location, administrative), and each bank runs its own FAIR Data Point and SPARQL endpoints. A Virtual Platform federates queries across all members. Six banks are live; this catalog lists every way to reach them."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-flairgg> ;
+    dcterms:rights <https://wilkinsonlab.github.io/FLAIR-GG/> ;
+    dcterms:title "FLAIR-GG — FAIR network of Spanish plant germplasm banks"@en ;
+    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/bgusal-2025-02>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/bgv-2023-06>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/jbclm-2025-10>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/jbo-2024-08>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/jbs-2025-02>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/semantic-model>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/urjc-2024-11>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/virtual-platform>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/wfo-backbone> ;
+    dcat:keyword "FAIR Data Point"@en,
+        "Spain"@en,
+        "ex situ conservation"@en,
+        "germplasm"@en,
+        "seed bank"@en,
+        "wild flora"@en ;
+    dcat:landingPage <https://wilkinsonlab.github.io/FLAIR-GG/> .
+
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgusal-germplasm-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 (RDF4J) at https://bgusal.linkeddata.systems/repositories/germplasm — accessions, species with WFO identifiers, IUCN categories, collecting events (2 198 triples on 2026-10-07). The OpenAPI file documents GET and POST."@en ;
     dcterms:title "BGUSAL germplasm — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgusal-germplasm> ;
     dcat:accessURL <https://bgusal.linkeddata.systems/repositories/germplasm> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1722,7 +1604,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgusal-location-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://bgusal.linkeddata.systems/repositories/location — country, coordinates and soil conditions of collecting sites (908 triples on 2026-10-07)."@en ;
     dcterms:title "BGUSAL collecting sites — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgusal-location> ;
     dcat:accessURL <https://bgusal.linkeddata.systems/repositories/location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1730,7 +1612,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgv-germplasm-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 (RDF4J) at https://w3id.org/bgv-fdp/repositories/germplasm — accessions, species with WFO identifiers, IUCN categories, collecting events (680 459 triples on 2026-10-07). The OpenAPI file documents GET and POST."@en ;
     dcterms:title "BGV-UPM germplasm — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgv-germplasm> ;
     dcat:accessURL <https://w3id.org/bgv-fdp/repositories/germplasm> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1738,7 +1620,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgv-location-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://w3id.org/bgv-fdp/repositories/location — country, coordinates and soil conditions of collecting sites (269 882 triples on 2026-10-07)."@en ;
     dcterms:title "BGV-UPM collecting sites — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-bgv-location> ;
     dcat:accessURL <https://w3id.org/bgv-fdp/repositories/location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1746,7 +1628,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbclm-germplasm-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 (RDF4J) at https://jbclm.linkeddata.systems/repositories/germplasm — accessions, species with WFO identifiers, IUCN categories, collecting events (57 873 triples on 2026-10-07). The OpenAPI file documents GET and POST."@en ;
     dcterms:title "BG-JBCLM germplasm — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbclm-germplasm> ;
     dcat:accessURL <https://jbclm.linkeddata.systems/repositories/germplasm> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1754,7 +1636,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbclm-location-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://jbclm.linkeddata.systems/repositories/location — country, coordinates and soil conditions of collecting sites (70 triples on 2026-10-07)."@en ;
     dcterms:title "BG-JBCLM collecting sites — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbclm-location> ;
     dcat:accessURL <https://jbclm.linkeddata.systems/repositories/location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1762,7 +1644,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbo-germplasm-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 (RDF4J) at https://jbo.linkeddata.systems/repositories/germplasm — accessions, species with WFO identifiers, IUCN categories, collecting events (39 704 triples on 2026-10-07). The OpenAPI file documents GET and POST."@en ;
     dcterms:title "JBO germplasm — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbo-germplasm> ;
     dcat:accessURL <https://jbo.linkeddata.systems/repositories/germplasm> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1770,7 +1652,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbo-location-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://jbo.linkeddata.systems/repositories/location — country, coordinates and soil conditions of collecting sites (16 965 triples on 2026-10-07)."@en ;
     dcterms:title "JBO collecting sites — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbo-location> ;
     dcat:accessURL <https://jbo.linkeddata.systems/repositories/location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1778,7 +1660,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbs-germplasm-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 (RDF4J) at https://jbs.linkeddata.systems/repositories/germplasm — accessions, species with WFO identifiers, IUCN categories, collecting events (124 086 triples on 2026-10-07). The OpenAPI file documents GET and POST."@en ;
     dcterms:title "JBS germplasm — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbs-germplasm> ;
     dcat:accessURL <https://jbs.linkeddata.systems/repositories/germplasm> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1786,7 +1668,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-jbs-location-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://jbs.linkeddata.systems/repositories/location — country, coordinates and soil conditions of collecting sites (53 543 triples on 2026-10-07)."@en ;
     dcterms:title "JBS collecting sites — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-jbs-location> ;
     dcat:accessURL <https://jbs.linkeddata.systems/repositories/location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1794,7 +1676,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-urjc-germplasm-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 (RDF4J) at https://urjc.linkeddata.systems/repositories/germplasm — accessions, species with WFO identifiers, IUCN categories, collecting events (32 359 triples on 2026-10-07). The OpenAPI file documents GET and POST."@en ;
     dcterms:title "BG URJC germplasm — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-urjc-germplasm> ;
     dcat:accessURL <https://urjc.linkeddata.systems/repositories/germplasm> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1802,7 +1684,7 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-urjc-location-sparql> a dcat:Distribution ;
     dcterms:description "How to get it: SPARQL 1.1 at https://urjc.linkeddata.systems/repositories/location — country, coordinates and soil conditions of collecting sites (12 837 triples on 2026-10-07)."@en ;
     dcterms:title "BG URJC collecting sites — SPARQL endpoint"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#sparql-endpoint> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#sparql-endpoint> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/svc-urjc-location> ;
     dcat:accessURL <https://urjc.linkeddata.systems/repositories/location> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/sparql-results+json> .
@@ -1847,7 +1729,7 @@
     dcterms:description "How to get it: download backbone.zip (Taxon core plus vernacular names, distributions, references) from the hosted-datasets folder; older versions sit next to it."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
     dcterms:title "GBIF Backbone — Darwin Core Archive"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#darwin-core-archive> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#darwin-core-archive> ;
     dcat:accessURL <https://hosted-datasets.gbif.org/datasets/backbone/2023-08-28/> ;
     dcat:downloadURL <https://hosted-datasets.gbif.org/datasets/backbone/2023-08-28/backbone.zip> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/zip> .
@@ -1891,12 +1773,37 @@
     dcterms:title "S3 bucket gbif-open-data-us-east-1 (N. Virginia)"@en ;
     dcat:endpointURL <https://gbif-open-data-us-east-1.s3.us-east-1.amazonaws.com/> .
 
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog.ttl#catalog> a dcat:Catalog ;
+    dcterms:description "Over 12 million place names with coordinates, feature classes and administrative hierarchy; the usual way to resolve locality strings and country/admin codes in occurrence data."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/publisher-geonames> ;
+    dcterms:title "GeoNames — geographical names gazetteer"@en ;
+    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/geonames-gazetteer> ;
+    dcat:keyword "gazetteer"@en,
+        "georeferencing"@en,
+        "place names"@en ;
+    dcat:landingPage <https://www.geonames.org> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog.ttl#catalog> a dcat:Catalog ;
+    dcterms:description "Community-sourced, photo-vouchered observations of organisms and the iNaturalist taxonomy. Native access on inaturalist.org, plus the research-grade subset republished through GBIF (portal, API, AWS Parquet snapshots and the QLever RDF graph)."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/publisher-inat> ;
+    dcterms:title "iNaturalist — citizen-science biodiversity observations"@en ;
+    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/inat-observations>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/inat-taxonomy> ;
+    dcat:keyword "citizen science"@en,
+        "observation"@en,
+        "occurrence"@en,
+        "taxonomy"@en ;
+    dcat:landingPage <https://www.inaturalist.org> ;
+    dcat:themeTaxonomy <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#scheme> .
+
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/dist-obs-dwca> a dcat:Distribution ;
     dcterms:description "How to get it: download the weekly-regenerated zip directly; this is the exact file GBIF harvests. Contains research-grade observations licensed CC0, CC BY or CC BY-NC."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:title "iNaturalist research-grade observations — Darwin Core Archive"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#darwin-core-archive> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#darwin-core-archive> ;
     dcat:accessURL <https://www.inaturalist.org/observations/gbif-observations-dwca.zip> ;
     dcat:downloadURL <https://www.inaturalist.org/observations/gbif-observations-dwca.zip> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/zip> .
@@ -1907,6 +1814,20 @@
     dcterms:title "iNaturalist API v1"@en ;
     dcat:endpointDescription <https://api.inaturalist.org/v1/swagger.json> ;
     dcat:endpointURL <https://api.inaturalist.org/v1/> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl#catalog> a dcat:Catalog ;
+    dcterms:description "Nodes, ways and relations with free-form tags: protected areas, land cover, water bodies, trails and places that give spatial context to biodiversity records. Native APIs and planet files, plus the osm2rdf RDF conversion queryable on QLever."@en ;
+    dcterms:license <https://opendatacommons.org/licenses/odbl/1-0/> ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/publisher-osmf> ;
+    dcterms:title "OpenStreetMap — collaborative map of the world"@en ;
+    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/osm-live>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/osm-planet-2026-09-28>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/osm-rdf> ;
+    dcat:keyword "geography"@en,
+        "land cover"@en,
+        "map"@en,
+        "protected area"@en ;
+    dcat:landingPage <https://www.openstreetmap.org> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/osm-planet-2026-09-28> a dcat:Dataset ;
     dcterms:description "Weekly full-planet export (planet-260928)."@en ;
@@ -1926,11 +1847,24 @@
     foaf:homepage <https://ad.informatik.uni-freiburg.de> ;
     foaf:name "University of Freiburg — Chair of Algorithms and Data Structures (QLever, osm2rdf)"@en .
 
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl#catalog> a dcat:Catalog ;
+    dcterms:description "Taxonomic treatments, material citations, figures and bibliographic data liberated from published literature. Plazi publishes the same content through many channels: TreatmentBank, its APIs, XML and RDF in git, a SPARQL endpoint, Synospecies, GBIF and Zenodo."@en ;
+    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/publisher-plazi> ;
+    dcterms:title "Plazi — TreatmentBank and the Biodiversity Literature Repository"@en ;
+    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/plazi-blr>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/plazi-treatmentbank> ;
+    dcat:keyword "figures"@en,
+        "literature"@en,
+        "material citation"@en,
+        "taxonomic treatment"@en ;
+    dcat:landingPage <https://plazi.org> .
+
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/dist-tb-gbif> a dcat:Distribution ;
     dcterms:description "How to get it: GBIF publisher 7ce8aef0-9e92-11dc-8738-b8a03c50a862 (56 309 datasets, 686 712 material-citation occurrences on 2026-10-06); query https://api.gbif.org/v1/occurrence/search?publishingOrg=7ce8aef0-9e92-11dc-8738-b8a03c50a862 or request a GBIF download with that filter."@en ;
+    dcterms:references <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl#catalog> ;
     dcterms:title "Plazi in GBIF — one dataset per publication"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#aggregator-mirror> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#aggregator-mirror> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-api> ;
     dcat:accessURL <https://www.gbif.org/publisher/7ce8aef0-9e92-11dc-8738-b8a03c50a862> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> .
@@ -1939,7 +1873,7 @@
     dcterms:description "How to get it: git clone https://github.com/plazi/treatments-rdf and bulk-load the .ttl files into any triple store; this is the source of the Plazi SPARQL endpoint."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dcterms:title "treatments-rdf — all treatments as Turtle in git"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rdf-dump> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rdf-dump> ;
     dcat:accessURL <https://github.com/plazi/treatments-rdf> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> .
 
@@ -1947,7 +1881,7 @@
     dcterms:description "How to get it: download the compressed RDF/XML parts from current_release/rdf/ and load them into a triple store (several hundred GB uncompressed)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
     dcterms:title "UniProt RDF dump — RDF/XML"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#rdf-dump> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#rdf-dump> ;
     dcat:accessURL <https://ftp.uniprot.org/pub/databases/uniprot/current_release/rdf/> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/rdf+xml> .
 
@@ -1981,13 +1915,26 @@
     dcterms:identifier "https://doi.org/10.15468/ab3s5x" ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:modified "2026-10-06"^^xsd:date ;
+    dcterms:references <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl#catalog> ;
     dcterms:title "Research-grade subset in GBIF — iNaturalist Research-grade Observations (doi:10.15468/ab3s5x)"@en ;
-    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods#aggregator-mirror> ;
-    rdfs:seeAlso <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl> ;
+    dcterms:type <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/vocab/access-methods.ttl#aggregator-mirror> ;
     dcat:accessService <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/svc-gbif-api> ;
     dcat:accessURL <https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
     prov:wasDerivedFrom <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/dist-obs-dwca> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl#catalog> a dcat:Catalog ;
+    dcterms:description "Protein sequences and functional annotation (UniProtKB Swiss-Prot and TrEMBL, UniRef, UniParc, Proteomes) and the UniProt taxonomy. Links to biodiversity via NCBI taxon identifiers and up:scientificName."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/publisher-uniprot> ;
+    dcterms:title "UniProt — Universal Protein Resource"@en ;
+    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/uniprot-2026-03>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/uniprot-previous> ;
+    dcat:keyword "functional annotation"@en,
+        "protein"@en,
+        "sequence"@en,
+        "taxonomy"@en ;
+    dcat:landingPage <https://www.uniprot.org> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-bgusal> a foaf:Organization ;
     foaf:homepage <https://bgusal.linkeddata.systems> ;
@@ -2000,6 +1947,21 @@
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-jbs> a foaf:Organization ;
     foaf:homepage <https://jbs.linkeddata.systems> ;
     foaf:name "Jardí Botànic de Sóller (JBS)"@ca .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl#catalog> a dcat:Catalog ;
+    dcterms:description "Occurrence records aggregated from tens of thousands of publishers, and the GBIF Backbone Taxonomy. Native access on gbif.org and api.gbif.org, monthly Parquet snapshots on AWS Open Data, and an RDF copy queryable with SPARQL on QLever."@en ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/publisher-gbif> ;
+    dcterms:rights <https://www.gbif.org/terms> ;
+    dcterms:title "GBIF — Global Biodiversity Information Facility"@en ;
+    dcat:dataset <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/gbif-backbone-2023-08-28>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/gbif-occurrence-live>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/gbif-snapshot-2026-09-01>,
+        <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/gbif-snapshot-2026-10-01> ;
+    dcat:keyword "Darwin Core"@en,
+        "occurrence"@en,
+        "specimen"@en,
+        "taxonomy"@en ;
+    dcat:landingPage <https://www.gbif.org> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/publisher-osmf> a foaf:Organization ;
     foaf:homepage <https://osmfoundation.org> ;
