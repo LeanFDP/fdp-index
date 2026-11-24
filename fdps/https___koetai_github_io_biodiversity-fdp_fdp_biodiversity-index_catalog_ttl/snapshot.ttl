@@ -7,13 +7,6 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
-        fdp-o:MetadataService ;
-    dcterms:modified "2026-10-06"^^xsd:date ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/publisher-curator> ;
-    dcterms:title "Biodiversity Heritage Library FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl#catalog> .
-
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/biodiversity-index/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
     dcterms:description "Static FAIR Data Point index over biodiversity infrastructures. Each sub-catalog describes one resource and lists every way to obtain it: native portal and APIs, bulk files, cloud buckets and copies in aggregators (GBIF, QLever, Koetai). Provenance is preserved, not deduplicated: the iNaturalist subset in GBIF appears under both."@en ;
@@ -45,54 +38,14 @@
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl#catalog>,
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl#catalog> .
 
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
         fdp-o:MetadataService ;
-    dcterms:modified "2026-10-07"^^xsd:date ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-curator> ;
-    dcterms:title "FLAIR-GG FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog.ttl#catalog> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
-        fdp-o:MetadataService ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/bhl-fdp/catalog.ttl",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/" ;
     dcterms:modified "2026-10-06"^^xsd:date ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/publisher-curator> ;
-    dcterms:title "GBIF FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl#catalog> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
-        fdp-o:MetadataService ;
-    dcterms:modified "2026-10-06"^^xsd:date ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/publisher-curator> ;
-    dcterms:title "GeoNames FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog.ttl#catalog> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
-        fdp-o:MetadataService ;
-    dcterms:modified "2026-10-06"^^xsd:date ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/publisher-curator> ;
-    dcterms:title "iNaturalist FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog.ttl#catalog> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
-        fdp-o:MetadataService ;
-    dcterms:modified "2026-10-06"^^xsd:date ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/publisher-curator> ;
-    dcterms:title "OpenStreetMap FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl#catalog> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
-        fdp-o:MetadataService ;
-    dcterms:modified "2026-10-06"^^xsd:date ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/publisher-curator> ;
-    dcterms:title "Plazi FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl#catalog> .
-
-<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
-        fdp-o:MetadataService ;
-    dcterms:modified "2026-10-06"^^xsd:date ;
-    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/publisher-curator> ;
-    dcterms:title "UniProt FAIR Data Point — Biodiversity FDP"@en ;
-    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl#catalog> .
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/publisher-curator> ;
+    dcterms:title "Biodiversity Heritage Library FAIR Data Point — Biodiversity FDP"@en ;
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl#catalog> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/bhl-koetai-sample> a dcat:Dataset ;
     dcterms:description "Small but structurally complete sample of the BHL RDF (whole titles with all their items, pages, parts and creators), same schema as the full graph. Meant for schema discovery and whole-graph tools."@en ;
@@ -118,6 +71,8 @@
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bhl-web> ;
     dcat:landingPage <https://www.biodiversitylibrary.org> ;
     dcat:version "live (described 2026-10-06)" .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl> foaf:primaryTopic <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/dist-bhl-api3> a dcat:Distribution ;
     dcterms:description "How to get it: request a free API key, then GET https://www.biodiversitylibrary.org/api3?op=PublicationSearch&searchterm=...&format=json&apikey=KEY (ops include GetTitleMetadata, GetPageMetadata, NameSearch, GetPartMetadata)."@en ;
@@ -221,6 +176,15 @@
     foaf:homepage <https://orcid.org/0000-0001-9773-4008> ;
     foaf:name "Andra Waagmeester" .
 
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
+        fdp-o:MetadataService ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/flair-gg-fdp/catalog.ttl",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/" ;
+    dcterms:modified "2026-10-07"^^xsd:date ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-curator> ;
+    dcterms:title "FLAIR-GG FAIR Data Point — Biodiversity FDP"@en ;
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog.ttl#catalog> .
+
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/bgusal-2025-02> a dcat:Dataset ;
     dcterms:description "Banco de Germoplasma de la Universidad de Salamanca. Seeds of threatened flora of Castilla y León and spores and mycelium of fungi, hosted at CIALE since 2007. Data follow the FLAIR-GG semantic model (FAO/IPGRI multi-crop passport descriptors, SIO, Darwin Core, WFO taxonomy)."@en ;
     dcterms:identifier "https://bgusal.linkeddata.systems" ;
@@ -253,6 +217,8 @@
         <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgv-species-location> ;
     dcat:landingPage <https://w3id.org/bgv-fdp> ;
     dcat:version "2023-06" .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog.ttl> foaf:primaryTopic <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/dist-bgusal-fdp> a dcat:Distribution ;
     dcterms:description "How to get it: open the FDP in a browser, or curl -H 'Accept: text/turtle' https://bgusal.linkeddata.systems and follow fdp:metadataCatalog, dcat:dataset and dcat:distribution to the data services. Runs the FAIR Data Point reference implementation."@en ;
@@ -802,6 +768,17 @@
     dcat:landingPage <https://www.worldfloraonline.org> ;
     dcat:version "current" .
 
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
+        fdp-o:MetadataService ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/gbif-fdp/catalog.ttl",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/" ;
+    dcterms:modified "2026-10-06"^^xsd:date ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/publisher-curator> ;
+    dcterms:title "GBIF FAIR Data Point — Biodiversity FDP"@en ;
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl#catalog> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl> foaf:primaryTopic <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/> .
+
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/dist-2026-09-aws-parquet> a dcat:Distribution ;
     dcterms:description "How to get it: s3://gbif-open-data-REGION/occurrence/2026-09-01/occurrence.parquet/ with --no-sign-request, in any of the five regions."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/PARQUET> ;
@@ -933,6 +910,17 @@
     foaf:homepage <https://ad.informatik.uni-freiburg.de> ;
     foaf:name "University of Freiburg — Chair of Algorithms and Data Structures (QLever)"@en .
 
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
+        fdp-o:MetadataService ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/geonames-fdp/catalog.ttl",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/" ;
+    dcterms:modified "2026-10-06"^^xsd:date ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/publisher-curator> ;
+    dcterms:title "GeoNames FAIR Data Point — Biodiversity FDP"@en ;
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog.ttl#catalog> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog.ttl> foaf:primaryTopic <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/> .
+
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/dist-dump> a dcat:Distribution ;
     dcterms:description "How to get it: download allCountries.zip (or one file per country, cities500/1000/5000/15000, alternateNamesV2, admin codes, hierarchy) from export/dump; daily modifications and deletes files allow incremental sync."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/ZIP> ;
@@ -1000,6 +988,17 @@
     dcterms:title "GeoNames web services"@en ;
     dcat:endpointDescription <https://www.geonames.org/export/ws-overview.html> ;
     dcat:endpointURL <http://api.geonames.org/> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
+        fdp-o:MetadataService ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/inaturalist-fdp/catalog.ttl",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/" ;
+    dcterms:modified "2026-10-06"^^xsd:date ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/publisher-curator> ;
+    dcterms:title "iNaturalist FAIR Data Point — Biodiversity FDP"@en ;
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog.ttl#catalog> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog.ttl> foaf:primaryTopic <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/dist-obs-api-v1> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://api.inaturalist.org/v1/observations?taxon_id=...&place_id=... (no key for reads; keep under ~60 requests/minute, 10 000 results per query; page with id_above for more)."@en ;
@@ -1133,6 +1132,17 @@
     dcterms:title "AWS S3 bucket inaturalist-open-data (us-east-1, no sign-in)"@en ;
     dcat:endpointDescription <https://github.com/inaturalist/inaturalist-open-data> ;
     dcat:endpointURL <https://inaturalist-open-data.s3.amazonaws.com/> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
+        fdp-o:MetadataService ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/openstreetmap-fdp/catalog.ttl",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/" ;
+    dcterms:modified "2026-10-06"^^xsd:date ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/publisher-curator> ;
+    dcterms:title "OpenStreetMap FAIR Data Point — Biodiversity FDP"@en ;
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl#catalog> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl> foaf:primaryTopic <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/> .
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/dist-live-api06> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://api.openstreetmap.org/api/0.6/way/ID/full or map?bbox=...; meant for editors, not bulk reads (use Overpass or planet files instead)."@en ;
@@ -1286,6 +1296,17 @@
     dcat:endpointDescription <https://qlever.dev/osm-planet> ;
     dcat:endpointURL <https://qlever.dev/api/osm-planet> .
 
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
+        fdp-o:MetadataService ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/plazi-fdp/catalog.ttl",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/" ;
+    dcterms:modified "2026-10-06"^^xsd:date ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/publisher-curator> ;
+    dcterms:title "Plazi FAIR Data Point — Biodiversity FDP"@en ;
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl#catalog> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl> foaf:primaryTopic <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/> .
+
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/dist-blr-api> a dcat:Distribution ;
     dcterms:description "How to get it: GET https://zenodo.org/api/records?communities=biosyslit&q=...&size=100 (JSON; anonymous allowed, token raises rate limits)."@en ;
     dcterms:title "Zenodo REST API — biosyslit records"@en ;
@@ -1421,6 +1442,17 @@
     dcat:endpointDescription <https://developers.zenodo.org/> ;
     dcat:endpointURL <https://zenodo.org/api/> .
 
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/> a <http://www.re3data.org/schema/3-0#Repository>,
+        fdp-o:MetadataService ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/uniprot-fdp/catalog.ttl",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/" ;
+    dcterms:modified "2026-10-06"^^xsd:date ;
+    dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/publisher-curator> ;
+    dcterms:title "UniProt FAIR Data Point — Biodiversity FDP"@en ;
+    fdp-o:hasCatalog <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl#catalog> .
+
+<https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl> foaf:primaryTopic <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/> .
+
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/dist-ftp-flat> a dcat:Distribution ;
     dcterms:description "How to get it: wget the files under current_release/knowledgebase/complete/ (uniprot_sprot.dat.gz, uniprot_sprot.xml.gz, uniprot_sprot.fasta.gz and the much larger TrEMBL equivalents)."@en ;
     dcterms:format <http://publications.europa.eu/resource/authority/file-type/GZIP> ;
@@ -1550,6 +1582,8 @@
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl#catalog> a dcat:Catalog ;
     dcterms:description "Open-access digitised biodiversity literature: titles, items, pages, parts, creators, subjects and page-level scientific-name mentions. Native access on biodiversitylibrary.org and its API and data export, plus RDF conversions on Koetai nodes of the Mangal network."@en ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/bhl-fdp/catalog.ttl#catalog",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/catalog.ttl#catalog" ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/bhl-fdp/publisher-bhl> ;
     dcterms:rights <https://about.biodiversitylibrary.org/help/copyright-and-reuse/> ;
     dcterms:title "BHL — Biodiversity Heritage Library"@en ;
@@ -1572,6 +1606,8 @@
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog.ttl#catalog> a dcat:Catalog ;
     dcterms:description "FLAIR-GG makes seed and germplasm banks FAIR without changing their databases: each bank exports CSV templates, YARRRML turns them into RDF following a shared semantic model (germplasm, location, administrative), and each bank runs its own FAIR Data Point and SPARQL endpoints. A Virtual Platform federates queries across all members. Six banks are live; this catalog lists every way to reach them."@en ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/flair-gg-fdp/catalog.ttl#catalog",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/catalog.ttl#catalog" ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/flair-gg-fdp/publisher-flairgg> ;
     dcterms:rights <https://wilkinsonlab.github.io/FLAIR-GG/> ;
@@ -1775,6 +1811,8 @@
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog.ttl#catalog> a dcat:Catalog ;
     dcterms:description "Over 12 million place names with coordinates, feature classes and administrative hierarchy; the usual way to resolve locality strings and country/admin codes in occurrence data."@en ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/geonames-fdp/catalog.ttl#catalog",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/catalog.ttl#catalog" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/geonames-fdp/publisher-geonames> ;
     dcterms:title "GeoNames — geographical names gazetteer"@en ;
@@ -1786,6 +1824,8 @@
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog.ttl#catalog> a dcat:Catalog ;
     dcterms:description "Community-sourced, photo-vouchered observations of organisms and the iNaturalist taxonomy. Native access on inaturalist.org, plus the research-grade subset republished through GBIF (portal, API, AWS Parquet snapshots and the QLever RDF graph)."@en ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/inaturalist-fdp/catalog.ttl#catalog",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/catalog.ttl#catalog" ;
     dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/inaturalist-fdp/publisher-inat> ;
     dcterms:title "iNaturalist — citizen-science biodiversity observations"@en ;
@@ -1817,6 +1857,8 @@
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl#catalog> a dcat:Catalog ;
     dcterms:description "Nodes, ways and relations with free-form tags: protected areas, land cover, water bodies, trails and places that give spatial context to biodiversity records. Native APIs and planet files, plus the osm2rdf RDF conversion queryable on QLever."@en ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/openstreetmap-fdp/catalog.ttl#catalog",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/catalog.ttl#catalog" ;
     dcterms:license <https://opendatacommons.org/licenses/odbl/1-0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/openstreetmap-fdp/publisher-osmf> ;
     dcterms:title "OpenStreetMap — collaborative map of the world"@en ;
@@ -1849,6 +1891,8 @@
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl#catalog> a dcat:Catalog ;
     dcterms:description "Taxonomic treatments, material citations, figures and bibliographic data liberated from published literature. Plazi publishes the same content through many channels: TreatmentBank, its APIs, XML and RDF in git, a SPARQL endpoint, Synospecies, GBIF and Zenodo."@en ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/plazi-fdp/catalog.ttl#catalog",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/catalog.ttl#catalog" ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/plazi-fdp/publisher-plazi> ;
     dcterms:title "Plazi — TreatmentBank and the Biodiversity Literature Repository"@en ;
@@ -1925,6 +1969,8 @@
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl#catalog> a dcat:Catalog ;
     dcterms:description "Protein sequences and functional annotation (UniProtKB Swiss-Prot and TrEMBL, UniRef, UniParc, Proteomes) and the UniProt taxonomy. Links to biodiversity via NCBI taxon identifiers and up:scientificName."@en ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/uniprot-fdp/catalog.ttl#catalog",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/catalog.ttl#catalog" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/uniprot-fdp/publisher-uniprot> ;
     dcterms:title "UniProt — Universal Protein Resource"@en ;
@@ -1950,6 +1996,8 @@
 
 <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl#catalog> a dcat:Catalog ;
     dcterms:description "Occurrence records aggregated from tens of thousands of publishers, and the GBIF Backbone Taxonomy. Native access on gbif.org and api.gbif.org, monthly Parquet snapshots on AWS Open Data, and an RDF copy queryable with SPARQL on QLever."@en ;
+    dcterms:identifier "https://koetai.github.io/biodiversity-fdp/fdp/gbif-fdp/catalog.ttl#catalog",
+        "https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/catalog.ttl#catalog" ;
     dcterms:publisher <https://raw.githubusercontent.com/Koetai/biodiversity-fdp/main/fdp/gbif-fdp/publisher-gbif> ;
     dcterms:rights <https://www.gbif.org/terms> ;
     dcterms:title "GBIF — Global Biodiversity Information Facility"@en ;
