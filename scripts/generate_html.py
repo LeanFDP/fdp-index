@@ -19,7 +19,7 @@ HTML_TEMPLATE = """\
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lean FDP Index</title>
+  <title>FDP Index</title>
   <link rel="alternate" type="application/atom+xml" title="Outages and recoveries" href="status.atom">
   <style>
     :root {{
@@ -163,7 +163,7 @@ HTML_TEMPLATE = """\
 <body>
 
 <header>
-  <h1>Lean FDP Index</h1>
+  <h1>FDP Index</h1>
   <p>Daily-crawled index of <a href="https://www.go-fair.org/fair-principles/" style="color:var(--accent)">FAIR Data Points</a>
      hosted via <a href="https://github.com/LeanFDP" style="color:var(--accent)">Lean FDP / fdpCloud</a>.
      GitHub is the canonical source — no server required.</p>
