@@ -67,7 +67,7 @@ If `status.json` is missing, the history is rebuilt from the earlier crawl repor
 
 ## Related: the Lean FDP Index service
 
-Mark Wilkinson's [Lean FDP Index](https://github.com/markwilkinson/lean-fdp-index) does the same job as a hosted service, running for ERDERA at <https://erdera-vp-index.linkeddata.systems/>. The two follow the same idea: a small index that records what each FDP returns, rechecks it daily and needs nothing from the FDP beyond its RDF. They differ in where they run and how you register.
+Mark Wilkinson's Lean FDP Index ([code](https://github.com/markwilkinson/lean-fdp-index), a private repository) does the same job as a hosted service, running for ERDERA at <https://erdera-vp-index.linkeddata.systems/>. Despite the similar name, it is a separate index: this repository is the *FDP Index*. The two follow the same idea: a small index that records what each FDP returns, rechecks it daily and needs nothing from the FDP beyond its RDF. They differ in where they run and how you register.
 
 | | This repository (fdp-index) | Lean FDP Index service |
 |---|---|---|

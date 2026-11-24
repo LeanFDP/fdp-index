@@ -200,7 +200,7 @@ def build_index(crawl_results: list[dict]) -> Graph:
     index_uri = URIRef("https://fdp.semscape.org/fdp-index/")
 
     g.add((index_uri, RDF.type,           DCAT.Catalog))
-    g.add((index_uri, DCTERMS.title,      Literal("Lean FDP Index", lang="en")))
+    g.add((index_uri, DCTERMS.title,      Literal("FDP Index", lang="en")))
     g.add((index_uri, DCTERMS.description,
            Literal("Daily-crawled index of FAIR Data Points hosted via Lean FDP / fdpCloud.", lang="en")))
     g.add((index_uri, DCTERMS.modified,   now))
