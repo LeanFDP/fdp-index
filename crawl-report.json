@@ -1,5 +1,5 @@
 {
-  "crawled_at": "2026-11-27T11:32:29.534165+00:00",
+  "crawled_at": "2026-11-28T11:02:32.775764+00:00",
   "total": 7,
   "succeeded": 5,
   "failed": 2,
@@ -17,7 +17,7 @@
         "errors": 0,
         "skipped": 0
       },
-      "elapsed_s": 1.25
+      "elapsed_s": 1.44
     },
     {
       "url": "https://fdp.wikipathways.org/index.ttl",
@@ -32,7 +32,7 @@
         "errors": 0,
         "skipped": 0
       },
-      "elapsed_s": 0.51
+      "elapsed_s": 0.72
     },
     {
       "url": "https://fdp.dcc.sib.swiss",
@@ -47,7 +47,7 @@
         "errors": 0,
         "skipped": 0
       },
-      "elapsed_s": 127.66
+      "elapsed_s": 119.7
     },
     {
       "url": "http://fairdatapointorphanet.info:7070",
@@ -62,13 +62,13 @@
         "errors": 1,
         "skipped": 1798
       },
-      "elapsed_s": 50.46
+      "elapsed_s": 50.43
     },
     {
       "url": "https://dpp.worldduchenne.org",
       "label": "Duchenne Parent Project \u2014 FAIR Data Point",
       "status": "error",
-      "error": "HTTP 503",
+      "error": "SSLError: HTTPSConnectionPool(host='dpp.worldduchenne.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify faile",
       "stats": {
         "root": "https://dpp.worldduchenne.org",
         "resources": 0,
@@ -77,7 +77,7 @@
         "errors": 1,
         "skipped": 0
       },
-      "elapsed_s": 0.52
+      "elapsed_s": 0.53
     },
     {
       "url": "https://rajaramzfdp.fdpcloud.org/fdp-content/repository",
@@ -92,7 +92,7 @@
         "errors": 1,
         "skipped": 0
       },
-      "elapsed_s": 0.49
+      "elapsed_s": 0.53
     },
     {
       "url": "https://koetai.github.io/biodiversity-fdp/fdp/biodiversity-index/catalog.ttl",
@@ -107,7 +107,7 @@
         "errors": 143,
         "skipped": 0
       },
-      "elapsed_s": 9.57
+      "elapsed_s": 10.86
     }
   ]
 }

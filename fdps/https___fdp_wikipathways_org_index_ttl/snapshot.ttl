@@ -3,8 +3,8 @@
 @prefix fdp-o: <https://w3id.org/fdp/fdp-o#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ldp: <http://www.w3.org/ns/ldp#> .
-@prefix ns1: <http://www.w3.org/2006/vcard/ns#> .
-@prefix ns2: <https://w3id.org/ejp-rd/vocabulary#> .
+@prefix ns1: <https://w3id.org/ejp-rd/vocabulary#> .
+@prefix ns2: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -40,8 +40,8 @@
     dcat:landingPage <https://data.wikipathways.org/20260810/> ;
     dcat:theme <http://vocabularies.wikipathways.org/wp#Pathway> ;
     foaf:logo <https://upload.wikimedia.org/wikipedia/commons/8/83/Wplogo_with_text_500.png> ;
-    ns2:personalData "false" ;
-    ns2:vpConnection ns2:VPDiscoverable ;
+    ns1:personalData "false" ;
+    ns1:vpConnection ns1:VPDiscoverable ;
     fdp-o:metadataCatalog <https://fdp.wikipathways.org/catalog/index.ttl> ;
     fdp-o:metadataIssued "2023-03-10T07:42:08+00:00"^^xsd:dateTime ;
     fdp-o:metadataModified "2026-08-16T06:39:23.078536+00:00"^^xsd:dateTime .
@@ -49,7 +49,7 @@
 <https://fdp.wikipathways.org/#accessRights> a dcterms:RightsStatement ;
     dcterms:description "This resource has no access restriction" .
 
-<https://fdp.wikipathways.org/contact/> ns1:url <https://github.com/wikipathways/fdp/issues> .
+<https://fdp.wikipathways.org/contact/> ns2:url <https://github.com/wikipathways/fdp/issues> .
 
 <https://fdp.wikipathways.org/dataset/20260810/gmt/index.ttl> a dcat:Distribution ;
     dcterms:title "WikiPathways 20260810, GMT files" .
